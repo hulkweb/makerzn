@@ -4,7 +4,7 @@
 use App\Http\Controllers\BlogController;
 
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 
 use Illuminate\Support\Facades\Route;
@@ -21,44 +21,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
-Route::get('get_quote', [WebsiteController::class, 'get_quote'])->name('get_quote');
-Route::get('quote/{slug}', [WebsiteController::class, 'show_quote'])->name('show_quote');
-Route::get('retrive_quote', [WebsiteController::class, 'retrive_quote'])->name('retrive_quote');
-Route::post('track_quote', [WebsiteController::class, 'track_quote'])->name('track_quote');
 
-Route::get('quote/show_detail/{id}', [WebsiteController::class, 'forced_quote'])->name('quote.forced');
-Route::get('booking_details/{id}', [WebsiteController::class, 'booking_details'])->name('booking_details');
-Route::post('booking_details', [WebsiteController::class, 'save_booking_details'])->name('booking_details.save');
+Route::get('/app', [WebsiteController::class, 'app'])->name('app');
 
-Route::get('payment/{id}', [WebsiteController::class, 'payment'])->name('quote.payment');
-Route::get('payment_success/{id}', [WebsiteController::class, 'payment_success'])->name('quote.payment_success');
-Route::get('strip_success/{id}', [WebsiteController::class, 'stripe_success'])->name('quote.stripe_success');
-
-
-
-Route::post('store_quote', [WebsiteController::class, 'store_quote'])->name('store_quote');
-Route::post('store_location', [WebsiteController::class, 'store_location'])->name('store_location');
-
-Route::get('/models/{make_id}', [WebsiteController::class, 'getModels']);
-
-Route::get('blog', [WebsiteController::class, 'blogs'])->name('blogs');
+Route::get('blogs', [WebsiteController::class, 'blogs'])->name('blogs');
 Route::get('blog/{slug}', [WebsiteController::class, 'blog'])->name('blog');
 
-Route::get('service', [WebsiteController::class, 'services'])->name('services');
-Route::get('service/{slug}', [WebsiteController::class, 'service'])->name('service');
+Route::get('plans', [WebsiteController::class, 'plans'])->name('plans');
+Route::get('plan/{slug}', [WebsiteController::class, 'plan'])->name('plan');
 
-Route::get('location', [WebsiteController::class, 'locations'])->name('locations');
-Route::get('location/{slug}', [WebsiteController::class, 'location'])->name('location');
+
 
 Route::get('about-us', [WebsiteController::class, 'about'])->name('about');
 Route::get('contact-us', [WebsiteController::class, 'contact'])->name('contact');
 Route::get('terms-and-conditions', [WebsiteController::class, 'terms'])->name('terms');
 Route::get('privacy-policy', [WebsiteController::class, 'privacy'])->name('privacy');
+Route::get('faq', [WebsiteController::class, 'faq'])->name('faq');
 
-Route::get("login", [DashboardController::class, 'signin'])->name('login');
-Route::post("signin", [DashboardController::class, 'signin_post'])->name('signin.post');
+Route::get("login", [UserController::class, 'login'])->name('login');
+Route::get("signup", [UserController::class, 'signup'])->name('signup');
 
-Route::get("email", [DashboardController::class, 'email'])->name('email');
+Route::post("login", [UserController::class, 'login_post'])->name('login.post');
+Route::post("signup", [UserController::class, 'signup_post'])->name('signup.post');
 
 
 Route::group(['middleware' => 'auth'], function () {

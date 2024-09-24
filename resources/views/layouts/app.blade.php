@@ -137,7 +137,7 @@
                         <div class="d-flex justify-content-between align-items-center flex-wrap">
 
                             <div class="logo-box">
-                                <div class="logo"><a href="home.html"><img
+                                <div class="logo"><a href="{{ route('home') }}"><img
                                             src="{{ asset('asset/img/logos/66a7e0c48e8441722278084.png') }}"
                                             alt="" title=""></a></div>
                             </div>
@@ -158,15 +158,16 @@
                                         id="navbarSupportedContent">
                                         <ul class="navigation clearfix">
                                             <li id="Home">
-                                                <a href="home.html">Home</a>
+                                                <a href="{{ route('home') }}">Home</a>
                                             </li>
-                                            <li><a href="plans.html" id="Plans">Plans</a></li>
-                                            <li><a href="affiliates.html" id="Affiliates">Affiliates</a></li>
-                                            <li><a href="about.html" id="About">About Us</a></li>
-                                            <li><a href="blogs.html" id="Blogs">Blogs</a></li>
-                                            <li><a href="faq.html" id="FAQs">FAQ</a></li>
-                                            <li><a href="app.html" id="APP">APP</a></li>
-                                            <li><a href="contact.html" id="Contact">Contact</a></li>
+                                            <li><a href="{{ route('plans') }}" id="Plans">Plans</a></li>
+                                            <li><a href="{{ route('affiliates') }}" id="Affiliates">Affiliates</a>
+                                            </li>
+                                            <li><a href="{{ route('about') }}" id="About">About Us</a></li>
+                                            <li><a href="{{ route('blogs') }}" id="Blogs">Blogs</a></li>
+                                            <li><a href="{{ route('faq') }}" id="FAQs">FAQ</a></li>
+                                            <li><a href="{{ route('app') }}" id="APP">APP</a></li>
+                                            <li><a href="{{ route('contact') }}" id="Contact">Contact</a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -226,13 +227,13 @@
                                 </div>
 
                                 <div class="main-header_buttons">
-                                    <a href="signin.html" class="template-btn btn-style-two">
+                                    <a href="{{ route('signin') }}" class="template-btn btn-style-two">
                                         <span class="btn-wrap">
                                             <span class="text-one">Login</span>
                                             <span class="text-two">Login</span>
                                         </span>
                                     </a>
-                                    <a href="signup.html" class="template-btn btn-style-one">
+                                    <a href="{{ route('signup') }}" class="template-btn btn-style-one">
                                         <span class="btn-wrap">
                                             <span class="text-one">Join now</span>
                                             <span class="text-two">Join now</span>
@@ -264,7 +265,7 @@
                 <div class="close-btn"><span class="icon fa-solid fa-xmark fa-fw"></span></div>
 
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="index-2.html"><img
+                    <div class="nav-logo"><a href="index-{{ route('2') }}"><img
                                 src="{{ asset('asset/img/logos/66a7e0c491f2f1722278084.png') }}" alt=""
                                 title=""></a>
                     </div>
@@ -292,7 +293,7 @@
 
                             <div class="big-column col-lg-4 col-md-12 col-sm-12">
                                 <div class="logo-box">
-                                    <div class="logo"><a href="home.html"><img
+                                    <div class="logo"><a href="{{ route('home') }}"><img
                                                 src="{{ asset('asset/img/logos/66a7e0c48e8441722278084.png') }}"
                                                 alt="" title=""></a></div>
                                 </div>
@@ -303,7 +304,8 @@
                                     journey is efficient and profitable.</p>
                                 <div class="txd d-flex align-items-center">
                                     <span class="icon fa-solid fa-envelope fa-fw"></span>
-                                    <p class="txt"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__"
+                                    <p class="txt"><a href="cdn-cgi/l/email-{{ route('protection') }}"
+                                            class="__cf_email__"
                                             data-cfemail="9be8eeebebf4e9efdbf6fae8f3fae8f3b5f8f4f6">[email&#160;protected]</a>
                                     </p>
                                 </div>
@@ -326,29 +328,29 @@
                                         <div class="column col-lg-5 col-md-4 col-sm-6">
                                             <h5 class="footer-title">Services</h5>
                                             <ul class="footer-pages_list">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="plans.html">Plans</a></li>
-                                                <li><a href="affiliates.html">Affiliates</a></li>
-                                                <li><a href="blogs.html">Blog</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
+                                                <li><a href="{{ route('about') }}">About Us</a></li>
+                                                <li><a href="{{ route('plans') }}">Plans</a></li>
+                                                <li><a href="{{ route('affiliates') }}">Affiliates</a></li>
+                                                <li><a href="{{ route('blogs') }}">Blog</a></li>
+                                                <li><a href="{{ route('faq') }}">FAQ</a></li>
                                             </ul>
                                         </div>
                                         <div class="column col-lg-3 col-md-4 col-sm-6">
                                             <h5 class="footer-title">resources</h5>
                                             <ul class="footer-pages_list">
-                                                <li><a href="terms.html">Terms & Conditions</a></li>
-                                                <li><a href="policy.html">Privacy Policy</a></li>
+                                                <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
+                                                <li><a href="{{ route('policy') }}">Privacy Policy</a></li>
                                             </ul>
                                         </div>
                                         <div class="column col-lg-4 col-md-4 col-sm-6">
                                             <h5 class="footer-title">App</h5>
                                             <ul class="footer-pages_list">
                                                 <li>
-                                                    <a href="app.html">
+                                                    <a href="{{ route('app') }}">
                                                         <img src="{{ asset('asset/img/android.png') }}"
                                                             style="width:110px;height:auto;" alt="image">
                                                     </a>
-                                                    <a href="app.html">
+                                                    <a href="{{ route('app') }}">
                                                         <img src="{{ asset('asset/img/ios.png') }}"
                                                             style="width:110px;height:auto;" alt="image">
                                                     </a>

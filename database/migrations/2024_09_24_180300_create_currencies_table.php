@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
             $table->id();
-            $table->text("slug")->nullable();
-            $table->string("title")->nullable();
-            $table->longText("subtitle")->nullable();
-            $table->longText("body")->nullable();
-            $table->text("image")->nullable();
-            $table->string("status")->nullable();
+
+            $table->string('name'); // Currency name (e.g., Bitcoin, Ethereum)
+            $table->string('symbol'); // Currency symbol (e.g., BTC, ETH)
+            $table->string('icon_url')->nullable(); // Opt
+            $table->float("usd_value")->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('currencies');
     }
 };

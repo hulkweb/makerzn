@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); // Link to user
+            $table->unsignedBigInteger('currency_id'); // Link to user
+
+            $table->enum('type', ['deposit', 'withdrawal']); // Transaction type: deposit or withdrawal
+            $table->enum('status', ['pending', 'in_progress', 'completed', 'failed']); // Transaction status
+            $table->decimal('amount', 20, 8); // Cryptocurrency amount (BTC in this case)
+
+            $table->decimal('usd_value', 15, 2); // USD equivalent of the cryptocurrency
+            $table->timestamp('transaction_time'); // Time of transaction
+            $table->string('proof')->nullable(); // Time of transaction
+            $table->timestamp('wallet_address')->nullable(); // Time of transaction
+
+            // Foreign key to the users table
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
