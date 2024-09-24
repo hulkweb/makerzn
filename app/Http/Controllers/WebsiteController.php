@@ -74,6 +74,12 @@ class WebsiteController extends Controller
         $title = "Privacy Policy";
         return view('pages.website.policy', compact('title'));
     }
+    public function affiliates()
+    {
+
+        $title = "Privacy Policy";
+        return view('pages.website.affiliates', compact('title'));
+    }
     public function about()
     {
 

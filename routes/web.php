@@ -25,12 +25,14 @@ Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('/app', [WebsiteController::class, 'app'])->name('app');
 
 Route::get('blogs', [WebsiteController::class, 'blogs'])->name('blogs');
-Route::get('blog/{slug}', [WebsiteController::class, 'blog'])->name('blog');
+// Route::get('blog/{slug}', [WebsiteController::class, 'blog'])->name('blog');
 
 Route::get('plans', [WebsiteController::class, 'plans'])->name('plans');
 Route::get('plan/{slug}', [WebsiteController::class, 'plan'])->name('plan');
 
+Route::get('affiliates', [WebsiteController::class, 'affiliates'])->name('affiliates');
 
+Route::get('about-us', [WebsiteController::class, 'about'])->name('about');
 
 Route::get('about-us', [WebsiteController::class, 'about'])->name('about');
 Route::get('contact-us', [WebsiteController::class, 'contact'])->name('contact');
@@ -39,6 +41,8 @@ Route::get('privacy-policy', [WebsiteController::class, 'privacy'])->name('priva
 Route::get('faq', [WebsiteController::class, 'faq'])->name('faq');
 
 Route::get("login", [UserController::class, 'login'])->name('login');
+Route::get("login", [UserController::class, 'login'])->name('signin');
+
 Route::get("signup", [UserController::class, 'signup'])->name('signup');
 
 Route::post("login", [UserController::class, 'login_post'])->name('login.post');
@@ -50,7 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("logout", [DashboardController::class, 'logout'])->name('logout');
 
 
-    Route::resource("blogs", BlogController::class);
+    // Route::resource("blogs", BlogController::class);
 
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');

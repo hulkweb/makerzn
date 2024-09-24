@@ -265,7 +265,7 @@
                 <div class="close-btn"><span class="icon fa-solid fa-xmark fa-fw"></span></div>
 
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="index-{{ route('2') }}"><img
+                    <div class="nav-logo"><a href="#"><img
                                 src="{{ asset('asset/img/logos/66a7e0c491f2f1722278084.png') }}" alt=""
                                 title=""></a>
                     </div>
@@ -304,8 +304,7 @@
                                     journey is efficient and profitable.</p>
                                 <div class="txd d-flex align-items-center">
                                     <span class="icon fa-solid fa-envelope fa-fw"></span>
-                                    <p class="txt"><a href="cdn-cgi/l/email-{{ route('protection') }}"
-                                            class="__cf_email__"
+                                    <p class="txt"><a href="#" class="__cf_email__"
                                             data-cfemail="9be8eeebebf4e9efdbf6fae8f3fae8f3b5f8f4f6">[email&#160;protected]</a>
                                     </p>
                                 </div>
@@ -339,7 +338,7 @@
                                             <h5 class="footer-title">resources</h5>
                                             <ul class="footer-pages_list">
                                                 <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
-                                                <li><a href="{{ route('policy') }}">Privacy Policy</a></li>
+                                                <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
                                             </ul>
                                         </div>
                                         <div class="column col-lg-4 col-md-4 col-sm-6">
