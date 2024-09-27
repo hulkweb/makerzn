@@ -1,12 +1,5 @@
 @extends('layouts.user')
 @section('content')
-    <script>
-        const menu3 = "dashboard";
-        if (document.getElementById(menu3)) {
-            document.getElementById(menu3).classList.add("act");
-        }
-    </script>
-
     <div class="page-right">
         <div class="content-block">
             <div class="d-grid brs" style="grid-template-columns: repeat(4, 1fr); gap: 15px">

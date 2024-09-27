@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Book;
 use App\Models\Chapter;
+use App\Models\Plan;
 use App\Models\Quote;
 use App\Models\Service;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,27 +20,27 @@ class DashboardController extends Controller
 
     public function dashboard(Request $request)
     {
-        $quotes = Quote::count();
+
         $blogs = Blog::count();
-        $services = Service::count();
+        $users = User::where("admin", false)->count();
         return view("admin.index", compact("quotes", 'blogs', 'services'));
     }
     public function signin(Request $request)
     {
-        if (auth()->user() && (auth()->user()->admin == 1)) {
+        if (Auth::user() && (Auth::user()->admin == 1)) {
             return redirect(route("admin.dashboard"));
         }
         return view("admin.signin");
     }
     public function profile(Request $request)
     {
-        $admin = User::find(auth()->user()->id);
+        $admin = User::find(Auth::user()->id);
         $title = 'Admin Profile';
         return view("admin.profile", compact('admin', 'title'));
     }
     public function profile_post(Request $request)
     {
-        $admin = User::find(auth()->user()->id);
+        $admin = User::find(Auth::user()->id);
         $admin->name = $request->name;
         $admin->email = $request->email;
         if ($request->has('password') != "") {
@@ -80,7 +82,7 @@ class DashboardController extends Controller
 
     public function logout()
     {
-        if (auth()->user()) {
+        if (Auth::user()) {
             Auth::logout();
             return redirect(route("login"));
         }
@@ -88,5 +90,17 @@ class DashboardController extends Controller
     public function email()
     {
         return view("mails.quote_confirmation");
+    }
+
+    public function users()
+    {
+
+        $users = User::where("admin", false)->get();
+        return view("users", compact('users'));
+    }
+    public function transactions()
+    {
+        $transactions = Transaction::orderBy("id", "desc")->get();
+        return view("transactions", compact('transactions'));
     }
 }

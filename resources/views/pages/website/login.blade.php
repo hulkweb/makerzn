@@ -41,11 +41,11 @@
                 </div>
 
                 <div class="register-form">
-                    <form action="#" method="post">
-                        <input type="hidden" name="_token" value="JNEEkyNpxqVrEe9LNE1fBWHHuwkuO1kHHKRe1aNr" />
+                    <form action="{{ route('login.post') }}" method="post" id="form">
+                        @csrf
                         <div class="form-group">
                             <label>Email*</label>
-                            <input type="email" id="email" name="email" value="" required />
+                            <input type="email" id="email" name="email" value="{{ old('email') }}" required />
                         </div>
 
                         <div class="form-group">
@@ -71,7 +71,7 @@
                         <div class="form-group">
                             <div class="creat-account">
                                 Don’t have account?
-                                <a href="signup">Sign Up</a>
+                                <a href="{{ route('signup') }}">Sign Up</a>
                             </div>
                         </div>
                     </form>

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text("refer_code")->nullable();
             $table->text("country_code")->nullable();
             $table->boolean("two_factor")->default(false);
+            $table->boolean("admin")->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

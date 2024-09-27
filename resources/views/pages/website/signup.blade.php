@@ -1,4 +1,12 @@
 @extends('layouts.app')
+@push('css')
+    <style>
+        .text-danger {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+@endpush
 @section('content')
     <script>
         const menu = "";
@@ -26,7 +34,7 @@
         <div class="auto-container">
             <h2>Sign Up</h2>
             <ul class="bread-crumb clearfix">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
                 <li>Sign Up</li>
             </ul>
         </div>
@@ -41,31 +49,32 @@
                 </div>
 
                 <div class="register-form">
-                    <form action="#" method="post">
-                        <input type="hidden" name="_token" value="tjCHecAr4lofShpXqC1sASXZheYnWYC2bBjrtmCe" />
+                    <form action="{{ route('signup.post') }}" method="post" id="form">
+                        @csrf
                         <div class="form-group">
                             <label>Username*</label>
-                            <input type="text" name="username" value="" required />
+                            <input type="text" name="username" value="{{ old('username') }}" class="input_field"
+                                required />
                         </div>
 
                         <div class="form-group">
                             <label>Email*</label>
-                            <input type="email" name="email" value="" required />
+                            <input type="email" name="email" value="{{ old('email') }}" class="input_field" required />
                         </div>
 
                         <div class="form-group">
                             <label>Password*</label>
-                            <input type="password" name="password" required />
+                            <input type="password" name="password" class="input_field" id="password" required />
                         </div>
 
                         <div class="form-group">
                             <label>Repeat Password*</label>
-                            <input type="password" name="password_repeat" required />
+                            <input type="password" name="password_repeat" class="input_field" required />
                         </div>
 
                         <div class="form-group">
                             <label>Referral Code (Optional)</label>
-                            <input type="text" name="ref_code" value="" />
+                            <input type="text" name="ref_code" value="{{ old('ref_code') }}" />
                         </div>
 
                         <div class="form-group">
@@ -80,13 +89,13 @@
                         <div class="form-group">
                             <div class="creat-account">
                                 Already have a account?
-                                <a href="signin.html">Login Now</a>
+                                <a href="{{ route('signin') }}">Login Now</a>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
+        </div>l
     </section>
 
     <section class="cta-one cta-footer" style="margin-top: 400px">
@@ -132,3 +141,146 @@
         </div>
     </section>
 @endsection
+@push('js')
+    <script>
+        $(document).ready(function() {
+
+            $.validator.addMethod("passwordMatch", function(value, element) {
+                return value === $("#password").val();
+            }, "Passwords do not match!");
+            $('#form').validate({
+                rules: {
+                    username: {
+                        required: true,
+                        maxlength: 191,
+
+                    },
+                    email: {
+                        required: true,
+                        maxlength: 191,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        maxlength: 191,
+
+                    },
+                    password_repeat: {
+                        required: true,
+                        maxlength: 191,
+                        passwordMatch: true
+
+                    },
+                },
+                errorElement: "span",
+                errorPlacement: function(error, element) {
+                    error.addClass("text-danger ml-4");
+                    element.closest(".form-group").append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $('.please-wait').click();
+                    $(element).addClass("text-danger ml-4");
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass("text-danger ml-4");
+                },
+                submitHandler: function(form, event) {
+                    event.preventDefault();
+                    let formData = new FormData(form);
+
+                    $.ajax({
+                        type: 'post',
+                        url: form.action,
+                        data: formData,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+
+                        success: function(response) {
+                            if (response.status == 200) {
+
+                                Swal.fire({
+                                    title: 'Success',
+                                    text: response.message,
+                                    icon: 'success',
+
+                                }).then((result) => {
+
+                                    if (response.redirect == true) {
+                                        window.location = response.route;
+                                    }
+                                    // var url = $('#redirect_url').val();
+                                    // if (url !== undefined || url != null) {
+                                    //     window.location = url;
+                                    // } else {
+                                    //     location.reload(true);
+                                    // }
+                                })
+
+                                return false;
+                            }
+
+                            if (response.status == 201) {
+                                Swal.fire(
+                                    'Error',
+                                    response.message,
+                                    'error'
+                                );
+
+                                return false;
+                            }
+                        },
+                        error: function(data) {
+                            if (data.status == 422) {
+                                var form = $("#form");
+                                let li_htm = '';
+                                $.each(data.responseJSON.errors, function(k, v) {
+                                    const $input = form.find(
+                                        `input[name=${k}],select[name=${k}],textarea[name=${k}]`
+                                    );
+                                    if ($input.next('small').length) {
+                                        $input.next('small').html(v);
+                                        if (k == 'services' || k == 'membership') {
+                                            $('#myselect').next('small').html(v);
+                                        }
+                                    } else {
+                                        $input.after(
+                                            `<small class='text-danger'>${v}</small>`
+                                        );
+                                        if (k == 'services' || k == 'membership') {
+                                            $('#myselect').after(
+                                                `<small class='text-danger'>${v[0]}</small>`
+                                            );
+                                        }
+                                    }
+                                    li_htm += `<li>${v}</li>`;
+                                });
+
+                                return false;
+                            } else {
+                                Swal.fire(
+                                    'Error',
+                                    data.statusText,
+                                    'error'
+                                );
+                            }
+                            return false;
+
+                        }
+                    });
+                }
+            })
+        });
+    </script>
+    @if (Session::has('success'))
+        <script>
+            Swal.fire('Success', '{{ Session('success') }}', 'success');
+        </script>
+    @endif
+
+    @if (Session::has('error'))
+        <script>
+            Swal.fire('Error', '{{ Session('error') }}', 'error');
+        </script>
+    @endif
+@endpush

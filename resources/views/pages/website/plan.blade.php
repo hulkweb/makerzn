@@ -9,19 +9,19 @@
     <section class="page-title mb-3">
         <div class="page-title-icon"
             style="
-            background-image: url(../asset/img/icons/page-title_icon-1.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-1.png') }});
         "></div>
         <div class="page-title-icon-two"
             style="
-            background-image: url(../asset/img/icons/page-title_icon-2.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-2.png') }});
         "></div>
         <div class="page-title-shadow"
             style="
-            background-image: url(../asset/img/background/page-title-1.png);
+            background-image: url({{ asset('asset/img/background/page-title-1.png') }});
         "></div>
         <div class="page-title-shadow_two"
             style="
-            background-image: url(../asset/img/background/page-title-2.png);
+            background-image: url({{ asset('asset/img/background/page-title-2.png') }});
         "></div>
         <div class="auto-container">
             <h2>Antminer S21 200Th/s</h2>
@@ -39,7 +39,7 @@
                 <div class="team-detail_image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="team-detail_image-outer" style="margin-top: 120px">
                         <div class="team-detail_image">
-                            <img src="../asset/img/plans/images/66b24006d58bc1722957830.png" alt="" />
+                            <img src="{{ asset('asset/img/plans/images/66b24006d58bc1722957830.png') }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
         <div class="testimonial-one">
             <div class="auto-container">
                 <div class="inner-container details" style="padding: 50px">
-                    <pre style="font-size: 10.5px"><div class="ram_detail" style="border-radius: 10px; border: 2px solid var(--blue-blue-300, #2A92CD); padding: 15px 35px; font-size: 18px; display: inline-flex; align-items: center; gap: 10px; font-family: Helvetica; white-space: normal;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMzSURBVHgB7VdLUttAEB2NMGyAKDuqQEYu8qmsIk4Qc4LACSAniDkB9gnIDTAnwJwAOAHOKlVJwCqwC5YCwwL06bx2JJCxJY9SUGHBqxp7RurpeTP9mZYQL/jP0PIItyzL8DxvWZfyExFZmqZZ+HfxykW/KdGElAclx3FUdSoRwMJWGASb6C4LNdSlrtdUiIwkcFQsVgXRRjzGjvcxqYHdOhNjY80botfC91+FQtg4hWUSohzLhkS1t+129Z8I8HFTEOwkFH677HZri67rigz8mJmxxgsFJrwWEW52r66W0uZpqYuH4R4m2xg6kmit1G4fiByADhtm20HXyiIhh01me8eL33reUt7FGbB/k+eyDpjGnp6a2hwmN3ACv01zDQ+30HWhYPHD+bmTtgjL6ppGpZOT7TQZNsnE+PghNmT4vr/y/uyskXw/cAJwrp7DwQSVrMU5MpgoHK3+c3bWTpNjHUEQ1LhfKBQ2RRZ4R0emSWgtoQDIbaHtqMgem+Ye626Z5ufk87HkAMexCq/n3VeFAhZOT78IRcAPGjBDOSCqYLibWPMecch5QZDb6UZCyu2ISJ+57ghw2PRIIGSybJ/EcbHY4qYii6jgEHTQjKTP3BGAhxpR1xWK4PuAm1BHk380ovkBArEiHJEjng5utIYxQEBKGe/cEE8EhK3F/3pik3cEdF2PH9riqRDt3CO6GCAg/qZMPgXr0DAe/RQ4cUXpXbzrdJoDBHpeigjg/vTk5Kp4ZCAblvmfr/Pk87484IdhL1ZJvfBQRpziwaCeSgC5mi8KNkUZhUhFjEBkMmeUHKf4KMqcN53OdioBNgN2vx4x3WC7ZSm+uLwsoUhZzJJhHdh97xIaluK1FMZ1vFjlnKBJuZSnyHy4eFTYWBjWh90dQwsShGSFq9xepoOCrOs2Db/m5srx4pzecVLrw+Sya8L7soyhVOnyvJCPmugrj9nrUY6t5KoJ+xQWixsoOqrxmBXiu6CBiPnO3wRwXPf25sZGITqPcV9VDOHqQrtdy9Kv9F3wsNIdBRBpeL6/rnKr5voyYiLwjzJO4CMm2jgZgy8W9B3iFob73evr3VGl+wueFf4Apau8q/LsijQAAAAASUVORK5CYII=" data-filename="info.png" style="width: 32px;">Unlimited supply per account per day.</div></pre>
+                    <pre style="font-size: 10.5px"><div class="ram_detail" style="border-radius: 10px; border: 2px solid var(--blue-blue-300, #2A92CD); padding: 15px 35px; font-size: 18px; display: inline-flex; align-items: center; gap: 10px; font-family: Helvetica; white-space: normal;"><img src="data:image/png')}};base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMzSURBVHgB7VdLUttAEB2NMGyAKDuqQEYu8qmsIk4Qc4LACSAniDkB9gnIDTAnwJwAOAHOKlVJwCqwC5YCwwL06bx2JJCxJY9SUGHBqxp7RurpeTP9mZYQL/jP0PIItyzL8DxvWZfyExFZmqZZ+HfxykW/KdGElAclx3FUdSoRwMJWGASb6C4LNdSlrtdUiIwkcFQsVgXRRjzGjvcxqYHdOhNjY80botfC91+FQtg4hWUSohzLhkS1t+129Z8I8HFTEOwkFH677HZri67rigz8mJmxxgsFJrwWEW52r66W0uZpqYuH4R4m2xg6kmit1G4fiByADhtm20HXyiIhh01me8eL33reUt7FGbB/k+eyDpjGnp6a2hwmN3ACv01zDQ+30HWhYPHD+bmTtgjL6ppGpZOT7TQZNsnE+PghNmT4vr/y/uyskXw/cAJwrp7DwQSVrMU5MpgoHK3+c3bWTpNjHUEQ1LhfKBQ2RRZ4R0emSWgtoQDIbaHtqMgem+Ye626Z5ufk87HkAMexCq/n3VeFAhZOT78IRcAPGjBDOSCqYLibWPMecch5QZDb6UZCyu2ISJ+57ghw2PRIIGSybJ/EcbHY4qYii6jgEHTQjKTP3BGAhxpR1xWK4PuAm1BHk380ovkBArEiHJEjng5utIYxQEBKGe/cEE8EhK3F/3pik3cEdF2PH9riqRDt3CO6GCAg/qZMPgXr0DAe/RQ4cUXpXbzrdJoDBHpeigjg/vTk5Kp4ZCAblvmfr/Pk87484IdhL1ZJvfBQRpziwaCeSgC5mi8KNkUZhUhFjEBkMmeUHKf4KMqcN53OdioBNgN2vx4x3WC7ZSm+uLwsoUhZzJJhHdh97xIaluK1FMZ1vFjlnKBJuZSnyHy4eFTYWBjWh90dQwsShGSFq9xepoOCrOs2Db/m5srx4pzecVLrw+Sya8L7soyhVOnyvJCPmugrj9nrUY6t5KoJ+xQWixsoOqrxmBXiu6CBiPnO3wRwXPf25sZGITqPcV9VDOHqQrtdy9Kv9F3wsNIdBRBpeL6/rnKr5voyYiLwjzJO4CMm2jgZgy8W9B3iFob73evr3VGl+wueFf4Apau8q/LsijQAAAAASUVORK5CYII=" data-filename="info.png')}}" style="width: 32px;">Unlimited supply per account per day.</div></pre>
                     <h3>
                         <span style="font-weight: bolder">Purchase instructions</span>
                     </h3>
@@ -263,12 +263,12 @@
             <div class="inner-container">
                 <div class="cta-icon_one"
                     style="
-                    background-image: url(../asset/img/icons/cta-icon-1.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
                 ">
                 </div>
                 <div class="cta-icon_two"
                     style="
-                    background-image: url(../asset/img/icons/cta-icon-2.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
                 ">
                 </div>
 
@@ -292,7 +292,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="../asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

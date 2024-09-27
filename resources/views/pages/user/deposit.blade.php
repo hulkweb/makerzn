@@ -14,27 +14,27 @@
                                     class="mb-3 form-c select-bar dw w-full rounded  bg-gray px-4.5 py-3 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark"
                                     required value="">
                                     <option disabled selected>Select Deposit Network</option>
-                                    <option value="10001" data-image="asset/img/crypto/coins/BTC.png">
+                                    <option value="10001" data-image="{{ asset('asset/img/crypto/coins/BTC.png') }}">
                                         BTC [Network: Bitcoin]</option>
-                                    <option value="10002" data-image="asset/img/crypto/coins/ETH.png">
+                                    <option value="10002" data-image="{{ asset('asset/img/crypto/coins/ETH.png') }}">
                                         ETH [Network: Ethereum]</option>
-                                    <option value="10003" data-image="asset/img/crypto/coins/LTC.png">
+                                    <option value="10003" data-image="{{ asset('asset/img/crypto/coins/LTC.png') }}">
                                         LTC [Network: Litecoin]</option>
-                                    <option value="10004" data-image="asset/img/crypto/coins/USDT.png">
+                                    <option value="10004" data-image="{{ asset('asset/img/crypto/coins/USDT.png') }}">
                                         USDT-ERC20 [Network: Ethereum]</option>
-                                    <option value="10005" data-image="asset/img/crypto/coins/USDT.png">
+                                    <option value="10005" data-image="{{ asset('asset/img/crypto/coins/USDT.png') }}">
                                         USDT-TRC20 [Network: Tron]</option>
-                                    <option value="10007" data-image="asset/img/crypto/coins/USDC.png">
+                                    <option value="10007" data-image="{{ asset('asset/img/crypto/coins/USDC.png') }}">
                                         USDC [Network: Ethereum]</option>
-                                    <option value="10008" data-image="asset/img/crypto/coins/BCH.png">
+                                    <option value="10008" data-image="{{ asset('asset/img/crypto/coins/BCH.png') }}">
                                         BCH [Network: Bitcoin Cash]</option>
-                                    <option value="10009" data-image="asset/img/crypto/coins/USDT.png">
+                                    <option value="10009" data-image="{{ asset('asset/img/crypto/coins/USDT.png') }}">
                                         USDT-BEP20 [Network: Binance Smart Chain]</option>
-                                    <option value="10010" data-image="asset/img/crypto/coins/BNB.png">
+                                    <option value="10010" data-image="{{ asset('asset/img/crypto/coins/BNB.png') }}">
                                         BNB [Network: Binance Smart Chain]</option>
-                                    <option value="10011" data-image="asset/img/crypto/coins/DOGE.png">
+                                    <option value="10011" data-image="{{ asset('asset/img/crypto/coins/DOGE.png') }}">
                                         DOGE [Network: Dogecoin]</option>
-                                    <option value="10012" data-image="asset/img/crypto/coins/USDC.png">
+                                    <option value="10012" data-image="{{ asset('asset/img/crypto/coins/USDC.png') }}">
                                         USDC [Network: Base]</option>
                                 </select>
                             </div>
@@ -82,8 +82,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/ETH.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/ETH.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             2.99808000
                                         </span> <span id="system">ETH</span>
@@ -113,8 +113,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/BTC.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/BTC.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             0.12624000
                                         </span> <span id="system">BTC</span>
@@ -144,8 +144,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/USDC.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/USDC.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             200.00000000
                                         </span> <span id="system">USDC</span>
@@ -175,8 +175,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/DOGE.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/DOGE.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             1,870.38249400
                                         </span> <span id="system">DOGE</span>
@@ -206,8 +206,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/BNB.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/BNB.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             0.32846200
                                         </span> <span id="system">BNB</span>
@@ -237,8 +237,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/USDT.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/USDT.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             200.00
                                         </span> <span id="system">USDT</span>
@@ -268,8 +268,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/BCH.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/BCH.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             0.58823600
                                         </span> <span id="system">BCH</span>
@@ -299,8 +299,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/USDC.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/USDC.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             200.00000000
                                         </span> <span id="system">USDC</span>
@@ -330,8 +330,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/USDT.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/USDT.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             200.00
                                         </span> <span id="system">USDT</span>
@@ -361,8 +361,8 @@
                             <td>
                                 <div class="d-flex align-items-center justify-content-between gap-40">
                                     <div class="d-flex align-items-center gap-10" style="gap: 6px">
-                                        <img src="/asset/img/crypto/coins/LTC.png" class="round-gate" width="22"
-                                            height="22">
+                                        <img src="/{{ asset('asset/img/crypto/coins/LTC.png') }}" class="round-gate"
+                                            width="22" height="22">
                                         <span class="white fw-600" id="amount">
                                             2.96120800
                                         </span> <span id="system">LTC</span>
@@ -388,7 +388,7 @@
                 </table>
             </div>
             <div class="un_table">
-                <link rel="stylesheet" href="asset/css/custom-pag.css">
+                <link rel="stylesheet" href="{{ asset('asset/css/custom-pag.css') }}">
                 <nav class="pagination-outer" aria-label="Page navigation">
                     <ul class="pagination">
                         <li class="page-item">
@@ -435,7 +435,7 @@
                                 </div>
                                 <div class="col-12 mt-0 relative d-flex align-items-center">
                                     <input type="file" name="image" id="imageUpload"
-                                        class="upload_btn form-c form-bg-2 w-100" accept=".png, .jpg, .jpeg"
+                                        class="upload_btn form-c form-bg-2 w-100" accept=".png') }}, .jpg, .jpeg"
                                         required="">
                                 </div>
                                 <div class="col-12 mb-2">

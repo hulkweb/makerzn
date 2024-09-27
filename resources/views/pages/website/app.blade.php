@@ -36,13 +36,15 @@
                 <div class="col-lg-6 col-md-12 aos-init aos-animate" data-aos="fade-in" data-aos-duration="1500">
                     <div class="banner_slider">
                         <div class="left_icon">
-                            <img src="asset/img/message_icon.png" class="moving_position_animatin" alt="image" />
+                            <img src="{{ asset('asset/img/message_icon.png') }}" class="moving_position_animatin"
+                                alt="image" />
                         </div>
                         <div class="right_icon">
-                            <img src="asset/img/shield_icon.png" class="moving_position_animatin" alt="image" />
+                            <img src="{{ asset('asset/img/shield_icon.png') }}" class="moving_position_animatin"
+                                alt="image" />
                         </div>
                         <div id="frmae_slider" class="owl-carousel owl-theme owl-loaded owl-drag">
-                            <img src="asset/img/app/1.png" alt="image" />
+                            <img src="{{ asset('asset/img/app/1.png') }}" alt="image" />
                         </div>
                     </div>
                 </div>
@@ -56,7 +58,7 @@
                 <div class="col-lg-6">
                     <div class="about_img aos-init" data-aos="fade-in" data-aos-duration="1500">
                         <div class="frame_img d-flex justify-content-center" style="width: 490px">
-                            <img src="asset/img/app/2.png" alt="image" />
+                            <img src="{{ asset('asset/img/app/2.png') }}" alt="image" />
                         </div>
                     </div>
                 </div>
@@ -82,7 +84,7 @@
                         <ul class="app_statstic aos-init" id="counter" data-aos="fade-in" data-aos-duration="1500">
                             <li>
                                 <div class="icon">
-                                    <img src="asset/img/download.png" alt="image" />
+                                    <img src="{{ asset('asset/img/download.png') }}" alt="image" />
                                 </div>
                                 <div class="text">
                                     <p>
@@ -93,7 +95,7 @@
                             </li>
                             <li>
                                 <div class="icon">
-                                    <img src="asset/img/followers.png" alt="image" />
+                                    <img src="{{ asset('asset/img/followers.png') }}" alt="image" />
                                 </div>
                                 <div class="text">
                                     <p>
@@ -104,7 +106,7 @@
                             </li>
                             <li>
                                 <div class="icon">
-                                    <img src="asset/img/reviews.png" alt="image" />
+                                    <img src="{{ asset('asset/img/reviews.png') }}" alt="image" />
                                 </div>
                                 <div class="text">
                                     <p>
@@ -115,7 +117,7 @@
                             </li>
                             <li>
                                 <div class="icon">
-                                    <img src="asset/img/countries.png" alt="image" />
+                                    <img src="{{ asset('asset/img/countries.png') }}" alt="image" />
                                 </div>
                                 <div class="text">
                                     <p>
@@ -173,7 +175,7 @@
                         <div class="about_img d-flex w-100 justify-content-center aos-init" data-aos="fade-in"
                             data-aos-duration="1500">
                             <div class="frame_img">
-                                <img src="asset/img/app/3.png" alt="image" />
+                                <img src="{{ asset('asset/img/app/3.png') }}" alt="image" />
                             </div>
                         </div>
                     </div>
@@ -205,8 +207,8 @@
 
                     <div class="col-md-6">
                         <div class="free_img">
-                            <img src="asset/img/app/5.png" alt="image" />
-                            <img class="mobile_mockup" src="asset/img/app/4.png" alt="image" />
+                            <img src="{{ asset('asset/img/app/5.png') }}" alt="image" />
+                            <img class="mobile_mockup" src="{{ asset('asset/img/app/4.png') }}" alt="image" />
                         </div>
                     </div>
                 </div>
@@ -237,12 +239,12 @@
             <div class="inner-container">
                 <div class="cta-icon_one"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-1.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
                 ">
                 </div>
                 <div class="cta-icon_two"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-2.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
                 ">
                 </div>
 
@@ -266,7 +268,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

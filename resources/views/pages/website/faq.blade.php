@@ -9,19 +9,19 @@
     <section class="page-title mb-3">
         <div class="page-title-icon"
             style="
-            background-image: url(asset/img/icons/page-title_icon-1.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-1.png') }});
         "></div>
         <div class="page-title-icon-two"
             style="
-            background-image: url(asset/img/icons/page-title_icon-2.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-2.png') }});
         "></div>
         <div class="page-title-shadow"
             style="
-            background-image: url(asset/img/background/page-title-1.png);
+            background-image: url({{ asset('asset/img/background/page-title-1.png') }});
         "></div>
         <div class="page-title-shadow_two"
             style="
-            background-image: url(asset/img/background/page-title-2.png);
+            background-image: url({{ asset('asset/img/background/page-title-2.png') }});
         "></div>
         <div class="auto-container">
             <h2>MasHash Faqs | Cryptocurrency Cloud Mining Platform</h2>
@@ -624,38 +624,38 @@
                     <div class="animation_mode">
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694af8aba6581721020298.png" alt="Google"
-                                    style="border-radius: 4px" />
+                                <img src="{{ asset('asset/img/sections/elements/6694af8aba6581721020298.png') }}"
+                                    alt="Google" style="border-radius: 4px" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b94320df21721022787.jpg" alt="Binance"
-                                    style="border-radius: 4px" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b94320df21721022787.jpg') }}"
+                                    alt="Binance" style="border-radius: 4px" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694afeaa6c6c1721020394.png" alt="Coinbase"
-                                    style="border-radius: 4px" />
+                                <img src="{{ asset('asset/img/sections/elements/6694afeaa6c6c1721020394.png') }}"
+                                    alt="Coinbase" style="border-radius: 4px" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b02468b591721020452.png" alt="Yahoo"
-                                    style="border-radius: 4px" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b02468b591721020452.png') }}"
+                                    alt="Yahoo" style="border-radius: 4px" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b03d6932a1721020477.png" alt="CoinPedia"
-                                    style="border-radius: 4px" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b03d6932a1721020477.png') }}"
+                                    alt="CoinPedia" style="border-radius: 4px" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b05984b051721020505.png" alt="YouTube"
-                                    style="border-radius: 4px" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b05984b051721020505.png') }}"
+                                    alt="YouTube" style="border-radius: 4px" />
                             </a>
                         </div>
                     </div>
@@ -732,12 +732,12 @@
             <div class="inner-container">
                 <div class="cta-icon_one"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-1.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
                 ">
                 </div>
                 <div class="cta-icon_two"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-2.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
                 ">
                 </div>
 
@@ -761,7 +761,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

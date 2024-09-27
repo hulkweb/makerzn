@@ -7,12 +7,12 @@
         }
     </script>
     <section class="page-title mb-3">
-        <div class="page-title-icon" style="background-image:url(asset/img/icons/page-title_icon-1.png)"></div>
-        <div class="page-title-icon-two" style="background-image:url(asset/img/icons/page-title_icon-2.png)">
+        <div class="page-title-icon" style="background-image:url({{ asset('asset/img/icons/page-title_icon-1.png') }})"></div>
+        <div class="page-title-icon-two" style="background-image:url({{ asset('asset/img/icons/page-title_icon-2.png') }})">
         </div>
-        <div class="page-title-shadow" style="background-image:url(asset/img/background/page-title-1.png)">
+        <div class="page-title-shadow" style="background-image:url({{ asset('asset/img/background/page-title-1.png') }})">
         </div>
-        <div class="page-title-shadow_two" style="background-image:url(asset/img/background/page-title-2.png)">
+        <div class="page-title-shadow_two" style="background-image:url({{ asset('asset/img/background/page-title-2.png') }})">
         </div>
         <div class="auto-container">
             <h2>MasHash Terms &amp; Conditions| Easy Cryptocurrency Cloud Mining with ASIC Miner</h2>
@@ -285,8 +285,8 @@
     <section class="cta-one cta-footer" style="margin-top: 400px">
         <div class="auto-container">
             <div class="inner-container">
-                <div class="cta-icon_one" style="background-image:url(asset/img/icons/cta-icon-1.png)"></div>
-                <div class="cta-icon_two" style="background-image:url(asset/img/icons/cta-icon-2.png)"></div>
+                <div class="cta-icon_one" style="background-image:url({{ asset('asset/img/icons/cta-icon-1.png') }})"></div>
+                <div class="cta-icon_two" style="background-image:url({{ asset('asset/img/icons/cta-icon-2.png') }})"></div>
 
                 <div class="row clearfix">
                     <div class="cta-one_title-column col-lg-6 col-md-12 col-sm-12">
@@ -305,7 +305,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

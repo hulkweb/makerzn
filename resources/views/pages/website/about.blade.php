@@ -7,12 +7,12 @@
         }
     </script>
     <section class="page-title mb-3">
-        <div class="page-title-icon" style="background-image:url(asset/img/icons/page-title_icon-1.png)"></div>
-        <div class="page-title-icon-two" style="background-image:url(asset/img/icons/page-title_icon-2.png)">
+        <div class="page-title-icon" style="background-image:url({{ asset('asset/img/icons/page-title_icon-1.png') }})"></div>
+        <div class="page-title-icon-two" style="background-image:url({{ asset('asset/img/icons/page-title_icon-2.png') }})">
         </div>
-        <div class="page-title-shadow" style="background-image:url(asset/img/background/page-title-1.png)">
+        <div class="page-title-shadow" style="background-image:url({{ asset('asset/img/background/page-title-1.png') }})">
         </div>
-        <div class="page-title-shadow_two" style="background-image:url(asset/img/background/page-title-2.png)">
+        <div class="page-title-shadow_two" style="background-image:url({{ asset('asset/img/background/page-title-2.png') }})">
         </div>
         <div class="auto-container">
             <h2>About MasHash | Cryptocurrency Cloud Mining Platform</h2>
@@ -24,18 +24,20 @@
     </section>
 
     <section class="about-one">
-        <div class="about-one_pattern" style="background-image:url(asset/img/background/about-pattern.png)"></div>
-        <div class="about-one_icon" style="background-image:url(asset/img/icons/about-1.png)"></div>
-        <div class="about-one_icon-two" style="background-image:url(asset/img/icons/about-2.png)"></div>
+        <div class="about-one_pattern" style="background-image:url({{ asset('asset/img/background/about-pattern.png') }})">
+        </div>
+        <div class="about-one_icon" style="background-image:url({{ asset('asset/img/icons/about-1.png') }})"></div>
+        <div class="about-one_icon-two" style="background-image:url({{ asset('asset/img/icons/about-2.png') }})"></div>
         <div class="auto-container">
             <div class="row clearfix">
 
                 <div class="about-one_tab-column col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="about-one_tab-outer">
-                        <div class="about-one_tab-shadow" style="background-image:url(asset/img/background/tab-shadow.png)">
+                        <div class="about-one_tab-shadow"
+                            style="background-image:url({{ asset('asset/img/background/tab-shadow.png') }})">
                         </div>
                         <div class="about-one_tab-image">
-                            <img src="asset/img/resource/about.png" alt="" />
+                            <img src="{{ asset('asset/img/resource/about.png') }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -149,7 +151,7 @@
                                     few months.</div>
                                 <div class="testimonial-block_one-author_box">
                                     <div class="testimonial-block_one-author-image">
-                                        <img src="asset/img/sections/elements/66971cc1e6f731721179329.jpg"
+                                        <img src="{{ asset('asset/img/sections/elements/66971cc1e6f731721179329.jpg') }}"
                                             alt="Angelo Dora" />
                                     </div>
                                     Angelo Dora <span>Investor</span>
@@ -171,7 +173,7 @@
                                     I invest, they have fulfilled their promises and withdraw money very quickly.</div>
                                 <div class="testimonial-block_one-author_box">
                                     <div class="testimonial-block_one-author-image">
-                                        <img src="asset/img/sections/elements/66971e0d792491721179661.jpg"
+                                        <img src="{{ asset('asset/img/sections/elements/66971e0d792491721179661.jpg') }}"
                                             alt="Carol Micah" />
                                     </div>
                                     Carol Micah <span>Trader</span>
@@ -194,7 +196,7 @@
                                 </div>
                                 <div class="testimonial-block_one-author_box">
                                     <div class="testimonial-block_one-author-image">
-                                        <img src="asset/img/sections/elements/66971fbc881ce1721180092.jpg"
+                                        <img src="{{ asset('asset/img/sections/elements/66971fbc881ce1721180092.jpg') }}"
                                             alt="Richard Priestley" />
                                     </div>
                                     Richard Priestley <span>Driver</span>
@@ -216,7 +218,7 @@
                                     operation team! Every detail reflects their hard work and dedication.</div>
                                 <div class="testimonial-block_one-author_box">
                                     <div class="testimonial-block_one-author-image">
-                                        <img src="asset/img/sections/elements/669720949d1911721180308.jpg"
+                                        <img src="{{ asset('asset/img/sections/elements/669720949d1911721180308.jpg') }}"
                                             alt="Iris Gracie" />
                                     </div>
                                     Iris Gracie <span>Prof</span>
@@ -243,7 +245,7 @@
                                     detail demonstrates the dedication and professionalism of the operations team</div>
                                 <div class="testimonial-block_one-author_box">
                                     <div class="testimonial-block_one-author-image">
-                                        <img src="asset/img/sections/elements/6697222b778261721180715.jpg"
+                                        <img src="{{ asset('asset/img/sections/elements/6697222b778261721180715.jpg') }}"
                                             alt="Madge Stella" />
                                     </div>
                                     Madge Stella <span>Doctor</span>
@@ -268,38 +270,38 @@
                     <div class="animation_mode">
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694af8aba6581721020298.png" alt="Google"
-                                    style="border-radius: 4px;" />
+                                <img src="{{ asset('asset/img/sections/elements/6694af8aba6581721020298.png') }}"
+                                    alt="Google" style="border-radius: 4px;" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b94320df21721022787.jpg" alt="Binance"
-                                    style="border-radius: 4px;" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b94320df21721022787.jpg') }}"
+                                    alt="Binance" style="border-radius: 4px;" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694afeaa6c6c1721020394.png" alt="Coinbase"
-                                    style="border-radius: 4px;" />
+                                <img src="{{ asset('asset/img/sections/elements/6694afeaa6c6c1721020394.png') }}"
+                                    alt="Coinbase" style="border-radius: 4px;" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b02468b591721020452.png" alt="Yahoo"
-                                    style="border-radius: 4px;" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b02468b591721020452.png') }}"
+                                    alt="Yahoo" style="border-radius: 4px;" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b03d6932a1721020477.png" alt="CoinPedia"
-                                    style="border-radius: 4px;" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b03d6932a1721020477.png') }}"
+                                    alt="CoinPedia" style="border-radius: 4px;" />
                             </a>
                         </div>
                         <div class="clients-box">
                             <a href="#">
-                                <img src="asset/img/sections/elements/6694b05984b051721020505.png" alt="YouTube"
-                                    style="border-radius: 4px;" />
+                                <img src="{{ asset('asset/img/sections/elements/6694b05984b051721020505.png') }}"
+                                    alt="YouTube" style="border-radius: 4px;" />
                             </a>
                         </div>
                     </div>
@@ -312,8 +314,10 @@
     <section class="cta-one cta-footer" style="margin-top: 400px">
         <div class="auto-container">
             <div class="inner-container">
-                <div class="cta-icon_one" style="background-image:url(asset/img/icons/cta-icon-1.png)"></div>
-                <div class="cta-icon_two" style="background-image:url(asset/img/icons/cta-icon-2.png)"></div>
+                <div class="cta-icon_one" style="background-image:url({{ asset('asset/img/icons/cta-icon-1.png') }})">
+                </div>
+                <div class="cta-icon_two" style="background-image:url({{ asset('asset/img/icons/cta-icon-2.png') }})">
+                </div>
 
                 <div class="row clearfix">
                     <div class="cta-one_title-column col-lg-6 col-md-12 col-sm-12">
@@ -332,7 +336,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

@@ -9,19 +9,19 @@
     <section class="page-title mb-3">
         <div class="page-title-icon"
             style="
-            background-image: url(asset/img/icons/page-title_icon-1.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-1.png') }});
         "></div>
         <div class="page-title-icon-two"
             style="
-            background-image: url(asset/img/icons/page-title_icon-2.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-2.png') }});
         "></div>
         <div class="page-title-shadow"
             style="
-            background-image: url(asset/img/background/page-title-1.png);
+            background-image: url({{ asset('asset/img/background/page-title-1.png') }});
         "></div>
         <div class="page-title-shadow_two"
             style="
-            background-image: url(asset/img/background/page-title-2.png);
+            background-image: url({{ asset('asset/img/background/page-title-2.png') }});
         "></div>
         <div class="auto-container">
             <h2>
@@ -44,7 +44,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073986.html"><img src="asset/img/sections/elements/66ca2097e56741724522647.jpg"
+                            <a href="blog/2073986.html"><img
+                                    src="{{ asset('asset/img/sections/elements/66ca2097e56741724522647.jpg') }}"
                                     alt="How to Make Money from Cloud Mining: Profitable Strategies Explained" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -68,7 +69,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073987.html"><img src="asset/img/sections/elements/66ca20721ba661724522610.jpg"
+                            <a href="blog/2073987.html"><img
+                                    src="{{ asset('asset/img/sections/elements/66ca20721ba661724522610.jpg') }}"
                                     alt="Cloud Mining vs. Hardware Mining: Which is Better in 2024?" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -90,7 +92,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073984.html"><img src="asset/img/sections/elements/66ca2051068251724522577.jpg"
+                            <a href="blog/2073984.html"><img
+                                    src="{{ asset('asset/img/sections/elements/66ca2051068251724522577.jpg') }}"
                                     alt="Top 11 Free Crypto Mining Apps for Android in 2024" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -112,7 +115,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073985.html"><img src="asset/img/sections/elements/66ca20485e2571724522568.jpg"
+                            <a href="blog/2073985.html"><img
+                                    src="{{ asset('asset/img/sections/elements/66ca20485e2571724522568.jpg') }}"
                                     alt="How Much Can You Make Cloud Mining? Maximize Your Earnings in 2024" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -134,7 +138,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073981.html"><img src="asset/img/sections/elements/66ca1fbb2fc951724522427.jpg"
+                            <a href="blog/2073981.html"><img
+                                    src="{{ asset('asset/img/sections/elements/66ca1fbb2fc951724522427.jpg') }}"
                                     alt="How to Maximize Your Crypto Mining Profits: Tips and Tricks for 2024" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -156,7 +161,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073980.html"><img src="asset/img/sections/elements/66ca1fb3429431724522419.jpg"
+                            <a href="blog/2073980.html"><img
+                                    src="{{ asset('asset/img/sections/elements/66ca1fb3429431724522419.jpg') }}"
                                     alt="MasHash Announces $50 Free Bonus for New Crypto Mining Enthusiasts" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -178,7 +184,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073982.html"><img src="asset/img/sections/elements/66ca1fa5a474b1724522405.jpg"
+                            <a href="blog/2073982.html"><img
+                                    src="{{ asset('asset/img/sections/elements/66ca1fa5a474b1724522405.jpg') }}"
                                     alt="The 6 Best Cloud Mining Sites of 2024" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -200,7 +207,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073968.html"><img src="asset/img/sections/elements/669b618a9a10b1721459082.jpg"
+                            <a href="blog/2073968.html"><img
+                                    src="{{ asset('asset/img/sections/elements/669b618a9a10b1721459082.jpg') }}"
                                     alt="El Salvador Launches First Volcano-Powered Bitcoin Mining Pool – Here’s What You Need to Know" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -223,7 +231,8 @@
                 <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
                     <div class="news-block_one-inner">
                         <div class="news-block_one-image">
-                            <a href="blog/2073967.html"><img src="asset/img/sections/elements/669b609896e571721458840.jpg"
+                            <a href="blog/2073967.html"><img
+                                    src="{{ asset('asset/img/sections/elements/669b609896e571721458840.jpg') }}"
                                     alt="Bitcoin Miners Transaction Revenue Clocks 400% YoY Surge in 2023" /></a>
                         </div>
                         <div class="news-block_one-content">
@@ -243,7 +252,7 @@
                     </div>
                 </div>
             </div>
-            <link rel="stylesheet" href="asset/css/custom-pag.html" />
+            <link rel="stylesheet" href="#" />
             <nav class="pagination-outer" aria-label="Page navigation">
                 <ul class="pagination">
                     <li class="page-item">
@@ -293,12 +302,12 @@
             <div class="inner-container">
                 <div class="cta-icon_one"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-1.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
                 ">
                 </div>
                 <div class="cta-icon_two"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-2.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
                 ">
                 </div>
 
@@ -322,7 +331,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

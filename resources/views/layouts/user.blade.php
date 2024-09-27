@@ -25,20 +25,45 @@
     <link href="{{ asset('asset/css/iziToast.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('asset/img/logos/66a7e0c49abd51722278084.png') }}" type="image/x-icon">
 
-    <!-- Default Statcounter code for MasHash  -->
-    <script type="text/javascript">
-        var sc_project = 13022378;
-        var sc_invisible = 1;
-        var sc_security = "8f4f8dc8";
-    </script>
-    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript>
-        <div class="statcounter"><a title="Web Analytics Made Easy -
-    Statcounter" href="https://statcounter.com/"
-                target="_blank"><img class="statcounter" src="https://c.statcounter.com/13022378/0/8f4f8dc8/1/"
-                    alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div>
-    </noscript>
+
     <!-- End of Statcounter Code -->
+    <script src="{{ asset('js/jquery-3.7.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('plugins/jquery-validation/jquery.validate.js') }}"></script>
+    <style>
+        .swal2-styled {
+            color: black !important;
+            background-color: #DBB75F !important;
+            min-width: 100px !important;
+
+        }
+
+        .input-group {
+            border: 1px solid gray;
+            /* Add border to input group */
+            border-radius: .25rem;
+            /* Optional: Add border radius for input group */
+            width: 100%;
+            display: flex
+                /* Ensure input group stretches to full width */
+        }
+
+        .input-group .form-control {
+            border: none;
+            /* Remove border from input field */
+            border-radius: 0;
+            /* Optional: Remove border radius from input field */
+            box-shadow: none;
+            flex: 1;
+            /* Optional: Remove any box shadow */
+        }
+
+        #passwordField {
+            border: none;
+            outline: none;
+        }
+    </style>
 
 </head>
 
@@ -126,8 +151,9 @@
                     <div class="d-flex justify-content-between align-items-center flex-wrap">
 
                         <div class="logo-box">
-                            <div class="logo"><a href="home"><img src="asset/img/logos/66a7e0c48e8441722278084.png"
-                                        alt="" title=""></a></div>
+                            <div class="logo"><a href="home"><img
+                                        src="{{ asset('asset/img/logos/66a7e0c48e8441722278084.png') }}" alt=""
+                                        title=""></a></div>
                         </div>
 
                         <div class="nav-outer d-flex flex-wrap">
@@ -163,40 +189,50 @@
                             <div class="language-dropdown notranslate">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="flag"><img src="asset/img/flags/64ea534b5cf3b1693078347.png"
+                                    <span class="flag"><img
+                                            src="{{ asset('asset/img/flags/64ea534b5cf3b1693078347.png') }}"
                                             width="32px" height="24px" /></span> <span
                                         class="fa-solid fa-angle-down fa-fw"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="#" data-google-lang="en"><span
-                                                class="flag"><img src="asset/img/flags/64ea534b5cf3b1693078347.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea534b5cf3b1693078347.png') }}"
                                                     class="ic" /></span> English</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="de"><span
-                                                class="flag"><img src="asset/img/flags/germany.png"
+                                                class="flag"><img src="{{ asset('asset/img/flags/germany.png') }}"
                                                     class="ic" /></span> Deutsch</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="fr"><span
-                                                class="flag"><img src="asset/img/flags/64ea51fd816461693078013.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea51fd816461693078013.png') }}"
                                                     class="ic" /></span> Français</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="ja"><span
-                                                class="flag"><img src="asset/img/flags/64ea520b408e31693078027.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea520b408e31693078027.png') }}"
                                                     class="ic" /></span> 日本</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="ko"><span
-                                                class="flag"><img src="asset/img/flags/64ea5212319621693078034.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea5212319621693078034.png') }}"
                                                     class="ic" /></span> 한국인</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="pt"><span
-                                                class="flag"><img src="asset/img/flags/64ea521a19c081693078042.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea521a19c081693078042.png') }}"
                                                     class="ic" /></span> Português</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="ru"><span
-                                                class="flag"><img src="asset/img/flags/64ea5220ea6221693078048.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea5220ea6221693078048.png') }}"
                                                     class="ic" /></span> Русский</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="es"><span
-                                                class="flag"><img src="asset/img/flags/64ea522710cf81693078055.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea522710cf81693078055.png') }}"
                                                     class="ic" /></span> Español</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="tr"><span
-                                                class="flag"><img src="asset/img/flags/65a86bbeb5f221705536446.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/65a86bbeb5f221705536446.png') }}"
                                                     class="ic" /></span> Türkçe</a></li>
                                     <li><a class="dropdown-item" href="#" data-google-lang="vi"><span
-                                                class="flag"><img src="asset/img/flags/64ea52323b4901693078066.png"
+                                                class="flag"><img
+                                                    src="{{ asset('asset/img/flags/64ea52323b4901693078066.png') }}"
                                                     class="ic" /></span> Tiếng Việt</a></li>
                                 </ul>
                             </div>
@@ -234,8 +270,10 @@
             <div class="close-btn"><span class="icon fa-solid fa-xmark fa-fw"></span></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="asset/img/logos/66a7e0c491f2f1722278084.png"
-                            alt="" title=""></a></div>
+                <div class="nav-logo"><a href="{{ route('dashboard') }}"><img
+                            src="{{ asset('asset/img/logos/66a7e0c491f2f1722278084.png') }}" alt=""
+                            title=""></a>
+                </div>
                 <div class="menu-outer"></div>
             </nav>
         </div>
@@ -250,7 +288,7 @@
     <aside class="aside">
         <div class="contents-a">
             <ul>
-                <a href="dashboard">
+                <a href="{{ route('dashboard') }}">
                     <li id="dashboard">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -263,7 +301,7 @@
                         Dashboard
                     </li>
                 </a>
-                <a href="deposit">
+                <a href="{{ route('deposit') }}">
                     <li id="deposit">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -275,7 +313,7 @@
                         Deposit
                     </li>
                 </a>
-                <a href="withdraw">
+                <a href="{{ route('withdraw') }}">
                     <li id="withdraw">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -287,7 +325,7 @@
                         Withdraw
                     </li>
                 </a>
-                <a href="orders">
+                <a href="{{ route('orders') }}">
                     <li id="orders">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -302,7 +340,7 @@
                         My Orders
                     </li>
                 </a>
-                <a href="bills">
+                <a href="{{ route('bills') }}">
                     <li id="bills">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -317,7 +355,7 @@
                         My Bills
                     </li>
                 </a>
-                <a href="referrals">
+                <a href="{{ route('referrals') }}">
                     <li id="referrals">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -331,7 +369,7 @@
                         Referrals
                     </li>
                 </a>
-                <a href="settings">
+                <a href="{{ route('settings') }}">
                     <li id="settings">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -344,7 +382,7 @@
                         Settings
                     </li>
                 </a>
-                <a href="settings/security">
+                <a href="{{ route('settings') }}">
                     <li id="settings_sec">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -355,7 +393,7 @@
                         Two Factor Security
                     </li>
                 </a>
-                <a href="profile">
+                <a href="{{ route('profile') }}">
                     <li id="profile">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -369,7 +407,8 @@
                 </a>
             </ul>
             <div class="d-flex justify-content-center w-100">
-                <a href="logout" class="template-btn btn-style-one w-100 nd d-flex justify-content-center"
+                <a href="{{ route('logout') }}"
+                    class="template-btn btn-style-one w-100 nd d-flex justify-content-center"
                     style="padding: 13px 34px;">
                     <span class="btn-wrap">
                         <span class="text-one">Log Out</span>
@@ -392,20 +431,6 @@
 
 <script src="{{ asset('asset/js/iziToast.js') }}"></script>
 <script>
-    var options = {
-        title: '',
-        message: 'Login completed successfully.',
-        messageColor: '',
-        messageSize: '14',
-        titleLineHeight: '20',
-        messageLineHeight: '20',
-        position: 'center',
-        titleSize: '16',
-        titleColor: '',
-        closeOnClick: '1',
-
-    };
-
     var type = 'success';
 
     show(type, options);
@@ -435,7 +460,7 @@
 <script src="{{ asset('asset/js/jquery.nice-select.min.js') }}"></script>
 <script src="{{ asset('asset/js/script.js') }}?v=1.0"></script>
 <script src="{{ asset('asset/js/all.js') }}"></script>
-<script src="//code.jivosite.com/widget/MRV81w8cJZ" async></script>
+
 
 <script src="https://translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
 <script>
@@ -486,5 +511,17 @@
         });
     });
 </script>
+@stack('js')
+@if (Session::has('success'))
+    <script>
+        Swal.fire('Success', '{{ Session('success') }}', 'success');
+    </script>
+@endif
+
+@if (Session::has('error'))
+    <script>
+        Swal.fire('Error', '{{ Session('error') }}', 'error');
+    </script>
+@endif
 
 </html>

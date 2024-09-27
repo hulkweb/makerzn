@@ -6,27 +6,27 @@
                 <div class="swiper-slide">
                     <div class="slider-one_icon"
                         style="
-                        background-image: url(asset/img/main-slider/icon-1.png);
+                        background-image: url({{ asset('asset/img/main-slider/icon-1.png') }});
                     ">
                     </div>
                     <div class="slider-one_icon-two"
                         style="
-                        background-image: url(asset/img/main-slider/icon-1.png);
+                        background-image: url({{ asset('asset/img/main-slider/icon-1.png') }});
                     ">
                     </div>
                     <div class="slider-one_pattern"
                         style="
-                        background-image: url(asset/img/main-slider/pattern-1.png);
+                        background-image: url({{ asset('asset/img/main-slider/pattern-1.png') }});
                     ">
                     </div>
                     <div class="slider-one_pattern-two"
                         style="
-                        background-image: url(asset/img/main-slider/pattern-2.png);
+                        background-image: url({{ asset('asset/img/main-slider/pattern-2.png') }});
                     ">
                     </div>
                     <div class="slider-one_pattern-four"
                         style="
-                        background-image: url(asset/img/main-slider/pattern-4.png);
+                        background-image: url({{ asset('asset/img/main-slider/pattern-4.png') }});
                     ">
                     </div>
                     <div class="auto-container">
@@ -61,12 +61,13 @@
                             <div class="slider-one_image-column col-lg-5 col-md-12 col-sm-12">
                                 <div class="slider-one_pattern-three"
                                     style="
-                                    background-image: url(asset/img/main-slider/pattern-3.png);
+                                    background-image: url({{ asset('asset/img/main-slider/pattern-3.png') }});
                                 ">
                                 </div>
                                 <div class="slider-one_image-outer">
                                     <div class="slider-one_image">
-                                        <img src="asset/img/sections/elements/66a421888a2691722032520.png" alt="" />
+                                        <img src="{{ asset('asset/img/sections/elements/66a421888a2691722032520.png') }}"
+                                            alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +203,7 @@
     <section class="price-one">
         <div class="price-one_bg"
             style="
-            background-image: url(asset/img/background/price-bg.png);
+            background-image: url({{ asset('asset/img/background/price-bg.png') }});
             position: relative;
             z-index: -1;
         ">
@@ -224,7 +225,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b23fa2267251722957730.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b23fa2267251722957730.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -276,7 +277,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b23fc0d77421722957760.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b23fc0d77421722957760.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -329,7 +330,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b23fe4802201722957796.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b23fe4802201722957796.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -381,7 +382,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b24006d58bc1722957830.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b24006d58bc1722957830.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -433,7 +434,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b24025902531722957861.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b24025902531722957861.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -485,7 +486,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b240456d8811722957893.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b240456d8811722957893.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -537,7 +538,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b2405c9a8571722957916.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b2405c9a8571722957916.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -589,7 +590,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b24077a0add1722957943.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b24077a0add1722957943.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -641,7 +642,7 @@
                                         <div class="price-block_one-inner">
                                             <div class="plan-image"
                                                 style="
-                                                background-image: url('asset/img/plans/images/66b2408f832571722957967.png');
+                                                background-image: url('{{ asset('asset/img/plans/images/66b2408f832571722957967.png') }}');
                                             ">
                                             </div>
                                             <div class="price-block_one-title">
@@ -710,21 +711,22 @@
     <section class="about-one">
         <div class="about-one_pattern"
             style="
-            background-image: url(asset/img/background/about-pattern.png);
-        "></div>
-        <div class="about-one_icon" style="background-image: url(asset/img/icons/about-1.png)"></div>
-        <div class="about-one_icon-two" style="background-image: url(asset/img/icons/about-2.png)"></div>
+            background-image: url({{ asset('asset/img/background/about-pattern.png') }});
+        ">
+        </div>
+        <div class="about-one_icon" style="background-image: url({{ asset('asset/img/icons/about-1.png') }})"></div>
+        <div class="about-one_icon-two" style="background-image: url({{ asset('asset/img/icons/about-2.png') }})"></div>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="about-one_tab-column col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="about-one_tab-outer">
                         <div class="about-one_tab-shadow"
                             style="
-                            background-image: url(asset/img/background/tab-shadow.png);
+                            background-image: url({{ asset('asset/img/background/tab-shadow.png') }});
                         ">
                         </div>
                         <div class="about-one_tab-image">
-                            <img src="asset/img/resource/about.png" alt="" />
+                            <img src="{{ asset('asset/img/resource/about.png') }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -896,11 +898,11 @@
                     <div class="answer-one_content-outer">
                         <div class="answer-one_pattern"
                             style="
-                            background-image: url(asset/img/background/faq-shadow.png);
+                            background-image: url({{ asset('asset/img/background/faq-shadow.png') }});
                         ">
                         </div>
                         <div class="answer-one_image">
-                            <img src="asset/img/resource/answer.png" alt="" />
+                            <img src="{{ asset('asset/img/resource/answer.png') }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -1518,7 +1520,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/BNB.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/BNB.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1546,7 +1549,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1574,7 +1578,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/DOGE.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/DOGE.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1602,7 +1607,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/BNB.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/BNB.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1630,7 +1636,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1658,7 +1665,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1686,7 +1694,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1714,7 +1723,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/ETH.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/ETH.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1749,7 +1759,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1777,7 +1788,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1805,7 +1817,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/LTC.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/LTC.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1833,7 +1846,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/BCH.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/BCH.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1861,7 +1875,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/DOGE.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/DOGE.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1889,7 +1904,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1917,7 +1933,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/USDT.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/USDT.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1945,7 +1962,8 @@
                                                 width: 150px !important;
                                             ">
                                                 <div class="member-block_one-image d-flex justify-content-center w-100">
-                                                    <img src="asset/img/crypto/coins/LTC.png" alt=""
+                                                    <img src="{{ asset('asset/img/crypto/coins/LTC.png') }}"
+                                                        alt=""
                                                         style="
                                                         width: 50px;
                                                         filter: grayscale(
@@ -1990,7 +2008,7 @@
         <div class="auto-container">
             <div class="inner-container"
                 style="
-                background-image: url(asset/img/background/testimonial-one_bg.png);
+                background-image: url({{ asset('asset/img/background/testimonial-one_bg.png') }});
             ">
                 <div class="sec-title centered">
                     <div class="sec-title_title">TESTIMONIALS</div>
@@ -2020,7 +2038,7 @@
                                     </div>
                                     <div class="testimonial-block_one-author_box">
                                         <div class="testimonial-block_one-author-image">
-                                            <img src="asset/img/sections/elements/66971cc1e6f731721179329.jpg"
+                                            <img src="{{ asset('asset/img/sections/elements/66971cc1e6f731721179329.jpg') }}"
                                                 alt="Angelo Dora" />
                                         </div>
                                         Angelo Dora
@@ -2048,7 +2066,7 @@
                                     </div>
                                     <div class="testimonial-block_one-author_box">
                                         <div class="testimonial-block_one-author-image">
-                                            <img src="asset/img/sections/elements/66971e0d792491721179661.jpg"
+                                            <img src="{{ asset('asset/img/sections/elements/66971e0d792491721179661.jpg') }}"
                                                 alt="Carol Micah" />
                                         </div>
                                         Carol Micah <span>Trader</span>
@@ -2075,7 +2093,7 @@
                                     </div>
                                     <div class="testimonial-block_one-author_box">
                                         <div class="testimonial-block_one-author-image">
-                                            <img src="asset/img/sections/elements/66971fbc881ce1721180092.jpg"
+                                            <img src="{{ asset('asset/img/sections/elements/66971fbc881ce1721180092.jpg') }}"
                                                 alt="Richard Priestley" />
                                         </div>
                                         Richard Priestley
@@ -2102,7 +2120,7 @@
                                     </div>
                                     <div class="testimonial-block_one-author_box">
                                         <div class="testimonial-block_one-author-image">
-                                            <img src="asset/img/sections/elements/669720949d1911721180308.jpg"
+                                            <img src="{{ asset('asset/img/sections/elements/669720949d1911721180308.jpg') }}"
                                                 alt="Iris Gracie" />
                                         </div>
                                         Iris Gracie <span>Prof</span>
@@ -2143,7 +2161,7 @@
                                     </div>
                                     <div class="testimonial-block_one-author_box">
                                         <div class="testimonial-block_one-author-image">
-                                            <img src="asset/img/sections/elements/6697222b778261721180715.jpg"
+                                            <img src="{{ asset('asset/img/sections/elements/6697222b778261721180715.jpg') }}"
                                                 alt="Madge Stella" />
                                         </div>
                                         Madge Stella <span>Doctor</span>
@@ -2161,12 +2179,14 @@
     <section class="news-one" style="padding-bottom: 20px">
         <div class="news-one_shadow"
             style="
-            background-image: url(asset/img/background/news-shadow-1.png);
-        "></div>
+            background-image: url({{ asset('asset/img/background/news-shadow-1.png') }});
+        ">
+        </div>
         <div class="news-one_shadow-two"
             style="
-            background-image: url(asset/img/background/news-shadow-2.png);
-        "></div>
+            background-image: url({{ asset('asset/img/background/news-shadow-2.png') }});
+        ">
+        </div>
         <div class="auto-container">
             <div class="sec-title title-anim centered">
                 <div class="sec-title_title">OUR BLOG</div>
@@ -2184,12 +2204,12 @@
             <div class="inner-container">
                 <div class="cta-icon_one"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-1.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
                 ">
                 </div>
                 <div class="cta-icon_two"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-2.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
                 ">
                 </div>
 
@@ -2213,7 +2233,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

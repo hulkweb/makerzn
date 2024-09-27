@@ -39,40 +39,47 @@
         var sc_invisible = 1;
         var sc_security = "8f4f8dc8";
     </script>
-    <script type="text/javascript" src="../www.statcounter.com/counter/counter.js')}}" async></script>
-    <noscript>
-        <div class="statcounter"><a title="Web Analytics Made Easy -
-    Statcounter" href="https://statcounter.com/"
-                target="_blank"><img class="statcounter" src="https://c.statcounter.com/13022378/0/8f4f8dc8/1/"
-                    alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div>
-    </noscript>
+
     <!-- End of Statcounter Code -->
 
-    <!-- Google tag (gtag.js')}}) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S42BMB46VF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        function gtag() {
-            dataLayer.push(arguments);
+
+
+
+    <style>
+        .swal2-styled {
+            color: black !important;
+            background-color: #DBB75F !important;
+            min-width: 100px !important;
+
         }
-        gtag('js', new Date());
 
-        gtag('config', 'G-S42BMB46VF');
-    </script>
-
-    <!-- Google tag (gtag.js')}}) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16700023780"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
+        .input-group {
+            border: 1px solid gray;
+            /* Add border to input group */
+            border-radius: .25rem;
+            /* Optional: Add border radius for input group */
+            width: 100%;
+            display: flex
+                /* Ensure input group stretches to full width */
         }
-        gtag('js', new Date());
 
-        gtag('config', 'AW-16700023780');
-    </script>
+        .input-group .form-control {
+            border: none;
+            /* Remove border from input field */
+            border-radius: 0;
+            /* Optional: Remove border radius from input field */
+            box-shadow: none;
+            flex: 1;
+            /* Optional: Remove any box shadow */
+        }
+
+        #passwordField {
+            border: none;
+            outline: none;
+        }
+    </style>
 
 </head>
 
@@ -399,6 +406,10 @@
     }
 </script>
 
+
+<script src="{{ asset('js/jquery-3.7.1.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('plugins/jquery-validation/jquery.validate.js') }}"></script>
+
 <script src="{{ asset('asset/js/google-translate.js') }}"></script>
 
 <script src="{{ asset('asset/js/jquery.js') }}"></script>
@@ -429,15 +440,19 @@
 <script src="{{ asset('asset/js/scriptc619.js') }}?v=1.0"></script>
 
 <script src="{{ asset('asset/js/all.js') }}"></script>
-<script src="http://code.jivosite.com/widget/MRV81w8cJZ" async></script>
-<script src="../translate.google.com/translate_a/element3a21.js')}}?cb=TranslateInit"></script>
-<script>
-    setTimeout(() => {
-        document.getElementById('tab2').classList.remove('bdq')
-        document.getElementById('tab2').style.display = 'none'
-    }, 10);
-</script>
 
+@if (Session::has('success'))
+    <script>
+        Swal.fire('Success', '{{ Session('success') }}', 'success');
+    </script>
+@endif
+
+@if (Session::has('error'))
+    <script>
+        Swal.fire('Error', '{{ Session('error') }}', 'error');
+    </script>
+@endif
+@stack('js')
 
 <!-- Mirrored from mashash.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:48:24 GMT -->
 

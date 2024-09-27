@@ -4,6 +4,7 @@
 use App\Http\Controllers\BlogController;
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 
@@ -50,14 +51,39 @@ Route::post("signup", [UserController::class, 'signup_post'])->name('signup.post
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get("dashboard", [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get("logout", [DashboardController::class, 'logout'])->name('logout');
+    Route::get("dashboard", [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get("deposit", [UserController::class, 'deposit'])->name('deposit');
+    Route::get("bills", [UserController::class, 'bills'])->name('bills');
+    Route::get("withdraw", [UserController::class, 'withdraw'])->name('withdraw');
+    Route::get("referrals", [UserController::class, 'referrals'])->name('referrals');
+    Route::get("profile", [UserController::class, 'profile'])->name('profile');
+    Route::get("settings", [UserController::class, 'settings'])->name('settings');
+    Route::get("orders", [UserController::class, 'orders'])->name('orders');
 
 
-    // Route::resource("blogs", BlogController::class);
+
+    Route::get("logout", [UserController::class, 'logout'])->name('logout');
+});
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
+    Route::get("/", [DashboardController::class, 'signin'])->name('sigin');
+    Route::get("login", [DashboardController::class, 'signin'])->name('login');
+    Route::post("signin", [DashboardController::class, 'signin_post'])->name('signin.post');
+
+    Route::middleware("auth")->group(function () {
+        Route::get("dashboard", [DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::get("logout", [DashboardController::class, 'logout'])->name('logout');
+
+        Route::get("users", [DashboardController::class, 'users'])->name('users');
+        Route::get("transactions", [DashboardController::class, 'transactions'])->name('transactions');
+
+        Route::resource("blogs", BlogController::class);
+        Route::resource("plans", PlanController::class);
 
 
-    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
 
-    Route::post('/profile', [DashboardController::class, 'profile_post'])->name('profile.post');
+        Route::post('/profile', [DashboardController::class, 'profile_post'])->name('profile.post');
+    });
 });

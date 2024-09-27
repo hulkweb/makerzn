@@ -9,19 +9,19 @@
     <section class="page-title mb-3">
         <div class="page-title-icon"
             style="
-            background-image: url(asset/img/icons/page-title_icon-1.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-1.png') }});
         "></div>
         <div class="page-title-icon-two"
             style="
-            background-image: url(asset/img/icons/page-title_icon-2.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-2.png') }});
         "></div>
         <div class="page-title-shadow"
             style="
-            background-image: url(asset/img/background/page-title-1.png);
+            background-image: url({{ asset('asset/img/background/page-title-1.png') }});
         "></div>
         <div class="page-title-shadow_two"
             style="
-            background-image: url(asset/img/background/page-title-2.png);
+            background-image: url({{ asset('asset/img/background/page-title-2.png') }});
         "></div>
         <div class="auto-container">
             <h2>
@@ -44,7 +44,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b23fa2267251722957730.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b23fa2267251722957730.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -88,7 +88,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b23fc0d77421722957760.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b23fc0d77421722957760.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -132,7 +132,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b23fe4802201722957796.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b23fe4802201722957796.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -176,7 +176,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b24006d58bc1722957830.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b24006d58bc1722957830.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -220,7 +220,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b24025902531722957861.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b24025902531722957861.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -264,7 +264,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b240456d8811722957893.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b240456d8811722957893.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -309,7 +309,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b2405c9a8571722957916.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b2405c9a8571722957916.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -354,7 +354,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b24077a0add1722957943.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b24077a0add1722957943.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -399,7 +399,7 @@
                     <div class="price-block_one-inner">
                         <div class="plan-image"
                             style="
-                            background-image: url('asset/img/plans/images/66b2408f832571722957967.png');
+                            background-image: url('{{ asset('asset/img/plans/images/66b2408f832571722957967.png') }}');
                         ">
                         </div>
                         <div class="price-block_one-title">
@@ -449,12 +449,12 @@
             <div class="inner-container">
                 <div class="cta-icon_one"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-1.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
                 ">
                 </div>
                 <div class="cta-icon_two"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-2.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
                 ">
                 </div>
 
@@ -478,7 +478,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>

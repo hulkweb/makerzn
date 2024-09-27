@@ -9,19 +9,19 @@
     <section class="page-title mb-3">
         <div class="page-title-icon"
             style="
-            background-image: url(asset/img/icons/page-title_icon-1.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-1.png') }});
         "></div>
         <div class="page-title-icon-two"
             style="
-            background-image: url(asset/img/icons/page-title_icon-2.png);
+            background-image: url({{ asset('asset/img/icons/page-title_icon-2.png') }});
         "></div>
         <div class="page-title-shadow"
             style="
-            background-image: url(asset/img/background/page-title-1.png);
+            background-image: url({{ asset('asset/img/background/page-title-1.png') }});
         "></div>
         <div class="page-title-shadow_two"
             style="
-            background-image: url(asset/img/background/page-title-2.png);
+            background-image: url({{ asset('asset/img/background/page-title-2.png') }});
         "></div>
         <div class="auto-container">
             <h2>
@@ -54,7 +54,8 @@
                         <div class="row clearfix">
                             <div class="data-block_one-image-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="data-block_one-image">
-                                    <img src="asset/img/sections/referral/66a42344470b71722032964.png" alt="" />
+                                    <img src="{{ asset('asset/img/sections/referral/66a42344470b71722032964.png') }}"
+                                        alt="" />
                                 </div>
                             </div>
                             <div class="data-block_one-content-column col-lg-6 col-md-12 col-sm-12">
@@ -256,12 +257,12 @@
             <div class="inner-container">
                 <div class="cta-icon_one"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-1.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
                 ">
                 </div>
                 <div class="cta-icon_two"
                     style="
-                    background-image: url(asset/img/icons/cta-icon-2.png);
+                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
                 ">
                 </div>
 
@@ -285,7 +286,8 @@
                     <div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_image-outer">
                             <div class="image">
-                                <img src="asset/img/sections/subfooter/66a42302d54b71722032898.png" alt="" />
+                                <img src="{{ asset('asset/img/sections/subfooter/66a42302d54b71722032898.png') }}"
+                                    alt="" />
                             </div>
                         </div>
                     </div>
