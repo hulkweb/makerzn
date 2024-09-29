@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\TransactionStatus;
+use App\Enums\StatusType;
+use App\Enums\TransactionType;
+
+use App\Models\Transaction;
 use App\Models\User;
+use App\Models\UserPlanDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
 
 class UserController extends Controller
 {
@@ -52,16 +59,30 @@ class UserController extends Controller
         // Proceed with user registration
         try {
             // Create a new user
-            $user = User::create([
-                'username' => $request->username,
-                'name' => $request->username,
 
-                'email' => $request->email,
-                'password' => Hash::make($request->password), // Hash the password
-            ]);
+
+            $user = new User();
+
+            $user->username =  $request->username;
+            $user->name =  $request->name;
+            $user->email =  $request->email;
+            $user->password = Hash::make($request->password);
+            if ($request->filled("refer_code")) {
+                $ref_user = User::where("refer_code", $request->refer_code)->first();
+                if ($ref_user) {
+                    $user->refer_bt = $ref_user->id;
+                }
+            }
+
+            $user->save();
+            if ($user) {
+                $user->refer_code = generateReferralCode($user->id);
+                $user->save();
+            }
+
 
             // Return success response
-            return redirect(route('login'))->with("success", 'Registration successfull');
+            return redirect(route('signin'))->with("success", 'Registration successfull');
             // 201 Created
         } catch (\Exception $e) {
             // Handle registration failure (e.g., database error)
@@ -100,6 +121,7 @@ class UserController extends Controller
         // Proceed with user registration
         try {
             if (Auth::attempt($request->only(['email', 'password']))) {
+            } else {
                 return back()->with("error", 'Inavalid Password');
             }
             // Create a new user
@@ -123,16 +145,59 @@ class UserController extends Controller
     }
     public function dashboard()
     {
-        return view("pages.user.dashboard");
+        $user = Auth::user();
+        $deposit = Transaction::where("user_id", $user->id)->where("status", TransactionStatus::$SUCCESS)->where("type", TransactionType::$DEPOSIT)->sum("amount");
+        $withdraw = Transaction::where("user_id", $user->id)->where("status", TransactionStatus::$SUCCESS)->where("type", TransactionType::$WITHDRAW)->sum("amount");
+        $orders = UserPlanDetail::join("plans", "user_plan_details.plan_id", "=", "plans.id")
+            ->select("user_plan_details.user_id as user_id", "user_plan_details.status as plan_status", "plans.price as price")
+            ->where("user_id", $user->id)->get();
+
+        $active_orders = $orders->where("plan_status", 'Active')->sum("price");
+        $inactive_orders = $orders->where("plan_status", 'Inactive')->sum("price");
+        $total_orders = $orders->sum("price");
+        $today_profit = 0;
+        $today_reward = 0;
+        $partners = 0;
+
+        $data = [
+            'balance' => priceHTML($user->wallet_balance),
+            'trial_balance' => priceHTML($user->trial_balance),
+            'deposit' => priceHTML($deposit),
+            'withdraw' => priceHTML($withdraw),
+            'total_orders' => priceHTML($total_orders),
+            'active_orders' => priceHTML($active_orders),
+            'inactive_orders' => priceHTML($inactive_orders),
+            'today_referal' => 0,
+            'today_profit' =>  priceHTML($today_profit),
+            'today_reward' =>  priceHTML($today_reward),
+            'partners' => $partners,
+            'user' => $user
+
+
+        ];
+        return view("pages.user.dashboard", $data);
     }
     public function deposit()
     {
-        return view("pages.user.deposit");
+        $deposits = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->paginate(10);
+
+        return view("pages.user.deposit", compact('deposits'));
     }
+    public function deposit_post()
+    {
+        $deposits = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->paginate(10);
+
+        return view("pages.user.deposit", compact('deposits'));
+    }
+
     public function withdraw()
     {
-        return view("pages.user.withdraw");
+        $withdraw = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$WITHDRAW)->paginate(10);
+
+        return view("pages.user.withdraw", compact('withdraw'));
     }
+
+
     public function settings()
     {
         return view("pages.user.settings");

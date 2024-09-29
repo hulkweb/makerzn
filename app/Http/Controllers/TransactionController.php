@@ -6,5 +6,5 @@ use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
-    //
+    public function deposit(Request $request) {}
 }
