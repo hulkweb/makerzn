@@ -74,7 +74,7 @@
 
                         <div class="form-group">
                             <label>Referral Code (Optional)</label>
-                            <input type="text" name="ref_code" value="{{ old('ref_code') }}" />
+                            <input type="text" name="refer_code" value="{{ old('ref_code') }}" />
                         </div>
 
                         <div class="form-group">

@@ -13,7 +13,7 @@
                         </svg>
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
-                        <h4 class="text-center main_color">$0.00</h4>
+                        <h4 class="text-center main_color">{{ $balance }}</h4>
                         <h5 class="text-right mt-2">Available Balance</h5>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         </svg>
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
-                        <h4 class="text-center main_color">$50.00</h4>
+                        <h4 class="text-center main_color">{{ $trial_balance }}</h4>
                         <h5 class="text-center mt-2">Trial Funds</h5>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         </svg>
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
-                        <h4 class="text-center main_color">$0.00</h4>
+                        <h4 class="text-center main_color">{{ $deposit }}</h4>
                         <h5 class="text-center mt-2">Total Deposit</h5>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         </svg>
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
-                        <h4 class="text-center main_color">$0.00</h4>
+                        <h4 class="text-center main_color">{{ $withdraw }}</h4>
                         <h5 class="text-center mt-2">Total Withdraw</h5>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
                         <h5 class="text-center main_color">Today Profits</h5>
-                        <h4 class="text-center mt-2">+ $0.00</h4>
+                        <h4 class="text-center mt-2">+ {{ $today_profit }}</h4>
                     </div>
                 </div>
                 <div class="block-d outlined-b bds">
@@ -101,7 +101,7 @@
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
                         <h5 class="text-center main_color">Today Referrals</h5>
-                        <h4 class="text-center mt-2">+ 0</h4>
+                        <h4 class="text-center mt-2">+ {{ $today_referal }}</h4>
                     </div>
                 </div>
                 <div class="block-d outlined-b bds">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
                         <h5 class="text-center main_color">Today Rewards</h5>
-                        <h4 class="text-center mt-2">+ $0</h4>
+                        <h4 class="text-center mt-2">+ {{ $today_reward }}</h4>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
                         <h5 class="text-center main_color">Total Orders</h5>
-                        <h4 class="text-center mt-2">$0.00</h4>
+                        <h4 class="text-center mt-2">{{ $total_orders }}</h4>
                     </div>
                 </div>
                 <div class="block-d">
@@ -153,7 +153,7 @@
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
                         <h5 class="text-center main_color">Active Orders</h5>
-                        <h4 class="text-center mt-2">$0.00</h4>
+                        <h4 class="text-center mt-2">{{ $active_orders }}</h4>
                     </div>
                 </div>
                 <div class="block-d">
@@ -168,7 +168,7 @@
                     </div>
                     <div class="w-100 d-flex flex-column align-items-center">
                         <h5 class="text-center main_color">Expired Orders</h5>
-                        <h4 class="text-center mt-2">$0.00</h4>
+                        <h4 class="text-center mt-2">{{ $inactive_orders }}</h4>
                     </div>
                 </div>
             </div>
@@ -180,7 +180,7 @@
                 <div class="col-7">
                     <div class="block-d">
                         <input type="text" class="form-c w-100 text-center copyd" readonly
-                            value="signup?ref=A5KEKW" />
+                            value="signup?ref={{ $user->refer_code }}" />
                         <div class="w-100 d-flex justify-content-center mt-3">
                             <a href="#" id="copyButton" class="template-btn btn-style-three"
                                 style="padding: 13px 34px">
@@ -196,7 +196,7 @@
                     <div class="block-d h-100 align-items-center d-flex justify-content-center"
                         style="flex-direction: column">
                         <h5 class="text-center main_color">Your Partners</h5>
-                        <h4 class="text-center mt-2">0</h4>
+                        <h4 class="text-center mt-2">{{ $partners }}</h4>
                     </div>
                 </div>
             </div>

@@ -6,8 +6,20 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Http\\Controllers\\BlogController' => $baseDir . '/app/Http/Controllers/BlogController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\CurrencyController' => $baseDir . '/app/Http/Controllers/CurrencyController.php',
+    'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
+    'App\\Http\\Controllers\\PlanController' => $baseDir . '/app/Http/Controllers/PlanController.php',
+    'App\\Http\\Controllers\\TransactionController' => $baseDir . '/app/Http/Controllers/TransactionController.php',
+    'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
+    'App\\Http\\Controllers\\WebsiteController' => $baseDir . '/app/Http/Controllers/WebsiteController.php',
+    'App\\Models\\Blog' => $baseDir . '/app/Models/Blog.php',
+    'App\\Models\\Currency' => $baseDir . '/app/Models/Currency.php',
+    'App\\Models\\Plan' => $baseDir . '/app/Models/Plan.php',
+    'App\\Models\\Transaction' => $baseDir . '/app/Models/Transaction.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\UserPlanDetail' => $baseDir . '/app/Models/UserPlanDetail.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Brick\\Math\\BigDecimal' => $vendorDir . '/brick/math/src/BigDecimal.php',

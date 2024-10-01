@@ -23,20 +23,20 @@ class DashboardController extends Controller
 
         $blogs = Blog::count();
         $users = User::where("admin", false)->count();
-        return view("admin.index", compact("quotes", 'blogs', 'services'));
+        return view("pages.admin.index", compact("quotes", 'blogs', 'services'));
     }
     public function signin(Request $request)
     {
         if (Auth::user() && (Auth::user()->admin == 1)) {
-            return redirect(route("admin.dashboard"));
+            return redirect(route("pages.admin.dashboard"));
         }
-        return view("admin.signin");
+        return view("pages.admin.signin");
     }
     public function profile(Request $request)
     {
         $admin = User::find(Auth::user()->id);
         $title = 'Admin Profile';
-        return view("admin.profile", compact('admin', 'title'));
+        return view("pages.admin.profile", compact('admin', 'title'));
     }
     public function profile_post(Request $request)
     {
