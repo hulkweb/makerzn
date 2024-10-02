@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\TransactionStatus;
 use App\Enums\StatusType;
 use App\Enums\TransactionType;
-
+use App\Models\Currency;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserPlanDetail;
@@ -180,8 +180,9 @@ class UserController extends Controller
     public function deposit()
     {
         $deposits = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->paginate(10);
+        $currencies = Currency::all();
 
-        return view("pages.user.deposit", compact('deposits'));
+        return view("pages.user.deposit", compact('deposits', 'currencies'));
     }
     public function deposit_post()
     {

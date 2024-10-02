@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\TransactionController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -52,7 +53,7 @@ Route::post("signup", [UserController::class, 'signup_post'])->name('signup.post
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get("dashboard", [UserController::class, 'dashboard'])->name('dashboard');
-    Route::get("deposit", [UserController::class, 'deposit'])->name('deposit');
+    Route::get("deposit", [TransactionController::class, 'deposit'])->name('deposit');
     Route::get("bills", [UserController::class, 'bills'])->name('bills');
     Route::get("withdraw", [UserController::class, 'withdraw'])->name('withdraw');
     Route::get("referrals", [UserController::class, 'referrals'])->name('referrals');
@@ -60,7 +61,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("settings", [UserController::class, 'settings'])->name('settings');
     Route::get("orders", [UserController::class, 'orders'])->name('orders');
 
+    Route::post("deposit_post", [TransactionController::class, 'deposit_post'])->name("deposit_post");
+    Route::post("deposit_post_verify", [TransactionController::class, 'deposit_post_verify'])->name("deposit_post_verify");
 
+    Route::post("withdraw_post", [TransactionController::class, 'withdraw_post'])->name("withdraw_post");
+    Route::post("withdraw_post_verify", [TransactionController::class, 'withdraw_post_verify'])->name("withdraw_post_verify");
 
     Route::get("logout", [UserController::class, 'logout'])->name('logout');
 });
