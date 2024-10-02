@@ -14,7 +14,7 @@ class BlogController extends Controller
             $keyword = trim(request('search'));
             return $query->where("title", "LIKE", "%$keyword%");
         })->paginate(10);
-        return view('admin.blogs.index', compact("blogs"));
+        return view('pages.admin.blogs.index', compact("blogs"));
     }
 
     public function store(Request $request)

@@ -31,7 +31,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'username' => 'required|max:191',
             'email' => 'required|max:191|email|unique:users,email', // Ensure the email is unique
-            'password' => 'required|min:8|max:191',
+            'password' => 'required|min:6|max:191',
             'password_repeat' => 'required|same:password|max:191',
         ], [
             'username.required' => 'The username field is required.',
@@ -64,7 +64,7 @@ class UserController extends Controller
             $user = new User();
 
             $user->username =  $request->username;
-            $user->name =  $request->name;
+            $user->name =  $request->username;
             $user->email =  $request->email;
             $user->password = Hash::make($request->password);
             if ($request->filled("refer_code")) {

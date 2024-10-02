@@ -433,7 +433,7 @@
 <script>
     var type = 'success';
 
-    show(type, options);
+
 
     function show(type, options) {
         if (type === 'info') {

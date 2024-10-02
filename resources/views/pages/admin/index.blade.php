@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @push('css')
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
@@ -42,8 +42,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Quotes </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $quotes }}</div>
+                                    Orders </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ 0 }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -104,8 +104,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Services</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $services }}</div>
+                                    Users</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $users }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-comments fa-2x text-gray-300"></i>

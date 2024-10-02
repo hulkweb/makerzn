@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @push('css')
     <link href="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <style>
@@ -75,13 +75,13 @@
                                     <td>{{ date('Y/m/d', strtotime($item->created_at)) }}</td>
 
                                     <td> <button class="btn btn-primary mx-2"
-                                            data-url="{{ route('blogs.update', $item->id) }}"
+                                            data-url="{{ route('admin.blogs.update', $item->id) }}"
                                             data-subtitle="{{ $item->subtitle }}" data-title="{{ $item->title }}"
                                             data-body="{{ $item->body }}" data-status="{{ $item->status }}"
                                             onclick="openEditModal(this)"> <i class="fa fa-pencil"></i>
 
 
-                                            <form action="{{ route('blogs.destroy', $item) }}" method="POST">
+                                            <form action="{{ route('admin.blogs.destroy', $item) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger" onclick="deleteFlyer(this)" type="button">
@@ -110,7 +110,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <!-- Form -->
-            <form id="create" action="{{ route('blogs.store') }}" method="POST">
+            <form id="create" action="{{ route('admin.blogs.store') }}" method="POST">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">

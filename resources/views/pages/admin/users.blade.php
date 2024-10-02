@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @push('css')
     <link href="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <style>
@@ -16,8 +16,8 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Makes</span> <span> <button
-                    class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
+        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Users</span> <span>
+                {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button> --}}
             </span>
         </h1>
 
@@ -26,7 +26,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Makes
+                    Users
                 </h6>
             </div>
             <div class="card-body">
@@ -36,8 +36,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Created Date</th>
+                                <th>Email</th>
 
+                                <th>Created at</th>
 
                                 <th>Action</th>
 
@@ -46,15 +47,17 @@
 
                         <tbody>
 
-                            @forelse ($makes as $i => $item)
+                            @forelse ($users as $i => $item)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
 
-                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->username }}</td>
+                                    <td>{{ $item->email }}</td>
 
                                     <td>{{ date('Y/m/d', strtotime($item->created_at)) }}</td>
 
-                                    <td> <button class="btn btn-primary mx-2"
+                                    <td>
+                                        {{-- <button class="btn btn-primary mx-2"
                                             data-url="{{ route('makes.update', $item->id) }}"
                                             data-name="{{ $item->name }}" data-status="{{ $item->status }}"
                                             onclick="openEditModal(this)"> <i class="fa fa-pencil"></i>
@@ -67,7 +70,7 @@
                                                     <i class="fa fa-trash ms-2"></i></button>
 
 
-                                            </form>
+                                            </form> --}}
 
                                     </td>
                                 </tr>
@@ -85,47 +88,7 @@
             </div>
         </div>
     </div>
-    <!-- Create Make Modal -->
-    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <!-- Form -->
-            <form id="create" action="{{ route('makes.store') }}" method="POST">
-                @csrf
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Create Make</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
 
-                        <div class="form-group">
-                            <label for="inputTitle">Name</label>
-                            <input type="text" class="form-control" name="name" id="inputTitle"
-                                placeholder="Enter name">
-                        </div>
-
-                        <!-- Add more form fields as needed -->
-                        <div class="form-group">
-                            <label for="inputStatus">Status</label>
-                            <select class="form-control" id="inputStatus" name="status">
-                                <option value="Active">Active</option>
-                                <option value="Inactive">Inactive</option>
-                            </select>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-
-                        <button type="submit" class="btn btn-primary" id="saveChangesBtn">Save </button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Update Make Modal -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

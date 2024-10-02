@@ -23,12 +23,12 @@ class DashboardController extends Controller
 
         $blogs = Blog::count();
         $users = User::where("admin", false)->count();
-        return view("pages.admin.index", compact("quotes", 'blogs', 'services'));
+        return view("pages.admin.index", compact("users", 'blogs'));
     }
     public function signin(Request $request)
     {
         if (Auth::user() && (Auth::user()->admin == 1)) {
-            return redirect(route("pages.admin.dashboard"));
+            return redirect(route("admin.dashboard"));
         }
         return view("pages.admin.signin");
     }
@@ -96,11 +96,11 @@ class DashboardController extends Controller
     {
 
         $users = User::where("admin", false)->get();
-        return view("users", compact('users'));
+        return view("pages.admin.users", compact('users'));
     }
     public function transactions()
     {
         $transactions = Transaction::orderBy("id", "desc")->get();
-        return view("transactions", compact('transactions'));
+        return view("pages.admin.transactions", compact('transactions'));
     }
 }

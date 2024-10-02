@@ -30,7 +30,7 @@
     </style>
 </head>
 
-<body class="bg-warning">
+<body class="bg-dark">
 
     <div class="container">
 
@@ -71,7 +71,8 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-dark btn-user btn-block">
+                                        <button class="btn btn-dark btn-user btn-block"
+                                            style="background: #761FE3 !Important">
                                             Login
                                         </button>
                                         <hr>

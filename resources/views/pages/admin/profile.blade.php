@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @push('css')
     <style>
@@ -31,7 +31,7 @@
 
 
                             <div class="form mt-4">
-                                <form action="{{ route('profile.post') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.profile.post') }}" method="POST" enctype="multipart/form-data">
 
                                     @csrf
                                     <div class="row">

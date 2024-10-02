@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger("refer_by")->nullable();
+            $table->boolean("admin")->default(false);
         });
     }
 
