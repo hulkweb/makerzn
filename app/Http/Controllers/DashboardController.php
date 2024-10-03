@@ -67,7 +67,7 @@ class DashboardController extends Controller
                 if ($user->admin) {
 
                     Auth::login($user);
-                    return response()->json(['message' => 'Logged In Successfully. ', 'redirect' => true, 'route' => route("dashboard"), 'status' => 200]);
+                    return response()->json(['message' => 'Logged In Successfully. ', 'redirect' => true, 'route' => route("admin.dashboard"), 'status' => 200]);
                 } else {
                     return response()->json(['message' => 'Unauthorized Access. ', 'status' => 201]);
                 }
