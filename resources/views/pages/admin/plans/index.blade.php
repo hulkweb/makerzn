@@ -55,6 +55,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Price</th>
 
                                 <th>Created Date</th>
 
@@ -69,21 +70,25 @@
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
 
-                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->price }}</td>
 
 
                                     <td>{{ date('Y/m/d', strtotime($item->created_at)) }}</td>
 
                                     <td> <button class="btn btn-primary mx-2"
-                                            data-url="{{ route('locations.update', $item->id) }}"
-                                            data-subtitle="{{ $item->subtitle }}" data-title="{{ $item->title }}"
-                                            data-body="{{ $item->body }}" data-part_1="{{ $item->part_1 }}"
-                                            data-part_2="{{ $item->part_2 }}" data-part_3="{{ $item->part_3 }}"
-                                            data-part_4="{{ $item->part_4 }}" data-status="{{ $item->status }}"
+                                            data-url="{{ route('admin.plans.update', $item->id) }}"
+                                            data-name="{{ $item->name }}" data-price="{{ $item->price }}"
+                                            data-duration="{{ $item->duration }}"
+                                            data-daily_rebate="{{ $item->daily_rebate }}" data-part_2="{{ $item->part_2 }}"
+                                            data-recoverable_funds="{{ $item->recoverable_funds }}"
+                                            data-principal_refund="{{ $item->principal_refund }}"
+                                            data-status="{{ $item->status }}"
+                                            data-interest_settlement_time="{{ $item->interest_settlement_time }}"
                                             onclick="openEditModal(this)"> <i class="fa fa-pencil"></i>
 
 
-                                            <form action="{{ route('locations.destroy', $item) }}" method="POST">
+                                            <form action="{{ route('admin.plans.destroy', $item) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger" onclick="deleteFlyer(this)" type="button">
@@ -112,11 +117,11 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <!-- Form -->
-            <form id="create" action="{{ route('locations.store') }}" method="POST">
+            <form id="create" action="{{ route('admin.plans.store') }}" method="POST">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Create Service</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Create Plan</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -124,48 +129,55 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="inputTitle">Title</label>
-                            <input type="text" class="form-control" name="title" id="inputTitle"
-                                placeholder="Enter title" required>
+                            <label for="inputTitle">Name</label>
+                            <input type="text" class="form-control" name="name" id="inputTitle"
+                                placeholder="Enter name" required>
                         </div>
                         <div class="form-group">
-                            <label for="inputTitle">SubTitle</label>
-                            <textarea name="subtitle" class="form-control" cols="30" rows="3" required></textarea>
+                            <label for="inputTitle">Price($)</label>
+                            <input type="text" class="form-control" name="price" id="inputTitle"
+                                placeholder="Enter price" required>
                         </div>
+                        <div class="form-group">
+                            <label for="inputTitle">duration(in days)</label>
+                            <input type="integer" min="1" class="form-control" name="duration" id="inputTitle"
+                                placeholder="Enter duration" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">daily rebate(in $)</label>
+                            <input type="integer" min="1" class="form-control" name="daily_rebate" id="inputTitle"
+                                placeholder="Enter daily rebate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">recoverable funds(in $)</label>
+                            <input type="integer" min="1" class="form-control" name="recoverable_funds"
+                                id="inputTitle" placeholder="Enter recoverable funds" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">principal refund(in $)</label>
+                            <input type="integer" min="1" class="form-control" name="principal_refund"
+                                id="inputTitle" placeholder="Enter principal refund" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">interest settlement time(in days)</label>
+                            <input type="integer" min="1" class="form-control" name="interest_settlement_time"
+                                id="inputTitle" placeholder="Enter time" required>
+                        </div>
+
+
                         <div class="form-group">
                             <label for="inputAuthor">Image</label>
                             <input type="file" class="form-control" name="image" i placeholder="" required>
                         </div>
-                        {{-- 
                         <div class="form-group">
-                            <label for="inputDescription">Body</label>
-                            <textarea class="form-control" id="summernote" name="body" rows="3" required placeholder="Enter description"></textarea>
-                        </div> --}}
-                        <div class="form-group">
-                            <label for="inputDescription">Part 1</label>
-                            <textarea class="form-control" id="summernote1_edit" name="part_1" rows="3" required
-                                placeholder="Enter description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputDescription">Part 2</label>
-                            <textarea class="form-control" id="summernote2_edit" name="part_2" rows="3" required
-                                placeholder="Enter description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputDescription">Part 3</label>
-                            <textarea class="form-control" id="summernote3_edit" name="part_3" rows="3" required
-                                placeholder="Enter description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAuthor">Part 3 Image</label>
-                            <input type="file" class="form-control" name="part_3_image" placeholder="" required>
+                            <label for="inputAuthor">Status</label>
+                            <select name="status" class="form-control" id="">
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+
+                            </select>
                         </div>
 
-                        <div class="form-group">
-                            <label for="inputDescription">Part 4</label>
-                            <textarea class="form-control" id="summernote4_edit" name="part_4" rows="3" required
-                                placeholder="Enter description"></textarea>
-                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -181,14 +193,14 @@
     <!-- Update Service Modal -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">\
+        <div class="modal-dialog modal-lg" role="document">
             <!-- Form -->
             <form id="edit" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Service</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Plan</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -198,43 +210,53 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="inputTitle">Title</label>
-                            <input type="text" class="form-control" name="title" id="title"
-                                placeholder="Enter title">
+                            <label for="inputTitle">Name</label>
+                            <input type="text" class="form-control" name="name" id="name"
+                                placeholder="Enter name" required>
                         </div>
                         <div class="form-group">
-                            <label for="inputTitle">SubTitle</label>
-                            <textarea name="subtitle" id="subtitle" class="form-control" cols="30" rows="3"></textarea>
+                            <label for="inputTitle">Price($)</label>
+                            <input type="text" class="form-control" name="price" id="price"
+                                placeholder="Enter price" required>
                         </div>
+                        <div class="form-group">
+                            <label for="inputTitle">duration(in days)</label>
+                            <input type="integer" min="1" class="form-control" name="duration" id="duration"
+                                placeholder="Enter duration" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">daily rebate(in $)</label>
+                            <input type="integer" min="1" class="form-control" name="daily_rebate"
+                                id="daily_rebate" placeholder="Enter daily rebate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">recoverable funds(in $)</label>
+                            <input type="integer" min="1" class="form-control" name="recoverable_funds"
+                                id="recoverable_funds" placeholder="Enter recoverable funds" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">principal refund(in $)</label>
+                            <input type="integer" min="1" class="form-control" name="principal_refund"
+                                id="principal_refund" placeholder="Enter principal refund" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">interest settlement time(in days)</label>
+                            <input type="integer" min="1" class="form-control" name="interest_settlement_time"
+                                id="interest_settlement_time" placeholder="Enter time" required>
+                        </div>
+
+
                         <div class="form-group">
                             <label for="inputAuthor">Image</label>
-                            <input type="file" class="form-control" name="image" i placeholder="">
+                            <input type="file" class="form-control" name="image" placeholder="" required>
                         </div>
+                        <div class="form-group">
+                            <label for="inputAuthor">Status</label>
+                            <select name="status" class="form-control" id="status">
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
 
-                        <div class="form-group">
-                            <label for="inputDescription">Part 1</label>
-                            <textarea class="form-control" id="summernote1" name="part_1" rows="3" required
-                                placeholder="Enter description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputDescription">Part 2</label>
-                            <textarea class="form-control" id="summernote2" name="part_2" rows="3" required
-                                placeholder="Enter description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputDescription">Part 3</label>
-                            <textarea class="form-control" id="summernote3" name="part_3" rows="3" required
-                                placeholder="Enter description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAuthor">Part 3 Image</label>
-                            <input type="file" class="form-control" name="part_3_image" placeholder="">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputDescription">Part 4</label>
-                            <textarea class="form-control" id="summernote4" name="part_4" rows="3" required
-                                placeholder="Enter description"></textarea>
+                            </select>
                         </div>
                     </div>
 
@@ -252,10 +274,7 @@
             // Edit button click handler
             $('.editBtn').click(function() {
                 // Retrieve data from table row and populate form fields
-                var title = $(this).closest('tr').find('.title').text();
-                var author = $(this).closest('tr').find('.author').text();
-                var publishedDate = $(this).closest('tr').find('.publishedDate').text();
-                var description = $(this).closest('tr').find('.description').text();
+
                 $('#inputTitle').val(title);
                 $('#inputAuthor').val(author);
                 $('#inputPublishedDate').val(publishedDate);
@@ -269,14 +288,13 @@
             // }, "Please select a table of content.");
             $('#create').validate({
                 rules: {
-                    title: {
+                    name: {
                         required: true,
                         maxlength: 191,
                         minlength: 3,
 
                     },
-
-                    body: {
+                    price: {
                         required: true,
 
 
@@ -383,13 +401,13 @@
             })
             $('#edit').validate({
                 rules: {
-                    title: {
+                    name: {
                         required: true,
                         maxlength: 191,
                         minlength: 3,
 
                     },
-                    body: {
+                    price: {
                         required: true,
 
 
@@ -501,13 +519,14 @@
 
 
             $("#edit").attr("action", ele.getAttribute("data-url"));
-            $("#title").val(ele.getAttribute("data-title"));
-            $("#subtitle").val(ele.getAttribute("data-subtitle"));
-            // $('#summernote_edit').summernote('code', ele.getAttribute("data-body"));
-            $('#summernote1').summernote('code', ele.getAttribute("data-part_1"));
-            $('#summernote2').summernote('code', ele.getAttribute("data-part_2"));
-            $('#summernote3').summernote('code', ele.getAttribute("data-part_3"));
-            $('#summernote4').summernote('code', ele.getAttribute("data-part_4"));
+            $("#name").val(ele.getAttribute("data-name"));
+            $("#price").val(ele.getAttribute("data-price"));
+            $("#duration").val(ele.getAttribute("data-duration"));
+            $("#daily_rebate").val(ele.getAttribute("data-daily_rebate"));
+            $("#recoverable_funds").val(ele.getAttribute("data-recoverable_funds"));
+            $("#principal_refund").val(ele.getAttribute("data-principal_refund"));
+            $("#interest_settlement_time").val(ele.getAttribute("data-interest_settlement_time"));
+
 
 
             $("#status").val(ele.getAttribute("data-status"));

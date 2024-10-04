@@ -42,7 +42,7 @@ class BlogController extends Controller
         if ($request->hasFile("image")) {
             $file = $request->file('image');
             $image = $slug . "." . $file->getClientOriginalExtension();
-            $file->move("uploads/blogs", $image);
+            $file->move("public/uploads/blogs", $image);
             $book->image = $image;
         }
         $book->status = $request->input('status');
@@ -81,7 +81,7 @@ class BlogController extends Controller
         if ($request->hasFile("image")) {
             $file = $request->file('image');
             $image = $slug . "." . $file->getClientOriginalExtension();
-            $file->move("uploads/blogs", $image);
+            $file->move("public/uploads/blogs", $image);
             $book->image = $image;
         }
         $book->status = $request->input('status');

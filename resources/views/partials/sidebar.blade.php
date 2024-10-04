@@ -32,7 +32,12 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Blogs</span></a>
     </li>
-
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item @if (Route::is('admin.plans.index')) active @endif">
+        <a class="nav-link" href="{{ route('admin.plans.index') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Plans</span></a>
+    </li>
 
 
 

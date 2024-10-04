@@ -50,7 +50,7 @@ class PlanController extends Controller
         if ($request->hasFile("image")) {
             $file = $request->file('image');
             $image = $slug . "." . $file->getClientOriginalExtension();
-            $file->move("uploads/plans", $image);
+            $file->move("public/uploads/plans", $image);
             $plan->image = $image;
         }
         $plan->status = $request->input('status');
@@ -78,22 +78,29 @@ class PlanController extends Controller
         }
 
         // If validation passes, save the book data
-        $book =  Plan::find($id);
+        $plan =  Plan::find($id);
+        $plan->name = $request->input('name');
+        $plan->price = $request->input('price');
+        $plan->duration = $request->input('duration');
+        $plan->daily_rebate = $request->input('daily_rebate');
+        $plan->recoverable_funds = $request->input('recoverable_funds');
+        $plan->principal_refund = $request->input('principal_refund');
+        $plan->interest_settlement_time = $request->input('interest_settlement_time');
+        $plan->status = $request->input('status');
 
-        $book->name = $request->input('name');
         $slug = str_replace(" ", "-", trim(strtolower($request->name)));
-        $book->subtitle = $request->input('subtitle');
-        $book->body = $request->input('body');
+        $plan->body = $request->input('body');
         if ($request->hasFile("image")) {
             $file = $request->file('image');
             $image = $slug . "." . $file->getClientOriginalExtension();
-            $file->move("uploads/plans", $image);
-            $book->image = $image;
+            $file->move("public/uploads/plans", $image);
+            $plan->image = $image;
         }
-        $book->status = $request->input('status');
+        $plan->status = $request->input('status');
+
         // Add more fields as needed
         // $book->slug = $slug . "-" . $book->id;
-        $book->save();
+        $plan->save();
 
         return response()->json(['message' => 'Plan saved successfully', 'status' => 200], 200);
     }
