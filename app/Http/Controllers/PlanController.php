@@ -15,7 +15,7 @@ class PlanController extends Controller
             $keyword = trim(request('search'));
             return $query->where("name", "LIKE", "%$keyword%");
         })->paginate(10);
-        return view('admin.plans.index', compact("plans"));
+        return view('pages.admin.plans.index', compact("plans"));
     }
 
     public function store(Request $request)
@@ -89,7 +89,7 @@ class PlanController extends Controller
         $plan->status = $request->input('status');
 
         $slug = str_replace(" ", "-", trim(strtolower($request->name)));
-        $plan->body = $request->input('body');
+
         if ($request->hasFile("image")) {
             $file = $request->file('image');
             $image = $slug . "." . $file->getClientOriginalExtension();

@@ -15,7 +15,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item @if (Route::is('admin.dashboard')) active @endif ">
         <a class="nav-link" href="{{ route('admin.dashboard') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-bar-chart"></i>
             <span>Dashboard</span></a>
     </li>
     <!-- Divider -->
@@ -23,21 +23,29 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item  @if (Route::is('admin.users')) active @endif">
         <a class="nav-link" href="{{ route('admin.users') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-users"></i>
             <span>Users</span></a>
     </li>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item @if (Route::is('admin.blogs.index')) active @endif">
         <a class="nav-link" href="{{ route('admin.blogs.index') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-file"></i>
             <span>Blogs</span></a>
     </li>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item @if (Route::is('admin.plans.index')) active @endif">
         <a class="nav-link" href="{{ route('admin.plans.index') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-money"></i>
             <span>Plans</span></a>
     </li>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item @if (Route::is('admin.transactions.index')) active @endif">
+        <a class="nav-link" href="{{ route('admin.transactions.index') }}">
+            <i class="fas fa-fw fa-bolt"></i>
+            <span>Transactions</span></a>
+    </li>
+
 
 
 

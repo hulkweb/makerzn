@@ -42,7 +42,7 @@ class TransactionController extends Controller
     {
         $validator = FacadesValidator::make($request->all(), [
             'deposit_id' => "required|exists:transactions,id",
-            'file' => 'required'
+            'image' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -51,10 +51,10 @@ class TransactionController extends Controller
         }
 
         $transaction = Transaction::find($request->deposit_id);
-        if ($request->hasFile("file")) {
-            $file = $request->file('file');
+        if ($request->hasFile("image")) {
+            $file = $request->file('image');
             $name = uniqid() . "." . $file->getClientOriginalExtension();
-            $file->move("public/uploads", $name);
+            $file->move("public/uploads/proofs", $name);
             $transaction->proof = $name;
         }
         $transaction->save();

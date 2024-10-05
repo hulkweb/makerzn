@@ -57,20 +57,21 @@
                                     <td>{{ date('Y/m/d', strtotime($item->created_at)) }}</td>
 
                                     <td>
-                                        {{-- <button class="btn btn-primary mx-2"
-                                            data-url="{{ route('makes.update', $item->id) }}"
-                                            data-name="{{ $item->name }}" data-status="{{ $item->status }}"
-                                            onclick="openEditModal(this)"> <i class="fa fa-pencil"></i>
+                                        <button class="btn btn-primary mx-2"
+                                            data-url="{{ route('admin.users.update', $item->id) }}"
+                                            data-name="{{ $item->name }}" data-email="{{ $item->email }}"
+                                            data-status="{{ $item->status }}" onclick="openEditModal(this)"> <i
+                                                class="fa fa-pencil"></i>
 
 
-                                            <form action="{{ route('makes.destroy', $item) }}" method="POST">
+                                            <form action="{{ route('admin.users.destroy', $item) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger" onclick="deleteFlyer(this)" type="button">
                                                     <i class="fa fa-trash ms-2"></i></button>
 
 
-                                            </form> --}}
+                                            </form>
 
                                     </td>
                                 </tr>
@@ -97,10 +98,10 @@
             <!-- Form -->
             <form id="edit" method="POST">
                 @csrf
-                @method('PUT')
+
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Make</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -112,7 +113,17 @@
                             <input type="text" class="form-control border" id="name" name="name"
                                 placeholder="Enter name">
                         </div>
+                        <div class="form-group">
+                            <label for="title">Email</label>
+                            <input type="text" class="form-control border" id="email" name="email"
+                                placeholder="Enter Email">
+                        </div>
 
+                        <div class="form-group">
+                            <label for="title">password (Enter if want to change password)</label>
+                            <input type="text" class="form-control border" id="password" name="password"
+                                placeholder="Enter password">
+                        </div>
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select class="form-control" id="status" name="status">
@@ -391,6 +402,7 @@
 
             $("#edit").attr("action", ele.getAttribute("data-url"));
             $("#name").val(ele.getAttribute("data-name"));
+            $("#email").val(ele.getAttribute("data-email"));
 
             $("#status").val(ele.getAttribute("data-status"));
             $("#editModal").modal("show");

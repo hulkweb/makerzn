@@ -17,17 +17,18 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Quotes</span> <span>
+        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Transactions</span> <span>
             </span>
             {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button> --}}
         </h1>
 
         <div class="row my-2">
-            <div class="col-md-6">
-                <form class="d-none  d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group bg-white">
+            <div class="col-md-3">
+                <form class="d-none  d-sm-inline-block form-inline mr-auto ml-md-3 mt-4 my-md-0 mw-100 navbar-search">
+                    <div class="input-group bg-white" style="margin-top:25px">
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                            aria-label="Search" name="search" aria-describedby="basic-addon2">
+                            @if (request()->has('search')) value="{{ request('search') }}" @endif aria-label="Search"
+                            name="search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button">
                                 <i class="fas fa-search fa-sm"></i>
@@ -36,8 +37,43 @@
                     </div>
                 </form>
             </div>
+            <div class="col-md-1 d-flex">
+
+                <div class="px-3 pt-3  mt-2">
+                    <a href="{{ route('admin.transactions.index') }}" class="btn btn-primary">
+                        <i class="fas fa-rotate-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="">Status</label>
+                <select name="" class="form-control" onchange="TransactionStatus(this.value)">
+                    <option value="0">--Select--</option>
+
+                    <option value="{{ App\Enums\TransactionStatus::$PENDING }}"
+                        @if (request()->has('status') && request('status') == App\Enums\TransactionStatus::$PENDING) selected @endif>{{ App\Enums\TransactionStatus::$PENDING }}
+                    </option>
+                    <option value="{{ App\Enums\TransactionStatus::$FAILED }}"
+                        @if (request()->has('status') && request('status') == App\Enums\TransactionStatus::$FAILED) selected @endif>{{ App\Enums\TransactionStatus::$FAILED }}
+                    </option>
+                    <option value="{{ App\Enums\TransactionStatus::$SUCCESS }}"
+                        @if (request()->has('status') && request('status') == App\Enums\TransactionStatus::$SUCCESS) selected @endif>{{ App\Enums\TransactionStatus::$SUCCESS }}
+                    </option>
+
+                </select>
+            </div>
+            <div class="col-md-4 ">
+                <label for="">Transaction Type</label>
+                <select name="" class="form-control" onchange="TransactionType(this.value)">
+                    <option value="0">--Select--</option>
+
+                    <option value="Deposit" @if (request()->has('type') && request('type') == 'Deposit') selected @endif>Deposit
+                    </option>
+                    <option value="Withdrawal" @if (request()->has('type') && request('type') == 'Withdrawal') selected @endif>Withdrawal</option>
 
 
+                </select>
+            </div>
         </div>
 
 
@@ -45,7 +81,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Services
+                    Transactions
                 </h6>
             </div>
             <div class="card-body">
@@ -53,13 +89,14 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>#REFID</th>
+                                <th>#TRID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Pickup Address</th>
-                                <th>Dropoff Address</th>
-                                <th>Make/MOdel/Year</th>
+                                <th>Amount</th>
+                                <th>USD Value</th>
+
+                                <th>Type</th>
+                                <th>Status</th>
 
 
                                 <th>Created Date</th>
@@ -71,41 +108,44 @@
 
                         <tbody>
 
-                            @forelse ($quotes as $i => $item)
+                            @forelse ($transactions as $i => $item)
                                 <tr>
-                                    <td>{{ $item->ref_id }}</td>
+                                    <td>{{ $item->id }}</td>
 
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->pickup_address }}</td>
-                                    <td>{{ $item->dropoff_address }}</td>
+                                    <td>{{ $item->user->name }}</td>
+                                    <td>{{ $item->user->email }}</td>
 
-                                    <th>{{ $item->make->name ?? 'N/A' }}-{{ $item->model->name ?? 'N/A' }}-{{ $item->year ?? 'N/A' }}
-                                    </th>
+                                    <td>{{ $item->amount }} {{ $item->currency->symbol }}</td>
+                                    <td>${{ $item->usd_value }}</td>
+                                    <td>{{ $item->type }}</td>
+                                    <td>{{ $item->status }}</td>
+
+
                                     <td>{{ date('Y/m/d', strtotime($item->created_at)) }}</td>
 
                                     <td> <button class="btn btn-primary mx-2"
-                                            data-url="{{ route('quotes.update', $item->id) }}"
-                                            data-amount="{{ $item->amount }}" data-transit="{{ $item->transit }}"
+                                            data-url="{{ route('admin.transactions.update', $item->id) }}"
+                                            data-amount="{{ $item->amount }}" data-type="{{ $item->type }}"
+                                            data-type="{{ $item->type }}"
+                                            data-proof="{{ asset("uploads/proofs/$item->proof") }}"
                                             data-status="{{ $item->status }}" onclick="openEditModal(this)"> <i
-                                                class="fa fa-pencil"></i>
+                                                class="fa fa-eye"></i>
 
 
-                                            <form action="{{ route('quotes.destroy', $item) }}" method="POST">
+                                            {{-- <form action="{{ route('trnsaction.destroy', $item) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger" onclick="deleteFlyer(this)" type="button">
-                                                    <i class="fa fa-trash ms-2"></i></button>
+                                                    <i class="fa fa-view ms-2"></i></button>
 
 
-                                            </form>
+                                            </form> --}}
 
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5" align="center">No records found</td>
+                                    <td colspan="10" align="center">No records found</td>
                                 </tr>
                             @endforelse
 
@@ -116,103 +156,9 @@
             </div>
         </div>
     </div>
-    <!-- Create Blog Modal -->
-    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <!-- Form -->
-            <form id="create" action="{{ route('quotes.store') }}" method="POST">
-                @csrf
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Create Blog</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="form-group">
-                            <label for="inputTitle">Title</label>
-                            <input type="text" class="form-control" name="title" id="inputTitle"
-                                placeholder="Enter title" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputTitle">SubTitle</label>
-                            <textarea name="subtitle" class="form-control" cols="30" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAuthor">Image</label>
-                            <input type="file" class="form-control" name="image" i placeholder="" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputDescription">Body</label>
-                            <textarea class="form-control" id="summernote" name="body" rows="3" required placeholder="Enter description"></textarea>
-                        </div>
 
 
-                    </div>
-                    <div class="modal-footer">
 
-                        <button type="submit" class="btn btn-primary" id="saveChangesBtn">Save </button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Update Blog Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">\
-            <!-- Form -->
-            <form id="edit" method="POST">
-                @csrf
-                @method('PUT')
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Change Quote Status</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-
-                    <div class="modal-body">
-
-                        <div class="form-group">
-                            <label for="inputTitle">Status</label>
-                            <input type="text" class="form-control" name="status" id="status"
-                                placeholder="Enter status">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputTitle">Amount($)</label>
-                            <input type="text" class="form-control" name="amount" id="amount"
-                                placeholder="Enter amount">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputTitle">Transit</label>
-                            <input type="text" class="form-control" name="transit" id="transit"
-                                placeholder="Enter transit">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputTitle">Mail</label>
-                            <input type="checkbox" class="form-control" name="mail" id="mail"
-                                placeholder="Enter amount">
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-
-                        <button type="submit" class="btn btn-primary" id="saveChangesBtn">Update </button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- View Booking Modal -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -221,10 +167,10 @@
             <!-- Form -->
             <form id="edit" method="POST">
                 @csrf
-                @method('PUT')
+
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Update Transaction</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -235,13 +181,18 @@
 
                         <div class="form-group">
                             <label for="inputTitle">Payment Status</label>
-                            <select name="status" class="form-control" id="">
-                                <option value="COMPLETED">COMPLETED</option>
-                                <option value="PENDING">PENDING</option>
+                            <select name="status" class="form-control" id="status">
+                                <option value="{{ App\Enums\TransactionStatus::$SUCCESS }}">SUCCESS</option>
+                                <option value="{{ App\Enums\TransactionStatus::$PENDING }}">PENDING</option>
+                                <option value="{{ App\Enums\TransactionStatus::$FAILED }}">
+                                    {{ App\Enums\TransactionStatus::$FAILED }}</option>
+
 
                             </select>
                         </div>
-
+                        <div class="form-group px-2" id="image_container" style="display: none">
+                            <img src="" id="image" alt="" style="height: 200px">
+                        </div>
                     </div>
 
                     <div class="modal-footer">
@@ -274,133 +225,16 @@
             // $.validator.addMethod("integer", function(value, element) {
             //     return value != 0;
             // }, "Please select a table of content.");
-            $('#create').validate({
-                rules: {
-                    title: {
-                        required: true,
-                        maxlength: 191,
-                        minlength: 3,
 
-                    },
-
-                    body: {
-                        required: true,
-
-
-                    },
-
-
-                },
-                errorElement: "span",
-                errorPlacement: function(error, element) {
-                    error.addClass("error_text ");
-                    element.closest(".form-group").append(error);
-                    element.addClass("border-danger")
-                },
-                highlight: function(element, errorClass, validClass) {
-                    $('.please-wait').click();
-                    $(element).addClass("text-danger ");
-                },
-                unhighlight: function(element, errorClass, validClass) {
-                    $(element).removeClass("text-danger ");
-                },
-                submitHandler: function(form, event) {
-                    event.preventDefault();
-                    let formData = new FormData(form);
-
-                    $.ajax({
-                        type: 'post',
-                        url: form.action,
-                        data: formData,
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-
-                        success: function(response) {
-                            if (response.status == 200) {
-
-                                Swal.fire({
-                                    title: 'Successs',
-                                    text: response.message,
-                                    icon: 'success',
-
-                                }).then((result) => {
-
-
-                                    var url = $('#redirect_url').val();
-                                    if (url !== undefined || url != null) {
-                                        window.location = url;
-                                    } else {
-                                        location.reload(true);
-                                    }
-                                })
-
-                                return false;
-                            }
-
-                            if (response.status == 201) {
-                                Swal.fire(
-                                    'Error',
-                                    response.message,
-                                    'error'
-                                );
-
-                                return false;
-                            }
-                        },
-                        error: function(data) {
-                            if (data.status == 422) {
-                                var form = $("#signin_form");
-                                let li_htm = '';
-                                $.each(data.responseJSON.errors, function(k, v) {
-                                    const $input = form.find(
-                                        `input[name=${k}],select[name=${k}],textarea[name=${k}]`
-                                    );
-                                    if ($input.next('small').length) {
-                                        $input.next('small').html(v);
-                                        if (k == 'quotes' || k == 'membership') {
-                                            $('#myselect').next('small').html(v);
-                                        }
-                                    } else {
-                                        $input.after(
-                                            `<small class='text-danger'>${v}</small>`
-                                        );
-                                        if (k == 'quotes' || k == 'membership') {
-                                            $('#myselect').after(
-                                                `<small class='text-danger'>${v[0]}</small>`
-                                            );
-                                        }
-                                    }
-                                    li_htm += `<li>${v}</li>`;
-                                });
-
-                                return false;
-                            } else {
-                                Swal.fire(
-                                    'Error',
-                                    data.statusText,
-                                    'error'
-                                );
-                            }
-                            return false;
-
-                        }
-                    });
-                }
-            })
             $('#edit').validate({
                 rules: {
-                    title: {
+                    status: {
                         required: true,
                         maxlength: 191,
-                        minlength: 3,
-
-                    },
-                    body: {
-                        required: true,
 
 
                     },
+
 
 
                 },
@@ -433,7 +267,7 @@
                             if (response.status == 200) {
 
                                 Swal.fire({
-                                    title: 'Successs',
+                                    title: 'Success',
                                     text: response.message,
                                     icon: 'success',
 
@@ -471,14 +305,16 @@
                                     );
                                     if ($input.next('small').length) {
                                         $input.next('small').html(v);
-                                        if (k == 'quotes' || k == 'membership') {
+                                        if (k == 'trnsaction' || k ==
+                                            'membership') {
                                             $('#myselect').next('small').html(v);
                                         }
                                     } else {
                                         $input.after(
                                             `<small class='text-danger'>${v}</small>`
                                         );
-                                        if (k == 'quotes' || k == 'membership') {
+                                        if (k == 'trnsaction' || k ==
+                                            'membership') {
                                             $('#myselect').after(
                                                 `<small class='text-danger'>${v[0]}</small>`
                                             );
@@ -511,6 +347,11 @@
 
             $("#amount").val(ele.getAttribute("data-amount"));
             $("#transit").val(ele.getAttribute("data-transit"));
+            if (ele.getAttribute("data-type") == "Deposit") {
+                $("#image_container").show();
+                $("#image").attr("src", ele.getAttribute("data-proof"));
+
+            }
 
             $("#status").val(ele.getAttribute("data-status"));
             $("#editModal").modal("show");
@@ -557,5 +398,34 @@
         $(document).ready(function() {
             $('#summernote_edit').summernote();
         });
+
+
+        function TransactionType(val) {
+            var selectedValue = val;
+            var currentUrl = new URL(window.location.href);
+
+            // Add or update the 'run_id' parameter
+            currentUrl.searchParams.set('type', selectedValue);
+            if (selectedValue == 0) {
+                currentUrl.searchParams.delete("type");
+
+            }
+            // Reload the page with the new URL
+            window.location.href = currentUrl.toString();
+        }
+
+        function TransactionStatus(val) {
+            var selectedValue = val;
+            var currentUrl = new URL(window.location.href);
+
+            // Add or update the 'run_id' parameter
+            currentUrl.searchParams.set('status', selectedValue);
+            if (selectedValue == 0) {
+                currentUrl.searchParams.delete("status");
+
+            }
+            // Reload the page with the new URL
+            window.location.href = currentUrl.toString();
+        }
     </script>
 @endpush

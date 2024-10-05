@@ -13,4 +13,8 @@ class Transaction extends Model
     {
         return $this->belongsTo(Currency::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

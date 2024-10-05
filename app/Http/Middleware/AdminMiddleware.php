@@ -15,6 +15,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if ($request->user() && $request->user()->admin != 1) {
+
+            return redirect(route("signin"))->with("error", "Unauthorized access");
+        }
         return $next($request);
     }
 }

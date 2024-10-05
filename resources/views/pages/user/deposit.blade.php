@@ -86,7 +86,7 @@
                                         <button class="table_button  b_pen1 "
                                             data-gateway_name="{{ $item->currency->symbol }} [Network: Ethereum]"
                                             data-currency_id="{{ $item->currency->symbol }}"
-                                            data-amount="${{ number_format($item->user_value, 2, '.', ',') }}"
+                                            data-amount="${{ number_format($item->usd_value, 2, '.', ',') }}"
                                             data-id="{{ $item->id }}"
                                             data-wallet="0x8943b243CE3F98952a0349Ff39a8b565b50d2eeE"
                                             onclick="openVoucherModal(this)" data-id="{{ $item->id }}" data-status="0"
@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="col-12 mt-0">
                                     <label class="label_cod">Wallet Address:</label>
-                                    <textarea type="text" class="form-control copyd icon__copy form-bg-2 w-100" readonly id="wlt"
+                                    <textarea type="text" id="wallet" class="form-control copyd icon__copy form-bg-2 w-100" readonly id="wlt"
                                         style="padding-right: 40px; background-color: transparent;"></textarea>
                                 </div>
                                 <div class="col-12 mt-0 relative d-flex align-items-center">
@@ -374,6 +374,8 @@
         function openVoucherModal(ele) {
             $("#voucher_modal").modal("show");
             $("#dpsam").val(ele.getAttribute("data-amount"));
+            $("#wallet").val(ele.getAttribute("data-wallet"));
+
             $("#voucher_deposit_id").val(ele.getAttribute("data-id"));
 
         }

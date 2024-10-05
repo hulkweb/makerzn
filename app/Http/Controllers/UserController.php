@@ -66,6 +66,8 @@ class UserController extends Controller
             $user->username =  $request->username;
             $user->name =  $request->username;
             $user->email =  $request->email;
+            $user->status =  "Active";
+
             $user->password = Hash::make($request->password);
             if ($request->filled("refer_code")) {
                 $ref_user = User::where("refer_code", $request->refer_code)->first();
@@ -207,6 +209,22 @@ class UserController extends Controller
     {
         return view("pages.user.profile");
     }
+
+    public function profile_post(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+        $user->username = $request->username;
+        $user->email = $request->email;
+        if ($request->hasFile("image")) {
+            $file = $request->file('image');
+            $name = uniqid() . "." . $file->getClientOriginalExtension();
+            $file->move("public/uploads/profiles", $name);
+            $user->profile = $name;
+        }
+        $user->save();
+        return back()->with('success', 'Updated successfully');
+    }
+
     public function orders()
     {
         return view("pages.user.orders");

@@ -289,7 +289,7 @@
         <div class="contents-a">
             <ul>
                 <a href="{{ route('dashboard') }}">
-                    <li id="dashboard">
+                    <li class="@if (Route::is('dashboard')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -302,7 +302,7 @@
                     </li>
                 </a>
                 <a href="{{ route('deposit') }}">
-                    <li id="deposit">
+                    <li id="deposit " class="@if (Route::is('deposit')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -314,7 +314,7 @@
                     </li>
                 </a>
                 <a href="{{ route('withdraw') }}">
-                    <li id="withdraw">
+                    <li id="withdraw" class="@if (Route::is('withdraw')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -326,7 +326,7 @@
                     </li>
                 </a>
                 <a href="{{ route('orders') }}">
-                    <li id="orders">
+                    <li id="orders" class="@if (Route::is('orders')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -341,7 +341,7 @@
                     </li>
                 </a>
                 <a href="{{ route('bills') }}">
-                    <li id="bills">
+                    <li id="bills" class="@if (Route::is('bills')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -356,7 +356,7 @@
                     </li>
                 </a>
                 <a href="{{ route('referrals') }}">
-                    <li id="referrals">
+                    <li id="referrals" class="@if (Route::is('referrals')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -370,7 +370,7 @@
                     </li>
                 </a>
                 <a href="{{ route('settings') }}">
-                    <li id="settings">
+                    <li id="settings" class="@if (Route::is('settings')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -383,7 +383,7 @@
                     </li>
                 </a>
                 <a href="{{ route('settings') }}">
-                    <li id="settings_sec">
+                    <li id="settings_sec" class="@if (Route::is('settings')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">
@@ -394,7 +394,7 @@
                     </li>
                 </a>
                 <a href="{{ route('profile') }}">
-                    <li id="profile">
+                    <li id="profile" class="@if (Route::is('profile')) act @endif">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                             class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2">

@@ -8,7 +8,7 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\TransactionController;
-
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,8 +42,8 @@ Route::get('terms-and-conditions', [WebsiteController::class, 'terms'])->name('t
 Route::get('privacy-policy', [WebsiteController::class, 'privacy'])->name('privacy');
 Route::get('faq', [WebsiteController::class, 'faq'])->name('faq');
 
-Route::get("login", [UserController::class, 'login'])->name('login');
-Route::get("login", [UserController::class, 'login'])->name('signin');
+Route::get("/login", [UserController::class, 'login'])->name('login');
+Route::get("/login", [UserController::class, 'login'])->name('signin');
 
 Route::get("signup", [UserController::class, 'signup'])->name('signup');
 
@@ -57,9 +57,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("bills", [UserController::class, 'bills'])->name('bills');
     Route::get("withdraw", [UserController::class, 'withdraw'])->name('withdraw');
     Route::get("referrals", [UserController::class, 'referrals'])->name('referrals');
+
+
     Route::get("profile", [UserController::class, 'profile'])->name('profile');
+    Route::post('/profile', [UserController::class, 'profile_post'])->name('profile.post');
+
     Route::get("settings", [UserController::class, 'settings'])->name('settings');
     Route::get("orders", [UserController::class, 'orders'])->name('orders');
+
+
 
     Route::post("deposit_post", [TransactionController::class, 'deposit_post'])->name("deposit_post");
     Route::post("deposit_post_verify", [TransactionController::class, 'deposit_post_verify'])->name("deposit_post_verify");
@@ -76,12 +82,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get("login", [DashboardController::class, 'signin'])->name('login');
     Route::post("signin", [DashboardController::class, 'signin_post'])->name('signin.post');
 
-    Route::middleware("auth")->group(function () {
+    Route::middleware(["auth", AdminMiddleware::class])->group(function () {
         Route::get("dashboard", [DashboardController::class, 'dashboard'])->name('dashboard');
         Route::get("logout", [DashboardController::class, 'logout'])->name('logout');
 
         Route::get("users", [DashboardController::class, 'users'])->name('users');
-        Route::get("transactions", [DashboardController::class, 'transactions'])->name('transactions');
+        Route::post("users/update/{id}", [DashboardController::class, 'users_update'])->name('users.update');
+        Route::delete("users/delete/{id}", [DashboardController::class, 'users_delete'])->name('users.destroy');
+
+        Route::get("transactions", [DashboardController::class, 'transactions'])->name('transactions.index');
+        Route::post("transactions/update/{id}", [DashboardController::class, 'transactionsUpdate'])->name('transactions.update');
 
         Route::resource("blogs", BlogController::class);
         Route::resource("plans", PlanController::class);

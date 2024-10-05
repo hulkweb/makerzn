@@ -11,10 +11,10 @@
         <div class="content-block">
             <h4 class="main_color mb-3">Profile Details</h4>
             <div class="block-d">
-                <form action="https://mashash.com/profile/update" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="hSKmz6UzIqOFmsAs6Rceh3fIv5kFPn2CzEisGaPV" />
-                    <input type="file" name="image" id="imageUpload" class="upload" accept=".png, .jpg, .jpeg"
-                        hidden="" />
+                <form action="{{ route('profile.post') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="file" name="image" id="imageUpload" class="upload" onchange="previewImage(event)"
+                        accept=".png, .jpg, .jpeg" hidden="" />
                     <div class="row" style="row-gap: 20px">
                         <div class="col-12">
                             <label for="imageUpload" style="width: auto">
@@ -32,23 +32,23 @@
                                                 fill="#ABAAB5" />
                                         </svg>
                                     </div>
-                                    <img src="https://mashash.com/asset/img/user/avatar/logo.png" class="in_box"
-                                        id="preview" />
+                                    <img src="{{ auth()->user()->profile ? asset('uploads/profiles/' . auth()->user()->profile) : 'https://mashash.com/asset/img/user/avatar/logo.png' }} "
+                                        class="in_box" id="preview" />
                                 </div>
                             </label>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="username" class="form-c w-100" value="charlielogan520@gmail.com"
-                                    required />
+                                <input type="text" name="username" class="form-c w-100"
+                                    value="{{ auth()->user()->username }}" required />
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" readonly value="charlielogan520@gmail.com" class="form-c w-100"
-                                    required />
+                                <input type="text" name="email" readonly value="{{ auth()->user()->email }}"
+                                    class="form-c w-100" required />
                             </div>
                         </div>
                     </div>
@@ -66,3 +66,23 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const preview = document.getElementById('preview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Make the image visible
+                };
+
+                reader.readAsDataURL(file); // Convert the file to a Data URL
+            }
+        }
+    </script>
+@endpush

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @push('css')
     <link href="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <style>
@@ -17,7 +17,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Locations</span> <span>
+        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Plans</span> <span>
             </span>
             <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
         </h1>
@@ -45,7 +45,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Locations
+                    Plans
                 </h6>
             </div>
             <div class="card-body">
@@ -66,12 +66,12 @@
 
                         <tbody>
 
-                            @forelse ($locations as $i => $item)
+                            @forelse ($plans as $i => $item)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
 
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>${{ $item->price }}</td>
 
 
                                     <td>{{ date('Y/m/d', strtotime($item->created_at)) }}</td>
@@ -84,6 +84,7 @@
                                             data-recoverable_funds="{{ $item->recoverable_funds }}"
                                             data-principal_refund="{{ $item->principal_refund }}"
                                             data-status="{{ $item->status }}"
+                                            data-image="{{ asset("uploads/plans/$item->image") }}"
                                             data-interest_settlement_time="{{ $item->interest_settlement_time }}"
                                             onclick="openEditModal(this)"> <i class="fa fa-pencil"></i>
 
@@ -117,7 +118,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <!-- Form -->
-            <form id="create" action="{{ route('admin.plans.store') }}" method="POST">
+            <form id="create" action="{{ route('admin.plans.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
@@ -159,7 +160,7 @@
                                 id="inputTitle" placeholder="Enter principal refund" required>
                         </div>
                         <div class="form-group">
-                            <label for="inputTitle">interest settlement time(in days)</label>
+                            <label for="inputTitle">interest settlement time(in hours)</label>
                             <input type="integer" min="1" class="form-control" name="interest_settlement_time"
                                 id="inputTitle" placeholder="Enter time" required>
                         </div>
@@ -195,7 +196,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <!-- Form -->
-            <form id="edit" method="POST">
+            <form id="edit" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="modal-content">
@@ -240,16 +241,25 @@
                                 id="principal_refund" placeholder="Enter principal refund" required>
                         </div>
                         <div class="form-group">
-                            <label for="inputTitle">interest settlement time(in days)</label>
+                            <label for="inputTitle">interest settlement time(in hours)</label>
                             <input type="integer" min="1" class="form-control" name="interest_settlement_time"
                                 id="interest_settlement_time" placeholder="Enter time" required>
                         </div>
 
-
-                        <div class="form-group">
-                            <label for="inputAuthor">Image</label>
-                            <input type="file" class="form-control" name="image" placeholder="" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputAuthor">Image</label>
+                                    <input type="file" class="form-control" name="image" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group px-2">
+                                    <img src="" id="image" alt="" style="height: 200px">
+                                </div>
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label for="inputAuthor">Status</label>
                             <select name="status" class="form-control" id="status">
@@ -526,6 +536,7 @@
             $("#recoverable_funds").val(ele.getAttribute("data-recoverable_funds"));
             $("#principal_refund").val(ele.getAttribute("data-principal_refund"));
             $("#interest_settlement_time").val(ele.getAttribute("data-interest_settlement_time"));
+            $("#image").attr("src", ele.getAttribute("data-image"));
 
 
 

@@ -2,6 +2,15 @@
 @push('css')
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <style>
+        .border-mg {
+            border-left-color: #761FE2 !important;
+        }
+
+        .text-success {
+            color: #761FE2 !important;
+        }
+    </style>
 @endpush
 @section('content')
     <!-- Begin Page Content -->
@@ -19,7 +28,7 @@
 
             <!-- Earnings (Monthly) Card Example -->
             {{-- <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card border-mg border-left-primary shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -37,13 +46,13 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
+                <div class="card border-mg border-left-success shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Orders </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ 0 }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $orders }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -55,7 +64,7 @@
 
             {{-- <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-info shadow h-100 py-2">
+                <div class="card border-mg border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -83,11 +92,11 @@
 
             <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card border-mg border-left-warning shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Blogs</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $blogs }}</div>
                             </div>
@@ -99,7 +108,7 @@
                 </div>
             </div>
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
+                <div class="card border-mg border-left-success shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -108,7 +117,23 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $users }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                <i class="fas fa-users fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-mg border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Plans</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $plans }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-money fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
