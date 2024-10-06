@@ -32,7 +32,7 @@
                                                 fill="#ABAAB5" />
                                         </svg>
                                     </div>
-                                    <img src="{{ auth()->user()->profile ? asset('uploads/profiles/' . auth()->user()->profile) : 'https://mashash.com/asset/img/user/avatar/logo.png' }} "
+                                    <img src="{{ auth()->user()->profile ? asset('uploads/profiles/' . auth()->user()->profile) : '{{env("APP_URL") ?>' }}asset/img/user/avatar/logo.png' }} "
                                         class="in_box" id="preview" />
                                 </div>
                             </label>

@@ -227,7 +227,9 @@ class UserController extends Controller
 
     public function orders()
     {
-        return view("pages.user.orders");
+
+        $orders = UserPlanDetail::where("user_id", Auth::user()->id)->orderBy("id", "desc")->paginate(10);
+        return view("pages.user.orders", compact('orders'));
     }
     public function bills()
     {

@@ -25,12 +25,12 @@
         "></div>
         <div class="auto-container">
             <h2>
-                Contact MasHash | Cryptocurrency Cloud Mining Platform
+                Contact MakerZN | Cryptocurrency Cloud Mining Platform
             </h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    Contact MasHash | Cryptocurrency Cloud Mining
+                    Contact MakerZN | Cryptocurrency Cloud Mining
                     Platform
                 </li>
             </ul>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="column col-lg-6 col-md-12 col-sm-12">
                     <div class="default-form">
-                        <form method="post" action="https://mashash.com/contact">
+                        <form method="post" action="{{ env('APP_URL') }}contact">
                             <input type="hidden" name="_token" value="tjCHecAr4lofShpXqC1sASXZheYnWYC2bBjrtmCe" />
                             <div class="row clearfix">
                                 <div class="form-group col-lg-6 col-md-6 col-sm-6">
@@ -117,7 +117,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MasHash.</span>
+                                <span>MakerZN.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

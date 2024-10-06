@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
+Route::get('/home', [WebsiteController::class, 'index']);
 
 Route::get('/app', [WebsiteController::class, 'app'])->name('app');
 
@@ -31,6 +32,7 @@ Route::get('blogs', [WebsiteController::class, 'blogs'])->name('blogs');
 
 Route::get('plans', [WebsiteController::class, 'plans'])->name('plans');
 Route::get('plan/{slug}', [WebsiteController::class, 'plan'])->name('plan');
+Route::post('plan/buy', [WebsiteController::class, 'planBuy'])->name('plan.buy');
 
 Route::get('affiliates', [WebsiteController::class, 'affiliates'])->name('affiliates');
 
@@ -102,3 +104,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/profile', [DashboardController::class, 'profile_post'])->name('profile.post');
     });
 });
+
+
+Route::get('cron', [WebsiteController::class, 'cronJob']);

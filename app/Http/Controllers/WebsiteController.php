@@ -11,8 +11,11 @@ use App\Models\ModificationType;
 use App\Models\Plan;
 use App\Models\Quote;
 use App\Models\Service;
+use App\Models\User;
+use App\Models\UserPlanDetail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class WebsiteController extends Controller
@@ -20,10 +23,10 @@ class WebsiteController extends Controller
     public function index()
     {
 
-        // $plans = Plan::orderBy("id", 'desc')->get();
-        // $blogs = Blog::orderBy("views", 'desc')->paginate(3);
-        // return view('pages.website.index', compact('plans', 'blogs'));
-        return view('pages.website.index',);
+        $plans = Plan::orderBy("price", 'asc')->get();
+        $blogs = Blog::orderBy("views", 'desc')->paginate(3);
+        return view('pages.website.index', compact('plans', 'blogs'));
+        // return view('pages.website.index',);
     }
     public function app()
     {
@@ -38,17 +41,46 @@ class WebsiteController extends Controller
         // $blogs = Blog::orderBy("views", 'desc')->paginate(20);
         // $title = "Blogs";
         // $recent_posts = Blog::orderBy("id", "desc")->take(3)->get();
+
         // return view("blogs", compact('title', 'blogs', 'recent_posts'));
-        return view("pages.website.plans",);
+        $plans = Plan::orderBy("price", 'asc')->get();
+
+        return view("pages.website.plans", compact('plans'));
     }
     public function plan($plan_id)
     {
 
-        $quote = Plan::find($plan_id);
-
-        return view("pages.website.plan", compact('quote',));
+        $plan = Plan::find($plan_id);
+        if (!$plan) {
+            return redirect(route("home"));
+        }
+        return view("pages.website.plan", compact('plan',));
     }
 
+    public function planBuy(Request $request)
+    {
+
+        if (Auth::guest()) {
+            return redirect(route("signin"))->with("error", "Please signin to buy");
+        }
+
+        $user = User::find(Auth::user()->id);
+        $plan = Plan::find($request->plan_id);
+        if ($plan->price > $user->wallet_balance) {
+            return back()->with("error", "Insufficient Funds");
+        }
+        $userPlanDetail = new UserPlanDetail();
+        $userPlanDetail->plan_id = $plan->id;
+        $userPlanDetail->user_id = $user->id;
+        $userPlanDetail->status = "Active";
+        $userPlanDetail->qty = $request->quantity;
+        $userPlanDetail->total = $request->quantity * $plan->price;
+
+        $userPlanDetail->start_date = now();
+        $userPlanDetail->end_date = now()->addDay($plan->duration);
+        $userPlanDetail->save();
+        return redirect(route("orders"))->with("success", "Order completed successfully");
+    }
     public function blogs()
     {
         // $blogs = Blog::orderBy("views", 'desc')->paginate(20);
@@ -107,26 +139,7 @@ class WebsiteController extends Controller
     }
 
 
-    public function store_location(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'pickup_location' => 'required|string|max:255',
-            'pickup_lat' => 'required',
-            'pickup_lng' => 'required',
-            'dropoff_location' => 'required|string|max:255',
-            'dropoff_lat' => 'required',
-            'dropoff_lng' => 'required',
-            // Validate other fields as necessary
-        ]);
-        if ($validator->fails()) {
-            return back()->with("error", $validator->errors()->first());
-        }
-        $formData = $request->all();
 
-        // Save form data in session
-        session(['nemt_ride_data' => $formData]);
 
-        // Redirect to the next page where the data will be accessed
-        return redirect()->route('get_quote');
-    }
+    public function cronJob() {}
 }

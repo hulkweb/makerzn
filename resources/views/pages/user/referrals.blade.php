@@ -24,7 +24,7 @@
                 <div class="col-7">
                     <div class="block-d">
                         <input type="text" class="form-c w-100 text-center copyd" readonly
-                            value="https://mashash.com/signup?ref=A5KEKW" />
+                            value="{{ env('APP_URL') }}signup?ref=A5KEKW" />
                         <div class="w-100 d-flex justify-content-center mt-3">
                             <a href="#" id="copyButton" class="template-btn btn-style-three"
                                 style="padding: 13px 34px">
@@ -73,7 +73,7 @@
                 <blockquote>
                     <div class="blockquote_bg"
                         style="
-                        background-image: url(https://mashash.com/asset/img/background/blockquote-bg.png);
+                        background-image: url({{ env('APP_URL') }}asset/img/background/blockquote-bg.png);
                         background-size: cover;
                     ">
                     </div>
@@ -84,7 +84,7 @@
                         our 24-hour online customer service if you need
                         advice or technical assistance.
                     </p>
-                    <a href="https://mashash.com/faq" class="template-btn btn-style-two" style="padding: 13px 34px">
+                    <a href="{{ route('faq') }}" class="template-btn btn-style-two" style="padding: 13px 34px">
                         <span class="btn-wrap p-0">
                             <span class="text-one p-0">Get Support Now</span>
                             <span class="text-two p-0">Get Support Now</span>

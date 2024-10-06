@@ -21,27 +21,28 @@
                                     class="mb-3 form-c select-bar dw w-full rounded  bg-gray px-4.5 py-3 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark"
                                     required="" value="" style="display: none;">
                                     <option disabled="" selected="">Select Withdraw Network</option>
-                                    <option value="10001" data-image="https://mashash.com/asset/img/crypto/coins/USDT.png">
+                                    <option value="10001" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png">
                                         USDT-ERC20 [Network: Ethereum]</option>
-                                    <option value="10002" data-image="https://mashash.com/asset/img/crypto/coins/USDT.png">
+                                    <option value="10002" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png">
                                         USDT-TRC20 [Network: Tron]</option>
-                                    <option value="10003" data-image="https://mashash.com/asset/img/crypto/coins/BTC.png">
+                                    <option value="10003" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BTC.png">
                                         BTC [Network: Bitcoin]</option>
-                                    <option value="10004" data-image="https://mashash.com/asset/img/crypto/coins/ETH.png">
+                                    <option value="10004" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/ETH.png">
                                         ETH [Network: Ethereum]</option>
-                                    <option value="10005" data-image="https://mashash.com/asset/img/crypto/coins/LTC.png">
+                                    <option value="10005" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/LTC.png">
                                         LTC [Network: Litecoin]</option>
-                                    <option value="10007" data-image="https://mashash.com/asset/img/crypto/coins/USDC.png">
+                                    <option value="10007" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png">
                                         USDC [Network: Ethereum]</option>
-                                    <option value="10008" data-image="https://mashash.com/asset/img/crypto/coins/BCH.png">
+                                    <option value="10008" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BCH.png">
                                         BCH [Network: Bitcoin Cash]</option>
-                                    <option value="10009" data-image="https://mashash.com/asset/img/crypto/coins/DOGE.png">
+                                    <option value="10009" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/DOGE.png">
                                         DOGE [Network: Dogecoin]</option>
-                                    <option value="10011" data-image="https://mashash.com/asset/img/crypto/coins/USDT.png">
+                                    <option value="10011" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png">
                                         USDT-BEP20 [Network: Binance Smart Chain]</option>
-                                    <option value="10012" data-image="https://mashash.com/asset/img/crypto/coins/BNB.png">
+                                    <option value="10012" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BNB.png">
                                         BNB [Network: Binance Smart Chain]</option>
-                                    <option value="10013" data-image="https://mashash.com/asset/img/crypto/coins/USDC.png">
+                                    <option value="10013"
+                                        data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png">
                                         USDC [Network: Base]</option>
                                 </select>
                                 <div class="nice-select mb-3 form-c select-bar dw w-full rounded bg-gray px-4.5 py-3 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark"
@@ -50,48 +51,64 @@
                                         <li data-value="Select Withdraw Network" class="option selected disabled">Select
                                             Withdraw Network</li>
                                         <li data-value="10001"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/USDT.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/USDT.png"
-                                                class="icon-dep">USDT-ERC20 [Network: Ethereum]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
+                                            class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
+                                                class="icon-dep">USDT-ERC20 [Network: Ethereum]
+                                        </li>
                                         <li data-value="10002"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/USDT.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/USDT.png"
-                                                class="icon-dep">USDT-TRC20 [Network: Tron]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
+                                            class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
+                                                class="icon-dep">USDT-TRC20 [Network: Tron]
+                                        </li>
                                         <li data-value="10003"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/BTC.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/BTC.png"
-                                                class="icon-dep">BTC [Network: Bitcoin]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BTC.png" class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/BTC.png"
+                                                class="icon-dep">BTC [Network: Bitcoin]
+                                        </li>
                                         <li data-value="10004"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/ETH.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/ETH.png"
-                                                class="icon-dep">ETH [Network: Ethereum]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/ETH.png" class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/ETH.png"
+                                                class="icon-dep">ETH [Network: Ethereum]
+                                        </li>
                                         <li data-value="10005"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/LTC.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/LTC.png"
-                                                class="icon-dep">LTC [Network: Litecoin]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/LTC.png" class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/LTC.png"
+                                                class="icon-dep">LTC [Network: Litecoin]
+                                        </li>
                                         <li data-value="10007"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/USDC.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/USDC.png"
-                                                class="icon-dep">USDC [Network: Ethereum]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png"
+                                            class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png"
+                                                class="icon-dep">USDC [Network: Ethereum]
+                                        </li>
                                         <li data-value="10008"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/BCH.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/BCH.png"
-                                                class="icon-dep">BCH [Network: Bitcoin Cash]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BCH.png" class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/BCH.png"
+                                                class="icon-dep">BCH [Network: Bitcoin Cash]
+                                        </li>
                                         <li data-value="10009"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/DOGE.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/DOGE.png"
-                                                class="icon-dep">DOGE [Network: Dogecoin]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/DOGE.png"
+                                            class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/DOGE.png"
+                                                class="icon-dep">DOGE [Network: Dogecoin]
+                                        </li>
                                         <li data-value="10011"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/USDT.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/USDT.png"
-                                                class="icon-dep">USDT-BEP20 [Network: Binance Smart Chain]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
+                                            class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
+                                                class="icon-dep">USDT-BEP20 [Network: Binance Smart Chain]
+                                        </li>
                                         <li data-value="10012"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/BNB.png" class="option">
-                                            <img src="https://mashash.com/asset/img/crypto/coins/BNB.png"
-                                                class="icon-dep">BNB [Network: Binance Smart Chain]</li>
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BNB.png" class="option">
+                                            <img src="{{ env('APP_URL') }}asset/img/crypto/coins/BNB.png"
+                                                class="icon-dep">BNB [Network: Binance Smart Chain]
+                                        </li>
                                         <li data-value="10013"
-                                            data-image="https://mashash.com/asset/img/crypto/coins/USDC.png"
-                                            class="option"> <img src="https://mashash.com/asset/img/crypto/coins/USDC.png"
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png"
+                                            class="option"> <img
+                                                src="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png"
                                                 class="icon-dep">USDC [Network: Base]</li>
                                     </ul>
                                 </div>

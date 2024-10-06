@@ -24,11 +24,11 @@
             background-image: url({{ asset('asset/img/background/page-title-2.png') }});
         "></div>
         <div class="auto-container">
-            <h2>MasHash Faqs | Cryptocurrency Cloud Mining Platform</h2>
+            <h2>MakerZN Faqs | Cryptocurrency Cloud Mining Platform</h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    MasHash Faqs | Cryptocurrency Cloud Mining Platform
+                    MakerZN Faqs | Cryptocurrency Cloud Mining Platform
                 </li>
             </ul>
         </div>
@@ -72,12 +72,12 @@
                                     <div class="icon-outer">
                                         <span class="icon icon-plus fa-solid fa-plus fa-fw"></span>
                                     </div>
-                                    What is MasHash?
+                                    What is MakerZN?
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <div class="text">
-                                            MasHash is a leading
+                                            MakerZN is a leading
                                             cryptocurrency investment
                                             firm founded in the UK in
                                             2019. Our website and mobile
@@ -109,13 +109,13 @@
                                     <div class="icon-outer">
                                         <span class="icon icon-plus fa-solid fa-plus fa-fw"></span>
                                     </div>
-                                    Is MASHASH legal?
+                                    Is MakerZN legal?
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <div class="text">
                                             <div>
-                                                MasHash is a legitimate
+                                                MakerZN is a legitimate
                                                 and secure cloud mining
                                                 platform that lets you
                                                 earn income with minimal
@@ -141,7 +141,7 @@
                                                 against DDoS attacks,
                                                 allowing safe access
                                                 from anywhere in the
-                                                world. With MasHash, you
+                                                world. With MakerZN, you
                                                 can trust that you are
                                                 engaging in a secure and
                                                 efficient crypto mining
@@ -164,7 +164,7 @@
                                         <div class="text">
                                             To earn passive income
                                             through cloud mining on
-                                            MasHash, simply register and
+                                            MakerZN, simply register and
                                             choose your mining contract.
                                             You don’t need to invest in
                                             additional equipment like
@@ -177,7 +177,7 @@
                                             cryptocurrency mining,
                                             including popular options
                                             like Bitcoin, Ethereum, and
-                                            Litecoin. With MasHash, you
+                                            Litecoin. With MakerZN, you
                                             can take advantage of a
                                             secure and efficient way to
                                             mine cryptocurrencies and
@@ -243,7 +243,7 @@
                                     <div class="content">
                                         <div class="text">
                                             <div>
-                                                At MasHash, we only
+                                                At MakerZN, we only
                                                 accept payments in
                                                 cryptocurrency. Our
                                                 platform supports
@@ -271,7 +271,7 @@
                                                 simplifies the process,
                                                 making it easy to start
                                                 mining operations with
-                                                MasHash.
+                                                MakerZN.
                                             </div>
                                         </div>
                                     </div>
@@ -516,7 +516,7 @@
                                     <div class="content">
                                         <div class="text">
                                             <p>
-                                                <font color="#ffffff">At MasHash, our
+                                                <font color="#ffffff">At MakerZN, our
                                                     referral program
                                                     assigns every user a
                                                     personal referral
@@ -561,7 +561,7 @@
                                     <div class="icon-outer">
                                         <span class="icon icon-plus fa-solid fa-plus fa-fw"></span>
                                     </div>
-                                    How can I contact MasHash&#039;s
+                                    How can I contact MakerZN&#039;s
                                     customer support for additional
                                     queries?
                                 </div>
@@ -570,7 +570,7 @@
                                         <div class="text">
                                             <p>
                                                 <font color="#ffffff">You can easily
-                                                    reach MasHash's
+                                                    reach MakerZN's
                                                     customer support
                                                     through our 24/7
                                                     chat feature
@@ -694,7 +694,7 @@
                 </div>
                 <div class="column col-lg-6 col-md-12 col-sm-12">
                     <div class="default-form">
-                        <form method="post" action="https://mashash.com/contact">
+                        <form method="post" action="{{ env('APP_URL') }}contact">
                             <input type="hidden" name="_token" value="tjCHecAr4lofShpXqC1sASXZheYnWYC2bBjrtmCe" />
                             <div class="row clearfix">
                                 <div class="form-group col-lg-6 col-md-6 col-sm-6">
@@ -746,7 +746,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MasHash.</span>
+                                <span>MakerZN.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

@@ -19,15 +19,34 @@
                             <th scope="col" class="col">Status</th>
                             <th scope="col" class="col">Plan</th>
                             <th scope="col" class="col">Period</th>
+                            <th scope="col" class="col">Quantity</th>
+
                             <th scope="col" class="col">Amount</th>
                             <th scope="col" class="col">Received</th>
                             <th scope="col" class="col">Next Payment</th>
                         </tr>
                     </thead>
                     <tbody id="body_table">
-                        <td class="text-center no-data-table" colspan="100%">
-                            No data found
-                        </td>
+
+                        @forelse ($orders as $item)
+                            <tr>
+                                <td scope="col" class="col">{{ $item->created_at }}</td>
+                                <td scope="col" class="col">{{ $item->status }}</td>
+                                <td scope="col" class="col">{{ $item->plan->name }}</td>
+                                <td scope="col" class="col">{{ $item->plan->duration }} days</td>
+                                <td scope="col" class="col">{{ $item->qty }} Unit</td>
+
+                                <td scope="col" class="col">{{ priceHTML($item->plan->price) }}</td>
+                                <td scope="col" class="col">{{ priceHTML($item->transactions->sum('usd_value')) }}
+                                </td>
+                                <td scope="col" class="col">$0</td>
+                            </tr>
+                        @empty
+                            <td class="text-center no-data-table" colspan="100%">
+                                No data found
+                            </td>
+                        @endforelse
+
                     </tbody>
                 </table>
             </div>
@@ -39,7 +58,7 @@
                 <blockquote>
                     <div class="blockquote_bg"
                         style="
-                        background-image: url(https://mashash.com/asset/img/background/blockquote-bg.png);
+                        background-image: url({{ env('APP_URL') }}asset/img/background/blockquote-bg.png);
                         background-size: cover;
                     ">
                     </div>
@@ -50,7 +69,7 @@
                         our 24-hour online customer service if you need
                         advice or technical assistance.
                     </p>
-                    <a href="https://mashash.com/faq" class="template-btn btn-style-two" style="padding: 13px 34px">
+                    <a href="{{ route('faq') }}" class="template-btn btn-style-two" style="padding: 13px 34px">
                         <span class="btn-wrap p-0">
                             <span class="text-one p-0">Get Support Now</span>
                             <span class="text-two p-0">Get Support Now</span>

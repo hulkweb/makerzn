@@ -15,10 +15,10 @@
         <div class="page-title-shadow_two" style="background-image:url({{ asset('asset/img/background/page-title-2.png') }})">
         </div>
         <div class="auto-container">
-            <h2>MasHash Terms &amp; Conditions| Easy Cryptocurrency Cloud Mining with ASIC Miner</h2>
+            <h2>MakerZN Terms &amp; Conditions| Easy Cryptocurrency Cloud Mining with ASIC Miner</h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
-                <li>MasHash Terms &amp; Conditions| Easy Cryptocurrency Cloud Mining with ASIC Miner</li>
+                <li>MakerZN Terms &amp; Conditions| Easy Cryptocurrency Cloud Mining with ASIC Miner</li>
             </ul>
         </div>
     </section>
@@ -33,7 +33,7 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>By accessing this website (accessible at https://mashash.com), you agree to be
+                <font color="#cec6ce"><b>By accessing this website (accessible at https://MakerZN.com), you agree to be
                         bound by this website's terms and conditions of use. You agree that you are responsible for your
                         agreement with any applicable local laws. If you do not agree to any of these terms, your access to
                         this website is prohibited. The material contained on this website is protected by copyright and
@@ -56,7 +56,7 @@
             </div>
             <div>
                 <font color="#cec6ce"><b>(1) The user has the right to choose whether to become a registered user of
-                        MasHash. If the user decides to become a registered user of MasHash, he can create an account. The
+                        MakerZN. If the user decides to become a registered user of MakerZN, he can create an account. The
                         naming and use of accounts should comply with relevant laws and regulations and network ethics.</b>
                 </font>
             </div>
@@ -65,7 +65,7 @@
             </div>
             <div>
                 <font color="#cec6ce"><b>(2) Once the user has successfully registered and become a registered user of
-                        MasHash, he will obtain an account (email) and password and be responsible for all activities and
+                        MakerZN, he will obtain an account (email) and password and be responsible for all activities and
                         events after logging in to the system with this account and password. Any direct or indirect use of
                         the report will result in legal liability.</b></font>
             </div>
@@ -73,7 +73,7 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>(3) The user must properly use the MasHash account, password, and email
+                <font color="#cec6ce"><b>(3) The user must properly use the MakerZN account, password, and email
                         verification code. The user is solely responsible for the security of the username and password. Any
                         legal consequences caused by the disclosure of the user name or password due to the user's reasons
                         shall be borne by the user.</b></font>
@@ -83,14 +83,14 @@
             </div>
             <div>
                 <font color="#cec6ce"><b>(4) If the user password is lost, you can reset the password through the link sent
-                        by the registered email. Users should notify MasHash immediately if they become aware of any illegal
+                        by the registered email. Users should notify MakerZN immediately if they become aware of any illegal
                         account use or another security breach.</b></font>
             </div>
             <div>
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>2.2. MasHash promises: MasHash will not disclose the user's password and related
+                <font color="#cec6ce"><b>2.2. MakerZN promises: MakerZN will not disclose the user's password and related
                         information non-public information to any third party without legal reasons or the user's prior
                         permission.</b></font>
             </div>
@@ -99,14 +99,14 @@
             </div>
             <div>
                 <font color="#cec6ce"><b>2.3. Users have the right to participate in various online and offline activities
-                        provided by MasHash.</b></font>
+                        provided by MakerZN.</b></font>
             </div>
             <div>
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>2.4. Users have the right to enjoy other services by MasHash by the provisions of
-                        the MasHash website.</b></font>
+                <font color="#cec6ce"><b>2.4. Users have the right to enjoy other services by MakerZN by the provisions of
+                        the MakerZN website.</b></font>
             </div>
             <div>
                 <font color="#cec6ce"><b><br></b></font>
@@ -118,7 +118,7 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>Even if MasHash or an authorized representative of this site has been notified
+                <font color="#cec6ce"><b>Even if MakerZN or an authorized representative of this site has been notified
                         orally or in writing of the possibility of such damages, some jurisdictions do not allow limitations
                         on implied warranties or liability for collateral damage, so these limitations may not apply to
                         you.</b></font>
@@ -133,9 +133,9 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>The material appearing on the MasHash website may include technical, typographical,
-                        or photographic inaccuracies. MasHash makes no representation that any material on this website is
-                        accurate, complete, or current. MasHash may change the materials on its website at any time. MasHash
+                <font color="#cec6ce"><b>The material appearing on the MakerZN website may include technical, typographical,
+                        or photographic inaccuracies. MakerZN makes no representation that any material on this website is
+                        accurate, complete, or current. MakerZN may change the materials on its website at any time. MakerZN
                         does not commit to updating the materials.</b></font>
             </div>
             <div>
@@ -148,9 +148,9 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>MasHash has not reviewed all sites linked to its location and is not responsible
+                <font color="#cec6ce"><b>MakerZN has not reviewed all sites linked to its location and is not responsible
                         for the content of any such linked site. The existence of any link does not imply an endorsement of
-                        the site by MasHash. Use of any linked site is at the user's own risk.</b></font>
+                        the site by MakerZN. Use of any linked site is at the user's own risk.</b></font>
             </div>
             <div>
                 <font color="#cec6ce"><b><br></b></font>
@@ -162,7 +162,7 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>MasHash may revise these terms of use for its website at any time. By using this
+                <font color="#cec6ce"><b>MakerZN may revise these terms of use for its website at any time. By using this
                         website, you agree to be bound by the current version of these terms and conditions.</b></font>
             </div>
             <div>
@@ -187,7 +187,7 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>Our laws shall govern any claims related to the MasHash website without regard to
+                <font color="#cec6ce"><b>Our laws shall govern any claims related to the MakerZN website without regard to
                         their conflict of laws provisions.</b></font>
             </div>
             <div>
@@ -200,10 +200,10 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>(1). The user shall not maliciously register the MasHash website account in any
+                <font color="#cec6ce"><b>(1). The user shall not maliciously register the MakerZN website account in any
                         way, including but not limited to registering multiple accounts for profit, speculation, cash out,
                         reward, etc., and shall not steal other user accounts. If the user violates the above provisions,
-                        MasHash has the right to take all necessary measures, including freezing violating accounts for
+                        MakerZN has the right to take all necessary measures, including freezing violating accounts for
                         three months, and may cancel the benefits obtained from violations and even prosecute the user for
                         legal responsibility through litigation.</b></font>
             </div>
@@ -211,17 +211,17 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>(2). Users are prohibited from using MasHash in any form as a venue, platform, or
+                <font color="#cec6ce"><b>(2). Users are prohibited from using MakerZN in any form as a venue, platform, or
                         medium for engaging in various illegal activities. Without the authorization or permission of
-                        MasHash, users shall not use the name of this site to engage in any commercial activities, nor use
-                        MasHash as a venue, platform, or medium for any form of commercial activities.</b></font>
+                        MakerZN, users shall not use the name of this site to engage in any commercial activities, nor use
+                        MakerZN as a venue, platform, or medium for any form of commercial activities.</b></font>
             </div>
             <div>
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
                 <font color="#cec6ce"><b>(3). Permission is granted to temporarily download a copy of the material from the
-                        MasHash website for personal, non-commercial temporary viewing only. Without authorization, you may
+                        MakerZN website for personal, non-commercial temporary viewing only. Without authorization, you may
                         not:</b></font>
             </div>
             <div>
@@ -240,7 +240,7 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>Attempt to reverse engineer any software contained on the MasHash website;</b>
+                <font color="#cec6ce"><b>Attempt to reverse engineer any software contained on the MakerZN website;</b>
                 </font>
             </div>
             <div>
@@ -260,7 +260,7 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>This will terminate MasHash upon breach of any of these restrictions. Upon
+                <font color="#cec6ce"><b>This will terminate MakerZN upon breach of any of these restrictions. Upon
                         termination, your viewing rights will also remove, and you shall destroy any downloads in your
                         possession, whether in print or electronically.</b></font>
             </div>
@@ -274,8 +274,8 @@
                 <font color="#cec6ce"><b><br></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>All materials on the MasHash website are provided "as is." MasHash makes no
-                        warranties, express or implied, and disclaims all other warranties. In addition, MasHash makes no
+                <font color="#cec6ce"><b>All materials on the MakerZN website are provided "as is." MakerZN makes no
+                        warranties, express or implied, and disclaims all other warranties. In addition, MakerZN makes no
                         representations about the accuracy or reliability of the use of the materials on its website or any
                         website linked to it.</b></font>
             </div>
@@ -291,7 +291,7 @@
                 <div class="row clearfix">
                     <div class="cta-one_title-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_title-outer">
-                            <h2 class="cta-one_title">Start your first mining with <span>MasHash.</span></h2>
+                            <h2 class="cta-one_title">Start your first mining with <span>MakerZN.</span></h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">
                                     <span class="btn-wrap">

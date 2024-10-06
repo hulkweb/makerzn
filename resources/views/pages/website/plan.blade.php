@@ -24,10 +24,10 @@
             background-image: url({{ asset('asset/img/background/page-title-2.png') }});
         "></div>
         <div class="auto-container">
-            <h2>Antminer S21 200Th/s</h2>
+            <h2>{{ $plan->name }}</h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="../home.html">Home</a></li>
-                <li>Antminer S21 200Th/s</li>
+                <li>{{ $plan->name }}</li>
             </ul>
         </div>
     </section>
@@ -47,11 +47,11 @@
                 <div class="team-detail_content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="team-detail_content-outer">
                         <h2 class="team-detail_title">
-                            Antminer S21 200Th/s
+                            {{ $plan->name }}
                         </h2>
                         <div class="d-flex justify-content-between align-items-end flex-wrap">
                             <div class="price-block_one-price">
-                                <sup>$</sup>1,200
+                                <sup>$</sup>{{ number_format($plan->price, 0, '', '') }}
                             </div>
                         </div>
                         <div class="team-detail_info-outer" style="margin-top: 40px">
@@ -59,43 +59,45 @@
                                 <div class="column col-lg-6 col-md-6 col-sm-6">
                                     <div class="team-detail_info">
                                         Contract Terms
-                                        <span> 5 Days </span>
+                                        <span> {{ $plan->duration }} Days </span>
                                     </div>
                                     <div class="team-detail_info">
                                         Daily Rebate
-                                        <span>$22.80</span>
+                                        <span>{{ priceHTML($plan->daily_rebate) }} </span>
                                     </div>
                                     <div class="team-detail_info">
                                         Recoverable funds
-                                        <span>$1,200 + $114.00</span>
+                                        <span>{{ priceHTML($plan->recoverable_funds) }}+
+                                            {{ priceHTML($plan->recoverable_funds_two) }}</span>
                                     </div>
                                     <div class="team-detail_info">
                                         Affiliate Rewards 2nd
-                                        <span>$18.00</span>
+                                        <span>$0.00</span>
                                     </div>
                                 </div>
                                 <div class="column col-lg-6 col-md-6 col-sm-6">
                                     <div class="team-detail_info">
                                         Settle Interests
-                                        <span>Every 24 Hours</span>
+                                        <span>Every {{ $plan->interest_settlement_time }} Hours</span>
                                     </div>
                                     <div class="team-detail_info">
                                         Principal Refund
-                                        <span>Yes</span>
+                                        <span>{{ $plan->principal_refund ? 'Yes' : 'No' }}</span>
                                     </div>
                                     <div class="team-detail_info">
                                         Affiliate Rewards 1st
-                                        <span>$42.00</span>
+                                        <span>$0.00</span>
                                     </div>
                                     <div class="team-detail_info">
                                         Affiliate Rewards 3rd
-                                        <span>$12.00</span>
+                                        <span>$0.00</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="team-detail_button">
-                            <a href="#" class="template-btn calc btn-style-one" id="buyed">
+                            <a href="#" class="template-btn calc btn-style-one" data-bs-toggle="modal"
+                                data-bs-target="#buy" id="buyed">
                                 <span class="btn-wrap">
                                     <span class="text-one">Invest Now</span>
                                     <span class="text-two">Invest Now</span>
@@ -129,7 +131,7 @@
                     </h3>
                     <h6>
                         For calculation of mining income, please refer
-                        to MasHash pool: https://mashash.com/plans
+                        to MakerZN pool: {{ env('APP_URL') }}plans
                     </h6>
                     <p><br /></p>
                     <h3>
@@ -168,9 +170,9 @@
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="https://mashash.com/plan/buy" method="post" class="mb-0">
-                    <input type="hidden" name="_token" value="tjCHecAr4lofShpXqC1sASXZheYnWYC2bBjrtmCe" />
-                    <input type="hidden" name="plan" value="193517" />
+                <form action="{{ route('plan.buy') }}" method="post" class="mb-0">
+                    @csrf
+                    <input type="hidden" name="plan_id" value="{{ $plan->id }}" />
                     <input type="hidden" name="quantity" id="q_order" />
                     <div class="modal-body">
                         <div class="row" style="row-gap: 10px">
@@ -183,8 +185,7 @@
                                     </div>
                                     <div class="col-6">
                                         <h1 class="medium mb-0">
-                                            <span class="fw-700">Antminer S21
-                                                200Th/s</span>
+                                            <span class="fw-700"> {{ $plan->name }}</span>
                                         </h1>
                                     </div>
                                 </div>
@@ -198,7 +199,7 @@
                                     </div>
                                     <div class="col-6">
                                         <h1 class="medium mb-0">
-                                            <span class="fw-700">$1,200</span>
+                                            <span class="fw-700"> {{ priceHTML($plan->price) }}</span>
                                         </h1>
                                     </div>
                                 </div>
@@ -212,7 +213,7 @@
                                     </div>
                                     <div class="col-6">
                                         <h1 class="medium mb-0">
-                                            <span class="fw-700" id="quantity_order">0</span>
+                                            <span class="fw-700" id="quantity_order">1</span>
                                         </h1>
                                     </div>
                                 </div>
@@ -226,7 +227,8 @@
                                     </div>
                                     <div class="col-6">
                                         <h1 class="medium mb-0">
-                                            <span class="fw-700 c_red" id="totalsum">0</span>
+                                            <span class="fw-700 c_red"
+                                                id="totalsum">{{ priceHTML($plan->price) }}</span>
                                         </h1>
                                     </div>
                                 </div>
@@ -277,7 +279,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MasHash.</span>
+                                <span>MakerZN.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">
@@ -302,3 +304,50 @@
         </div>
     </section>
 @endsection
+@push('js')
+    <script>
+        // Get references to key elements
+        const unitPrice = {{ $plan->price }}; // Assuming unit price is passed from the backend
+        const quantityInput = document.getElementById('quantity');
+        const quantityOrderDisplay = document.getElementById('quantity_order');
+        const totalSumDisplay = document.getElementById('totalsum');
+        const qOrderHiddenInput = document.getElementById('q_order');
+
+        // Function to update total price and hidden input based on quantity
+        function updatePrice() {
+            let quantity = parseInt(quantityInput.value);
+            if (quantity < 1) {
+                quantity = 1; // Minimum quantity is 1
+            }
+
+            // Update hidden input
+            qOrderHiddenInput.value = quantity;
+
+            // Update quantity display
+            quantityOrderDisplay.textContent = quantity;
+
+            // Update total price display
+            let total = unitPrice * quantity;
+            totalSumDisplay.innerHTML = "$" + total; // Assuming priceHTML is a JS function
+        }
+
+        // Function to increase quantity
+        function plused() {
+            let quantity = parseInt(quantityInput.value);
+            quantityInput.value = quantity + 1;
+            updatePrice();
+        }
+
+        // Function to decrease quantity
+        function minused() {
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantityInput.value = quantity - 1;
+            }
+            updatePrice();
+        }
+
+        // Event listener to update the price when the input changes manually
+        quantityInput.addEventListener('input', updatePrice);
+    </script>
+@endpush

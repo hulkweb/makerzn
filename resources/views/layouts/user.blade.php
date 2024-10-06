@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="hSKmz6UzIqOFmsAs6Rceh3fIv5kFPn2CzEisGaPV">
     <meta name="dashboard" content="true">
-    <title>MasHash-Cryptocurrency Cloud Mining Platform | Dashboard</title>
+    <title>MakerZN-Cryptocurrency Cloud Mining Platform | Dashboard</title>
     <link href="{{ asset('asset/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/meanmenu.min.css') }}" rel="stylesheet">
@@ -34,7 +34,7 @@
     <style>
         .swal2-styled {
             color: black !important;
-            background-color: #DBB75F !important;
+            background-color: #761FE2 !important;
             min-width: 100px !important;
 
         }

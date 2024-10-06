@@ -25,13 +25,13 @@
         "></div>
         <div class="auto-container">
             <h2>
-                MasHash Blogs | Easy Cryptocurrency Cloud Mining
+                MakerZN Blogs | Easy Cryptocurrency Cloud Mining
                 Platform
             </h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    MasHash Blogs | Easy Cryptocurrency Cloud Mining
+                    MakerZN Blogs | Easy Cryptocurrency Cloud Mining
                     Platform
                 </li>
             </ul>
@@ -163,15 +163,15 @@
                         <div class="news-block_one-image">
                             <a href="blog/2073980.html"><img
                                     src="{{ asset('asset/img/sections/elements/66ca1fb3429431724522419.jpg') }}"
-                                    alt="MasHash Announces $50 Free Bonus for New Crypto Mining Enthusiasts" /></a>
+                                    alt="MakerZN Announces $50 Free Bonus for New Crypto Mining Enthusiasts" /></a>
                         </div>
                         <div class="news-block_one-content">
                             <h5 class="news-block_one-title">
-                                <a href="blog/2073980.html">MasHash Announces $50 Free Bonus
+                                <a href="blog/2073980.html">MakerZN Announces $50 Free Bonus
                                     for New Crypto Mining Enthusiasts</a>
                             </h5>
                             <div class="news-block_one-text">
-                                MasHash, a revolutionary and emerging
+                                MakerZN, a revolutionary and emerging
                                 cloud mining&nbsp;platform, is offering
                                 a $50 free bonus upon registration for
                                 new crypto mining users to kic...
@@ -316,7 +316,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MasHash.</span>
+                                <span>MakerZN.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

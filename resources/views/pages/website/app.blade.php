@@ -15,11 +15,11 @@
                             Best way to manage<br /><span>your mining</span>
                         </h2>
                         <p>
-                            Keep your MasHash activities at your
+                            Keep your MakerZN activities at your
                             fingertips with our mobile apps. Access
                             real-time data and track your mining
                             portfolio wherever you are, whenever you
-                            need. The MasHash app provides a convenient,
+                            need. The MakerZN app provides a convenient,
                             easy solution for purchasing and managing
                             mining plans, helping you grow your revenue
                             seamlessly.
@@ -27,7 +27,7 @@
                     </div>
                     <div class="d-flex" style="gap: 20px">
                         <a href="#">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=https://mashash.com/app"
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data={{ env('APP_URL') }}app"
                                 class="qr_app" />
                         </a>
                     </div>
@@ -66,10 +66,10 @@
                     <div class="about_text">
                         <div class="section_title aos-init">
                             <h2 class="sec-title_heading">
-                                MasHash Awesome Mining APP
+                                MakerZN Awesome Mining APP
                             </h2>
                             <p>
-                                MasHash Cloud Mining APP has achieved
+                                MakerZN Cloud Mining APP has achieved
                                 1.7 million downloads and has 860,000
                                 followers. It offers more than 20 mining
                                 plan contracts and serves customers in
@@ -141,14 +141,14 @@
                         <div class="section_title aos-init">
                             <h2 class="sec-title_heading mb-3">
                                 Start Your Cloud Mining From
-                                <span style="color: #fff">MasHash APP</span>
+                                <span style="color: #fff">MakerZN APP</span>
                             </h2>
                             <p>
-                                Download the MasHash APP today to enjoy
+                                Download the MakerZN APP today to enjoy
                                 a seamless mining order management
                                 experience. Gain access to real-time
                                 data and track your mining portfolio
-                                from anywhere, at any time. The MasHash
+                                from anywhere, at any time. The MakerZN
                                 APP provides an easy and convenient way
                                 to purchase and manage mining plans,
                                 helping you grow your revenue
@@ -192,13 +192,13 @@
                         <div class="free_text">
                             <div class="section_title">
                                 <h2>
-                                    Download MasHash and start your
+                                    Download MakerZN and start your
                                     first mining
                                 </h2>
                             </div>
                             <div class="d-flex" style="gap: 20px">
                                 <a href="#">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data=https://mashash.com/app"
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data={{ env('APP_URL') }}app"
                                         class="qr_app" />
                                 </a>
                             </div>
@@ -253,7 +253,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MasHash.</span>
+                                <span>MakerZN.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

@@ -25,12 +25,12 @@
         "></div>
         <div class="auto-container">
             <h2>
-                MasHash Cloud Minig Plans | Cryptocurrency Cloud Mining
+                MakerZN Cloud Minig Plans | Cryptocurrency Cloud Mining
             </h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    MasHash Cloud Minig Plans | Cryptocurrency Cloud
+                    MakerZN Cloud Minig Plans | Cryptocurrency Cloud
                     Mining
                 </li>
             </ul>
@@ -40,406 +40,62 @@
     <section class="price-four">
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b23fa2267251722957730.png') }}');
+                @foreach ($plans as $item)
+                    <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
+                        <div class="price-block_one-inner">
+                            <div class="plan-image"
+                                style="
+                            background-image: url('{{ asset('uploads/plans/' . $item->image) }}');
                         ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Free Trial Project
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>50
-                                </div>
                             </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 1 Day
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $50
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $1.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $50 + $1.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193520.html">
-                                    Invest Now
-                                </a>
+                            <div class="price-block_one-title">
+                                {{ $item->name }}
+                            </div>
+                            <div class="price-block_one-content">
+                                <div class="d-flex justify-content-between align-items-end flex-wrap">
+                                    <div class="price-block_one-price">
+                                        <sup>$</sup>{{ number_format($item->price, 0, '', '') }}
+                                    </div>
+                                </div>
+                                <ul class="price-block_one-list">
+                                    <li>
+                                        <i class="fa-solid fa-check fa-fw"></i>Contract Terms:
+                                        {{ $item->duration }} Day
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-check fa-fw"></i>Contract Price:
+                                        {{ priceHTML($item->price) }}
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-check fa-fw"></i>Daily Rebate:
+                                        {{ priceHTML($item->daily_rebate) }}
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-check fa-fw"></i>Recoverable
+                                        funds: {{ priceHTML($item->recoverable_funds) }}+
+                                        {{ priceHTML($item->recoverable_funds_two) }}
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-check fa-fw"></i>Settle
+                                        Interests: Every
+                                        {{ $item->interest_settlement_time }} Hours
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-check fa-fw"></i>Principal
+                                        Refund: {{ $item->principal_refund ? 'Yes' : 'No' }}
+                                    </li>
+                                </ul>
+                                <div class="price-block_one-button">
+                                    <a class="template-btn price-one_button" href="{{ route('plan', $item->id) }}">
+                                        Invest Now
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b23fc0d77421722957760.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Starter Experience Project
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>200
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 1 Day
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $200
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $6.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $200 + $6.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193519.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b23fe4802201722957796.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Antminer E9 Pro 3.68Gh/s
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>600
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 3 Days
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $600
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $10.50
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $600 + $31.50
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193518.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b24006d58bc1722957830.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Antminer S21 200Th/s
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>1,200
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 5 Days
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $1,200
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $22.80
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $1,200 + $114.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193517.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b24025902531722957861.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Antminer L7 9.16Gh/s
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>3,600
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 6 Days
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $3,600
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $75.60
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $3,600 + $453.60
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193516.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b240456d8811722957893.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Antminer S21 Hyd 335Th/s
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>8,000
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 8 Days
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $8,000
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $180.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $8,000 +
-                                    $1,440.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193515.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b2405c9a8571722957916.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Antminer L9 16Gh/s
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>16,800
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 10 Days
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $16,800
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $420.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $16,800 +
-                                    $4,200.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193514.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b24077a0add1722957943.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Antminer KS5 20Th/s
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>32,000
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 12 Days
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $32,000
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $896.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $32,000 +
-                                    $10,752.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193513.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-block_one style-two active col-lg-4 col-md-6 col-sm-12">
-                    <div class="price-block_one-inner">
-                        <div class="plan-image"
-                            style="
-                            background-image: url('{{ asset('asset/img/plans/images/66b2408f832571722957967.png') }}');
-                        ">
-                        </div>
-                        <div class="price-block_one-title">
-                            Antminer S21 XP Hyd 473Th/s
-                        </div>
-                        <div class="price-block_one-content">
-                            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                                <div class="price-block_one-price">
-                                    <sup>$</sup>60,000
-                                </div>
-                            </div>
-                            <ul class="price-block_one-list">
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Terms: 7 Days
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Contract Price: $60,000
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Daily Rebate: $1,980.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Recoverable funds: $60,000 +
-                                    $13,860.00
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Settle Interests: Every 24 Hours
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check fa-fw"></i>Principal Refund: Yes
-                                </li>
-                            </ul>
-                            <div class="price-block_one-button">
-                                <a class="template-btn price-one_button" href="plan/193512.html">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </section>
@@ -463,7 +119,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MasHash.</span>
+                                <span>MakerZN.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

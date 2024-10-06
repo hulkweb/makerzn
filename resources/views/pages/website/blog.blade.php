@@ -25,13 +25,13 @@
         "></div>
         <div class="auto-container">
             <h2>
-                MasHash Blogs | Easy Cryptocurrency Cloud Mining
+                MakerZN Blogs | Easy Cryptocurrency Cloud Mining
                 Platform
             </h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    MasHash Blogs | Easy Cryptocurrency Cloud Mining
+                    MakerZN Blogs | Easy Cryptocurrency Cloud Mining
                     Platform
                 </li>
             </ul>
@@ -153,7 +153,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MasHash.</span>
+                                <span>MakerZN.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

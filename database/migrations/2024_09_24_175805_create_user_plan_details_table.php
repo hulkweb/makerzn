@@ -19,7 +19,12 @@ return new class extends Migration
             $table->dateTime("end_date")->nullable();
             $table->string("status")->nullable();
             $table->string("subs_id")->nullable();
+            $table->integer("qty")->nullable();
+            $table->float("total")->nullable();
+
             $table->string("transaction_id")->nullable();
+
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamp('transaction_time'); // Time of transaction
             $table->string('proof')->nullable(); // Time of transaction
             $table->timestamp('wallet_address')->nullable(); // Time of transaction
-
+            $table->unsignedBigInteger("user_plan_detail_id")->nullable();
             // Foreign key to the users table
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

@@ -2,7 +2,7 @@
 <html>
 
 
-<!-- Mirrored from mashash.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:47:42 GMT -->
+<!-- Mirrored from MakerZN.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:47:42 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="tjCHecAr4lofShpXqC1sASXZheYnWYC2bBjrtmCe">
-    <meta name="title" content="MasHash | Easy Cryptocurrency Cloud Mining with ASIC Miner">
+    <meta name="title" content="MakerZN | Easy Cryptocurrency Cloud Mining with ASIC Miner">
     <meta name="description"
-        content="Join MasHash for secure crypto cloud mining with the latest ASIC miners and GPU rigs. Enjoy automated payouts, eco-friendly operations, and expert support.">
-    <title>MasHash | Easy Cryptocurrency Cloud Mining with ASIC Miner</title>
+        content="Join MakerZN for secure crypto cloud mining with the latest ASIC miners and GPU rigs. Enjoy automated payouts, eco-friendly operations, and expert support.">
+    <title>MakerZN | Easy Cryptocurrency Cloud Mining with ASIC Miner</title>
     <link href="{{ asset('asset/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/meanmenu.min.css') }}" rel="stylesheet">
@@ -33,7 +33,7 @@
     <link href="{{ asset('asset/css/iziToast.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('asset/img/logos/66a7e0c49abd51722278084.png') }}" type="image/x-icon">
 
-    <!-- Default Statcounter code for MasHash https://mashash.com/ -->
+    <!-- Default Statcounter code for MakerZN {{ env('APP_URL') }} -->
     <script type="text/javascript">
         var sc_project = 13022378;
         var sc_invisible = 1;
@@ -50,7 +50,7 @@
     <style>
         .swal2-styled {
             color: black !important;
-            background-color: #DBB75F !important;
+            background-color: #761FE2 !important;
             min-width: 100px !important;
 
         }
@@ -234,18 +234,29 @@
                                 </div>
 
                                 <div class="main-header_buttons">
-                                    <a href="{{ route('signin') }}" class="template-btn btn-style-two">
-                                        <span class="btn-wrap">
-                                            <span class="text-one">Login</span>
-                                            <span class="text-two">Login</span>
-                                        </span>
-                                    </a>
-                                    <a href="{{ route('signup') }}" class="template-btn btn-style-one">
-                                        <span class="btn-wrap">
-                                            <span class="text-one">Join now</span>
-                                            <span class="text-two">Join now</span>
-                                        </span>
-                                    </a>
+
+                                    @if (auth()->user())
+                                        <a href="{{ route('dashboard') }}" class="template-btn btn-style-two">
+                                            <span class="btn-wrap">
+                                                <span class="text-one">Dashboard</span>
+                                                <span class="text-two">Dashboard</span>
+                                            </span>
+                                        </a>
+                                    @else
+                                        <a href="{{ route('signin') }}" class="template-btn btn-style-two">
+                                            <span class="btn-wrap">
+                                                <span class="text-one">Login</span>
+                                                <span class="text-two">Login</span>
+                                            </span>
+                                        </a>
+                                        <a href="{{ route('signup') }}" class="template-btn btn-style-one">
+                                            <span class="btn-wrap">
+                                                <span class="text-one">Join now</span>
+                                                <span class="text-two">Join now</span>
+                                            </span>
+                                        </a>
+                                    @endif
+
                                 </div>
 
                                 <div class="mobile-nav-toggler">
@@ -304,7 +315,7 @@
                                                 src="{{ asset('asset/img/logos/66a7e0c48e8441722278084.png') }}"
                                                 alt="" title=""></a></div>
                                 </div>
-                                <p class="f-text">MasHash is a versatile company with a clear mission: to equip you
+                                <p class="f-text">MakerZN is a versatile company with a clear mission: to equip you
                                     with the essential tools and services for success in the digital asset realm.
                                     Whether you need high-performance equipment for maximum hash power or expert
                                     guidance in cloud mining investments, we're committed to ensuring your crypto
@@ -323,7 +334,7 @@
                                     <a href="https://www.facebook.com/profile.php?id=61563547275911"><i
                                             class="fa-brands fa-facebook-f"></i></a>
                                     <a href="https://x.com/Mas_Hash_"><i class="fa-brands fa-twitter"></i></a>
-                                    <a href="https://www.youtube.com/@MasHashMiner"><i
+                                    <a href="https://www.youtube.com/@MakerZNMiner"><i
                                             class="fa-brands fa-youtube"></i></a>
                                 </div>
                             </div>
@@ -374,7 +385,7 @@
             <div class="footer-bottom">
                 <div class="auto-container">
                     <div class="inner-container d-flex justify-content-center align-items-center flex-wrap">
-                        <div class="footer-copyright">Copyright 2019-2024 MasHash. All rights reserved.</div>
+                        <div class="footer-copyright">Copyright 2019-2024 MakerZN. All rights reserved.</div>
                     </div>
                 </div>
             </div>
@@ -454,6 +465,6 @@
 @endif
 @stack('js')
 
-<!-- Mirrored from mashash.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:48:24 GMT -->
+<!-- Mirrored from MakerZN.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:48:24 GMT -->
 
 </html>

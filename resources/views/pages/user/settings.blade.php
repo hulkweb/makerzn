@@ -14,7 +14,7 @@
                     Payment Password
                 </div>
             </a>
-            <a href="https://mashash.com/settings/account/password">
+            <a href="{{ env('APP_URL') }}settings/account/password">
                 <div class="user-title modify-title">Login Password</div>
             </a>
         </div>
@@ -28,7 +28,7 @@
                     </h6>
                 </div>
 
-                <form action="https://mashash.com/settings/modify/payment/password" method="POST">
+                <form action="{{ env('APP_URL') }}settings/modify/payment/password" method="POST">
                     <input type="hidden" name="_token" value="hSKmz6UzIqOFmsAs6Rceh3fIv5kFPn2CzEisGaPV" />
                     <div class="row" style="row-gap: 20px">
                         <div class="col-6">
@@ -69,7 +69,7 @@
                 <blockquote>
                     <div class="blockquote_bg"
                         style="
-                        background-image: url(https://mashash.com/asset/img/background/blockquote-bg.png);
+                        background-image: url({{ env('APP_URL') }}asset/img/background/blockquote-bg.png);
                         background-size: cover;
                     ">
                     </div>
@@ -80,7 +80,7 @@
                         our 24-hour online customer service if you need
                         advice or technical assistance.
                     </p>
-                    <a href="https://mashash.com/faq" class="template-btn btn-style-two" style="padding: 13px 34px">
+                    <a href="{{ route('faq') }}" class="template-btn btn-style-two" style="padding: 13px 34px">
                         <span class="btn-wrap p-0">
                             <span class="text-one p-0">Get Support Now</span>
                             <span class="text-two p-0">Get Support Now</span>
