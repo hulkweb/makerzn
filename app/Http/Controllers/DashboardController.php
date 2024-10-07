@@ -168,6 +168,6 @@ class DashboardController extends Controller
             $user_ids = User::where("name", "LIKE", "%$keyword%")->where("email", "LIKE", "%$keyword%")->pluck("id")->toArray();
             return $query->whereIn("user_id", $user_ids);
         })->paginate(10);
-        return view("subscriptions", compact('subscriptions'));
+        return view("pages.admin.subscriptions", compact('subscriptions'));
     }
 }
