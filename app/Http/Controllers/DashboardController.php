@@ -159,4 +159,15 @@ class DashboardController extends Controller
         }
         return response()->json(['status' => 200, "message" => "Transaction updated successfully"]);
     }
+
+    public function subscriptions()
+    {
+
+        $subscriptions = UserPlanDetail::when(request()->has("search"), function ($query) {
+            $keyword = request("search");
+            $user_ids = User::where("name", "LIKE", "%$keyword%")->where("email", "LIKE", "%$keyword%")->pluck("id")->toArray();
+            return $query->whereIn("user_id", $user_ids);
+        })->paginate(10);
+        return view("subscriptions", compact('subscriptions'));
+    }
 }

@@ -95,6 +95,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get("transactions", [DashboardController::class, 'transactions'])->name('transactions.index');
         Route::post("transactions/update/{id}", [DashboardController::class, 'transactionsUpdate'])->name('transactions.update');
 
+        Route::get("subscriptions", [DashboardController::class, 'subscriptions'])->name('subscriptions');
+
+
         Route::resource("blogs", BlogController::class);
         Route::resource("plans", PlanController::class);
 
