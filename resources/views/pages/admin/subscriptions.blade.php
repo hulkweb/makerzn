@@ -85,6 +85,8 @@
 
 
                                     <td>${{ $item->total }}</td>
+                                    <td>${{ $item->qty }}</td>
+
                                     <td>{{ $item->plan->name }}</td>
                                     <td>{{ $item->status }}</td>
 
