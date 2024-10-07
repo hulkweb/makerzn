@@ -17,7 +17,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Subscriptionsß</span> <span>
+        <h1 class="h3 mb-2 text-gray-800 d-flex justify-content-between"> <span>Subscriptions</span> <span>
             </span>
             {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button> --}}
         </h1>
