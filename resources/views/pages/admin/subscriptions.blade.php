@@ -53,7 +53,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Subscriptionsß
+                    Subscriptions
                 </h6>
             </div>
             <div class="card-body">
@@ -85,7 +85,7 @@
 
 
                                     <td>${{ $item->total }}</td>
-                                    <td>${{ $item->qty }}</td>
+                                    <td>{{ $item->qty }}</td>
 
                                     <td>{{ $item->plan->name }}</td>
                                     <td>{{ $item->status }}</td>
