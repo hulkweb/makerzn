@@ -26,9 +26,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('asset/css/all.min.css') }}" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
     <script src="{{ asset('asset/js/cookie.min.js') }}"></script>
     <link href="{{ asset('asset/css/iziToast.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('asset/img/logos/66a7e0c49abd51722278084.png') }}" type="image/x-icon">
@@ -109,6 +108,15 @@
 
     .__jivoMobileButton {
         margin-bottom: 100px !important;
+    }
+
+
+    @media only screen and (min-width: 600px) {
+
+        /* Styles */
+        #nav_mobile {
+            display: none;
+        }
     }
 </style>
 
@@ -394,6 +402,76 @@
             <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
+        </div>
+        <div class="nav-bar" id="nav_mobile">
+            <div class="content-nav">
+                <a href="{{ route('home') }}">
+                    <div class="nav-item @if (Route::is('home')) act @endif" id="Home-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            class="main-grid-item-icon" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <p>Home</p>
+                    </div>
+                </a>
+                <a href="{{ route('plans') }}">
+                    <div class="nav-item  @if (Route::is('plans')) act @endif" id="Plans-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            class="main-grid-item-icon" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" x2="12" y1="22.08" y2="12"></line>
+                        </svg>
+
+                        <p>Plans</p>
+                    </div>
+                </a>
+                <a href="{{ route('dashboard') }}">
+                    <div class="nav-item @if (Route::is('dashboard')) act @endif" id="dashboard-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            class="main-grid-item-icon" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                            <rect height="7" width="7" x="3" y="3"></rect>
+                            <rect height="7" width="7" x="14" y="3"></rect>
+                            <rect height="7" width="7" x="14" y="14"></rect>
+                            <rect height="7" width="7" x="3" y="14"></rect>
+                        </svg>
+                        <p>Dashboard</p>
+                    </div>
+                </a>
+                <a href="{{ route('affiliates') }}">
+                    <div class="nav-item @if (Route::is('affiliates')) act @endif" id="Affiliates-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            class="main-grid-item-icon" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+
+                        <p>Affiliates</p>
+                    </div>
+                </a>
+                <a href="{{ route('faq') }}">
+                    <div class="nav-item @if (Route::is('faq')) act @endif" id="FAQs-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            class="main-grid-item-icon" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" x2="12.01" y1="17" y2="17"></line>
+                        </svg>
+
+                        <p>FAQs</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script>

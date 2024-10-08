@@ -45,7 +45,7 @@
                         <div class="price-block_one-inner">
                             <div class="plan-image"
                                 style="
-                            background-image: url('{{ asset('uploads/plans/' . $item->image) }}');
+                            background-image: url('{{ asset('uploads/plans/' . $item->image) }}') !Important;
                         ">
                             </div>
                             <div class="price-block_one-title">

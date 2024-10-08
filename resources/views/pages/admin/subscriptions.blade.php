@@ -90,7 +90,7 @@
                                     <td>{{ $item->plan->name }}</td>
                                     <td>{{ $item->status }}</td>
 
-
+  
                                     <td>{{ date('Y/m/d', strtotime($item->created_at)) }}</td>
 
                                     {{-- <td> <button class="btn btn-primary mx-2"

@@ -1,160 +1,103 @@
 @extends('layouts.app')
 @section('content')
     <script>
-        const menu = "Blogs";
+        const menu = 'blogs'
         if (document.getElementById(menu)) {
-            document.getElementById(menu).classList.add("current");
+            document.getElementById(menu).classList.add('current')
         }
     </script>
     <section class="page-title mb-3">
-        <div class="page-title-icon"
-            style="
-            background-image: url({{ asset('asset/img/icons/page-title_icon-1.png') }});
-        "></div>
-        <div class="page-title-icon-two"
-            style="
-            background-image: url({{ asset('asset/img/icons/page-title_icon-2.png') }});
-        "></div>
-        <div class="page-title-shadow"
-            style="
-            background-image: url({{ asset('asset/img/background/page-title-1.png') }});
-        "></div>
-        <div class="page-title-shadow_two"
-            style="
-            background-image: url({{ asset('asset/img/background/page-title-2.png') }});
-        "></div>
+        <div class="page-title-icon" style="background-image:url({{ asset('asset/img/icons/page-title_icon-1.png') }})"></div>
+        <div class="page-title-icon-two" style="background-image:url({{ asset('asset/img/icons/page-title_icon-2.png') }})">
+        </div>
+        <div class="page-title-shadow" style="background-image:url({{ asset('asset/img/background/page-title-1.png') }})">
+        </div>
+        <div class="page-title-shadow_two" style="background-image:url({{ asset('asset/img/background/page-title-2.png') }})">
+        </div>
         <div class="auto-container">
-            <h2>
-                MakerZN Blogs | Easy Cryptocurrency Cloud Mining
-                Platform
-            </h2>
+            <h2>{{ $blog->title }}</h2>
             <ul class="bread-crumb clearfix">
-                <li><a href="home.html">Home</a></li>
-                <li>
-                    MakerZN Blogs | Easy Cryptocurrency Cloud Mining
-                    Platform
-                </li>
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('blogs') }}">Blogs</a></li>
+                <li>BLOG</li>
             </ul>
         </div>
     </section>
 
-    <section class="news-three" style="padding-bottom: 0px">
+    <div class="sidebar-page-container">
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
-                    <div class="news-block_one-inner">
-                        <div class="news-block_one-image">
-                            <a href="blog/2073978.html"><img
-                                    src="{{ asset('asset/img/sections/elements/669b7fb40603e1721466804.jpg') }}"
-                                    alt="Bitcoin hashrate drawdown hits bear market levels, but miners aren’t selling" /></a>
-                        </div>
-                        <div class="news-block_one-content">
-                            <h5 class="news-block_one-title">
-                                <a href="blog/2073978.html">Bitcoin hashrate drawdown hits bear
-                                    market levels, but miners aren’t
-                                    selling</a>
-                            </h5>
-                            <div class="news-block_one-text">
-                                At the beginning of July, the Bitcoin
-                                network’s hashrate drawdown, a metric of
-                                relative changes in the network’s
-                                overall computing power, sank to l...
+
+                <!-- Content Side -->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    <div class="blog-detail">
+                        <div class="blog-detail_inner">
+                            <div class="blog-detail_image">
+                                <img src="../asset/img/sections/elements/669b5aafd58fb1721457327.jpg"
+                                    alt="Bitcoin mining energy use doubled in 2023 as crypto prices rose" />
                             </div>
-                            <a class="news-block_one-more" href="blog/2073978.html">Read more
-                                <i class="fa-solid fa-plus fa-fw"></i></a>
+                            <div class="blog-detail_content">
+                                <h3 class="blog-detail_heading">{{ $blog->title }}</h3>
+                                <div class="blog-c">
+                                    {{ $blog->body }}
+                                </div>
+                                <div class="post-share-options">
+                                    <div class="post-share-inner d-flex justify-content-end flex-wrap">
+                                        <ul class="social-links">
+                                            <li><a href="#" class="fa-brands fa-facebook-f fa-fw"></a></li>
+                                            <li><a href="#" class="fa-brands fa-twitter fa-fw"></a></li>
+                                            <li><a href="#" class="fa-brands fa-google fa-fw"></a></li>
+                                            <li><a href="#" class="fa-brands fa-dribbble fa-fw"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="news-block_one col-lg-4 col-md-6 col-sm-12">
-                    <div class="news-block_one-inner">
-                        <div class="news-block_one-image">
-                            <a href="blog/2073979.html"><img
-                                    src="{{ asset('asset/img/sections/elements/66c75e9943f9b1724341913.png') }}"
-                                    alt="Analysts reveal bullish case for Bitcoin as global liquidity rises" /></a>
-                        </div>
-                        <div class="news-block_one-content">
-                            <h5 class="news-block_one-title">
-                                <a href="blog/2073979.html">Analysts reveal bullish case for
-                                    Bitcoin as global liquidity rises</a>
-                            </h5>
-                            <div class="news-block_one-text">
-                                In recent weeks, the global macro
-                                financial outlook has been showing signs
-                                of a shift. Over the weekend, Goldman
-                                Sachs economists announced that th...
+
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                    <aside class="sidebar">
+                        <div class="sidebar-inner">
+
+                            <div class="sidebar-widget post-widget">
+                                <div class="widget-content">
+                                    <h5 class="sidebar-widget_title">Latest blog</h5>
+                                    @foreach ($recent_posts as $item)
+                                        <div class="post">
+                                            <div class="thumb"><a href="{{ route('blog', $item->id) }}"><img
+                                                        src="{{ asset("uploads/blogs/$item->image") }}" alt=""></a>
+                                            </div>
+                                            <h6><a href="{{ route('blog', $item->id) }}">{{ $item->title }}</a></h6>
+                                        </div>
+                                    @endforeach
+
+                                   
+
+                                </div>
                             </div>
-                            <a class="news-block_one-more" href="blog/2073979.html">Read more
-                                <i class="fa-solid fa-plus fa-fw"></i></a>
+
                         </div>
-                    </div>
+
+                    </aside>
                 </div>
+
             </div>
-            <link rel="stylesheet" href="#" />
-            <nav class="pagination-outer" aria-label="Page navigation">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a href="blogsfdfa.html?page=8" class="page-link" aria-label="Previous">
-                            <span aria-hidden="true">«</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogs2679.html?page=1">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogs4658.html?page=2">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogs9ba9.html?page=3">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogsfdb0.html?page=4">4</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogsaf4d.html?page=5">5</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogsc575.html?page=6">6</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogs235c.html?page=7">7</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="blogsfdfa.html?page=8">8</a>
-                    </li>
-                    <li class="page-item activeds">
-                        <a class="page-link" href="blogs0b08.html?page=9">9</a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link" aria-label="Next">
-                            <span aria-hidden="true">»</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </section>
+    </div>
 
     <section class="cta-one cta-footer" style="margin-top: 400px">
         <div class="auto-container">
             <div class="inner-container">
-                <div class="cta-icon_one"
-                    style="
-                    background-image: url({{ asset('asset/img/icons/cta-icon-1.png') }});
-                ">
+                <div class="cta-icon_one" style="background-image:url({{ asset('asset/img/icons/cta-icon-1.png') }})">
                 </div>
-                <div class="cta-icon_two"
-                    style="
-                    background-image: url({{ asset('asset/img/icons/cta-icon-2.png') }});
-                ">
+                <div class="cta-icon_two" style="background-image:url({{ asset('asset/img/icons/cta-icon-2.png') }})">
                 </div>
 
                 <div class="row clearfix">
                     <div class="cta-one_title-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_title-outer">
-                            <h2 class="cta-one_title">
-                                Start your first mining with
-                                <span>MakerZN.</span>
-                            </h2>
+                            <h2 class="cta-one_title">Start your first mining with <span>MasHash.</span></h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">
                                     <span class="btn-wrap">

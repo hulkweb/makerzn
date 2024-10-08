@@ -39,7 +39,7 @@
                 <div class="team-detail_image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="team-detail_image-outer" style="margin-top: 120px">
                         <div class="team-detail_image">
-                            <img src="{{ asset('asset/img/plans/images/66b24006d58bc1722957830.png') }}" alt="" />
+                            <img src="{{ asset('uploads/plans/' . $item->image) }}" alt="" />
                         </div>
                     </div>
                 </div>

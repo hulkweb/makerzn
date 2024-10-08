@@ -2,14 +2,17 @@
 
 
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\BlogScraperController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Middleware\AdminMiddleware;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +31,7 @@ Route::get('/home', [WebsiteController::class, 'index']);
 Route::get('/app', [WebsiteController::class, 'app'])->name('app');
 
 Route::get('blogs', [WebsiteController::class, 'blogs'])->name('blogs');
-// Route::get('blog/{slug}', [WebsiteController::class, 'blog'])->name('blog');
+Route::get('blog/{slug}', [WebsiteController::class, 'blog'])->name('blog');
 
 Route::get('plans', [WebsiteController::class, 'plans'])->name('plans');
 Route::get('plan/{slug}', [WebsiteController::class, 'plan'])->name('plan');
@@ -44,12 +47,12 @@ Route::get('terms-and-conditions', [WebsiteController::class, 'terms'])->name('t
 Route::get('privacy-policy', [WebsiteController::class, 'privacy'])->name('privacy');
 Route::get('faq', [WebsiteController::class, 'faq'])->name('faq');
 
-Route::get("/login", [UserController::class, 'login'])->name('login');
-Route::get("/login", [UserController::class, 'login'])->name('signin');
+Route::get("login", [UserController::class, 'login'])->name('login');
+Route::get("signin", [UserController::class, 'login'])->name('signin');
 
 Route::get("signup", [UserController::class, 'signup'])->name('signup');
 
-Route::post("login", [UserController::class, 'login_post'])->name('login.post');
+Route::post("authenticate", [UserController::class, 'login_post'])->name('login.post');
 Route::post("signup", [UserController::class, 'signup_post'])->name('signup.post');
 
 
@@ -78,6 +81,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("logout", [UserController::class, 'logout'])->name('logout');
 });
 
+Route::get('/scrape-blogs', [BlogScraperController::class, 'scrapeAndInsertBlogs']);
+
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::get("/", [DashboardController::class, 'signin'])->name('sigin');
@@ -100,6 +105,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::resource("blogs", BlogController::class);
         Route::resource("plans", PlanController::class);
+        Route::resource("settings", SettingController::class);
 
 
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');

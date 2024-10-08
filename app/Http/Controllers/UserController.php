@@ -148,8 +148,8 @@ class UserController extends Controller
     public function dashboard()
     {
         $user = Auth::user();
-        $deposit = Transaction::where("user_id", $user->id)->where("status", TransactionStatus::$SUCCESS)->where("type", TransactionType::$DEPOSIT)->sum("amount");
-        $withdraw = Transaction::where("user_id", $user->id)->where("status", TransactionStatus::$SUCCESS)->where("type", TransactionType::$WITHDRAW)->sum("amount");
+        $deposit = Transaction::where("user_id", $user->id)->where("status", TransactionStatus::$SUCCESS)->where("type", TransactionType::$DEPOSIT)->sum("usd_value");
+        $withdraw = Transaction::where("user_id", $user->id)->where("status", TransactionStatus::$SUCCESS)->where("type", TransactionType::$WITHDRAW)->sum("usd_value");
         $orders = UserPlanDetail::join("plans", "user_plan_details.plan_id", "=", "plans.id")
             ->select("user_plan_details.user_id as user_id", "user_plan_details.status as plan_status", "plans.price as price")
             ->where("user_id", $user->id)->get();

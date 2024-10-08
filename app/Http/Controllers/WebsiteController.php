@@ -24,7 +24,7 @@ class WebsiteController extends Controller
     {
 
         $plans = Plan::orderBy("price", 'asc')->get();
-        $blogs = Blog::orderBy("views", 'desc')->paginate(3);
+        $blogs = Blog::orderBy("id", 'desc')->paginate(3);
         return view('pages.website.index', compact('plans', 'blogs'));
         // return view('pages.website.index',);
     }
@@ -85,19 +85,19 @@ class WebsiteController extends Controller
     {
         // $blogs = Blog::orderBy("views", 'desc')->paginate(20);
         // $title = "Blogs";
-        // $recent_posts = Blog::orderBy("id", "desc")->take(3)->get();
-        // return view("blogs", compact('title', 'blogs', 'recent_posts'));
-        return view("pages.website.blogs");
+        $blogs = Blog::orderBy("id", "desc")->paginate(9);
+        // return view("blogs", compact('title', 'blogs', 'blogs'));
+        return view("pages.website.blogs", compact('blogs'));
     }
     public function blog($slug)
     {
-        $blog = Blog::where("slug", trim($slug))->first();
+        $blog = Blog::find($slug);
         if (!$blog) {
             return redirect()->back();
         }
         $title = $blog->title;
         $recent_posts = Blog::take(4)->orderBy("id", "desc")->get();
-        return view("blog", compact('title', 'blog', 'recent_posts'));
+        return view("pages.website.blog", compact('title', 'blog', 'recent_posts'));
     }
 
     public function policy()
