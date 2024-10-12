@@ -72,7 +72,7 @@ class UserController extends Controller
             if ($request->filled("refer_code")) {
                 $ref_user = User::where("refer_code", $request->refer_code)->first();
                 if ($ref_user) {
-                    $user->refer_bt = $ref_user->id;
+                    $user->refer_by = $ref_user->id;
                 }
             }
 
@@ -196,6 +196,7 @@ class UserController extends Controller
     public function withdraw()
     {
         $withdraw = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$WITHDRAW)->paginate(10);
+        $currencies = Currency::all();
 
         return view("pages.user.withdraw", compact('withdraw'));
     }
@@ -237,6 +238,7 @@ class UserController extends Controller
     }
     public function referrals()
     {
-        return view("pages.user.referrals");
+        $partners = User::where("user_id", Auth::user()->id)->get();
+        return view("pages.user.referrals", compact("partners"));
     }
 }

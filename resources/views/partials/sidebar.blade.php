@@ -53,7 +53,12 @@
             <i class="fas fa-fw fa-bolt"></i>
             <span>Subscriptions</span></a>
     </li>
-
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item @if (Route::is('admin.settings.index')) active @endif">
+        <a class="nav-link" href="{{ route('admin.settings.index') }}">
+            <i class="fas fa-fw fa-bolt"></i>
+            <span>Settings</span></a>
+    </li>
 
 
     <!-- Divider -->

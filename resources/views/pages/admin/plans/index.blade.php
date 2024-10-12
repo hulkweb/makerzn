@@ -164,7 +164,21 @@
                             <input type="integer" min="1" class="form-control" name="interest_settlement_time"
                                 id="inputTitle" placeholder="Enter time" required>
                         </div>
-
+                        <div class="form-group">
+                            <label for="inputTitle">First Referral(in $)</label>
+                            <input type="text" min="1" class="form-control" name="first_referral"
+                                placeholder="Enter time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">Second Referral(in $)</label>
+                            <input type="text" min="1" class="form-control" name="second_referral"
+                                placeholder="Enter time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">Third Referral(in $)</label>
+                            <input type="text" min="1" class="form-control" name="third_referral"
+                                placeholder="Enter time" required>
+                        </div>
 
                         <div class="form-group">
                             <label for="inputAuthor">Image</label>
@@ -245,7 +259,21 @@
                             <input type="integer" min="1" class="form-control" name="interest_settlement_time"
                                 id="interest_settlement_time" placeholder="Enter time" required>
                         </div>
-
+                        <div class="form-group">
+                            <label for="inputTitle">First Referral(in $)</label>
+                            <input type="text" min="1" class="form-control" name="first_referral"
+                                id="first_referral" placeholder="Enter time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">Second Referral(in $)</label>
+                            <input type="text" min="1" class="form-control" name="second_referral"
+                                id="second_referral" placeholder="Enter time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">Third Referral(in $)</label>
+                            <input type="text" min="1" class="form-control" name="third_referral"
+                                id="third_referral" placeholder="Enter time" required>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

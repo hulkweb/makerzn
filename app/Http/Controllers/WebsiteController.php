@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\TransactionStatus;
+use App\Enums\TransactionType;
 use App\Models\Blog;
 use App\Models\Booking;
 use App\Models\Location;
@@ -11,6 +13,7 @@ use App\Models\ModificationType;
 use App\Models\Plan;
 use App\Models\Quote;
 use App\Models\Service;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserPlanDetail;
 use Illuminate\Database\Eloquent\Model;
@@ -79,6 +82,21 @@ class WebsiteController extends Controller
         $userPlanDetail->start_date = now();
         $userPlanDetail->end_date = now()->addDay($plan->duration);
         $userPlanDetail->save();
+        if ($user->refer_by != "") {
+            $one = User::find($user->refer_by);
+            if ($one) {
+                $transaction = new Transaction();
+                $transaction->usd_value = $plan->first_referral;
+                $transaction->user_id = $one->id;
+                $transaction->referral = true;
+                $transaction->status = TransactionStatus::$SUCCESS;
+                $transaction->type = TransactionType::$DEPOSIT;
+                $transaction->save();
+
+                $one->wallet_balance += $plan->first_referra;;
+                $one->save();
+            }
+        }
         return redirect(route("orders"))->with("success", "Order completed successfully");
     }
     public function blogs()
@@ -141,5 +159,27 @@ class WebsiteController extends Controller
 
 
 
-    public function cronJob() {}
+    public function cronJob()
+    {
+
+        $userPlans = UserPlanDetail::where("status", "Active")->get();
+        foreach ($userPlans as  $item) {
+            if (time() > strtotime($item->end_date)) {
+                $item->status = "Inactive";
+                $item->save();
+            } else {
+                $user = User::find($item->user_id);
+                $transaction = new Transaction();
+                $transaction->user_id = $user->id;
+                $transaction->user_plan_detail_id = $item->id;
+                $transaction->usd_value = $item->plan->daily_rebate;
+                $transaction->type = TransactionType::$DEPOSIT;
+                $transaction->status = TransactionStatus::$SUCCESS;
+                $transaction->save();
+
+                $user->wallet_balance += $item->plan->daily_rebate;
+                $user->save();
+            }
+        }
+    }
 }

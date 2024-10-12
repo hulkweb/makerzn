@@ -43,6 +43,10 @@ class PlanController extends Controller
         $plan->recoverable_funds = $request->input('recoverable_funds');
         $plan->principal_refund = $request->input('principal_refund');
         $plan->interest_settlement_time = $request->input('interest_settlement_time');
+        $plan->first_referral = $request->input('first_referral');
+        $plan->second_referral = $request->input('second_referral');
+        $plan->third_referral = $request->input('third_referral');
+
         $plan->status = $request->input('status');
 
         $slug = str_replace(" ", "-", trim(strtolower($request->name)));
@@ -87,7 +91,10 @@ class PlanController extends Controller
         $plan->principal_refund = $request->input('principal_refund');
         $plan->interest_settlement_time = $request->input('interest_settlement_time');
         $plan->status = $request->input('status');
-
+        $plan->first_referral = $request->input('first_referral');
+        $plan->second_referral = $request->input('second_referral');
+        $plan->third_referral = $request->input('third_referral');
+        
         $slug = str_replace(" ", "-", trim(strtolower($request->name)));
 
         if ($request->hasFile("image")) {

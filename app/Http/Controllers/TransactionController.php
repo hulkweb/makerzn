@@ -6,6 +6,7 @@ use App\Enums\TransactionStatus;
 use App\Enums\TransactionType;
 use App\Models\Currency;
 use App\Models\Transaction;
+use App\Models\UserPlanDetail;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +69,29 @@ class TransactionController extends Controller
         return view("pages.user.withdraw", compact('withdraw', 'currencies', 'last'));
     }
 
-    public function withdraw_post() {}
+    public function withdraw_post(Request $request)
+    {
+        $plan_active = UserPlanDetail::where("status", "Active")->count();
+        if ($plan_active) {
+            return back()->with('error', 'Your plan is active . you can withdraw after completion');
+        }
+
+        if (Auth::user()->wallet_balance < $request->usd_value) {
+            return back()->with('error', 'Insufficient funds');
+        }
+        $currency = Currency::find($request->currency_id);
+
+        $new_transaction = new Transaction();
+        $new_transaction->type = TransactionType::$WITHDRAW;
+        $new_transaction->user_id = Auth::id();
+        $new_transaction->usd_value = $request->amount;
+        $new_transaction->amount = $request->amount / $currency->usd_value;
+
+        $new_transaction->status = TransactionStatus::$PENDING;
+
+        $new_transaction->currency_id = $request->currency_id;
+        $new_transaction->save();
+        return back()->with('success', 'Transaction created successfully');
+    }
     public function withdraw_post_verify() {}
 }

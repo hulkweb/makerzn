@@ -169,8 +169,8 @@
                                 </div>
                                 <div class="col-12 mt-0">
                                     <label class="label_cod">Wallet Address:</label>
-                                    <textarea type="text" id="wallet" class="form-control copyd icon__copy form-bg-2 w-100" readonly id="wlt"
-                                        style="padding-right: 40px; background-color: transparent;"></textarea>
+                                    <textarea type="text" id="wallet" class="form-control copyd icon__copy form-bg-2 w-100" readonly
+                                        id="wlt" style="padding-right: 40px; background-color: transparent;"></textarea>
                                 </div>
                                 <div class="col-12 mt-0 relative d-flex align-items-center">
                                     <input type="file" name="image" id="imageUpload"

@@ -149,6 +149,8 @@ class DashboardController extends Controller
                 if ($transaction->type == TransactionType::$DEPOSIT) {
                     $user = User::find($transaction->user_id);
                     $user->wallet_balance += $transaction->usd_value;
+
+
                     $user->save();
                 } else if ($transaction->type == TransactionType::$WITHDRAW) {
                     $user = User::find($transaction->user_id);
@@ -160,6 +162,11 @@ class DashboardController extends Controller
         return response()->json(['status' => 200, "message" => "Transaction updated successfully"]);
     }
 
+
+    function calculateReferralCommision($user, $plan, $level)
+    {
+        return $level - 1;
+    }
     public function subscriptions()
     {
 

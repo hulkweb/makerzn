@@ -24,7 +24,7 @@
                 <div class="col-7">
                     <div class="block-d">
                         <input type="text" class="form-c w-100 text-center copyd" readonly
-                            value="{{ env('APP_URL') }}signup?ref=A5KEKW" />
+                            value="{{ env('APP_URL') }}signup?ref={{ auth()->user()->refer_code }}" />
                         <div class="w-100 d-flex justify-content-center mt-3">
                             <a href="#" id="copyButton" class="template-btn btn-style-three"
                                 style="padding: 13px 34px">
@@ -42,7 +42,7 @@
                         <h5 class="text-center main_color">
                             Your Partners
                         </h5>
-                        <h4 class="text-center mt-2">0</h4>
+                        <h4 class="text-center mt-2">{{ count($partners) }}</h4>
                     </div>
                 </div>
             </div>
@@ -60,9 +60,18 @@
                         </tr>
                     </thead>
                     <tbody id="body_table">
-                        <td class="text-center no-data-table" colspan="100%">
-                            No data found
-                        </td>
+                        @forelse ($partners as $item)
+                            <tr>
+                                <td scope="col" class="col-4">{{ $item->email }}</td>
+                                <td scope="col" class="col-3">{{ date('Y-m-d', strtotime($item->created_at)) }}</td>
+                                <td scope="col" class="col">N/A</td>
+                            </tr>
+                        @empty
+                            <td class="text-center no-data-table" colspan="100%">
+                                No data found
+                            </td>
+                        @endforelse
+
                     </tbody>
                 </table>
             </div>

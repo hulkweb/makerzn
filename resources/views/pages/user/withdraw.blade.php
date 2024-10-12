@@ -12,7 +12,7 @@
             <h4 class="main_color mb-3">Withdraw</h4>
             <div class="block-d">
                 <form action="" method="POST">
-                    <input type="hidden" name="_token" value="jtIYmy9qs5Oc2ssMo15UFMjEi6hC2k3u2pcxtt6u">
+                    @csrf
                     <div class="row" style="row-gap: 20px">
                         <div class="col-6">
                             <div class="form-group">
@@ -20,45 +20,26 @@
                                 <select name="network"
                                     class="mb-3 form-c select-bar dw w-full rounded  bg-gray px-4.5 py-3 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark"
                                     required="" value="" style="display: none;">
-                                    <option disabled="" selected="">Select Withdraw Network</option>
-                                    <option value="10001" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png">
-                                        USDT-ERC20 [Network: Ethereum]</option>
-                                    <option value="10002" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png">
-                                        USDT-TRC20 [Network: Tron]</option>
-                                    <option value="10003" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BTC.png">
-                                        BTC [Network: Bitcoin]</option>
-                                    <option value="10004" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/ETH.png">
-                                        ETH [Network: Ethereum]</option>
-                                    <option value="10005" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/LTC.png">
-                                        LTC [Network: Litecoin]</option>
-                                    <option value="10007" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png">
-                                        USDC [Network: Ethereum]</option>
-                                    <option value="10008" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BCH.png">
-                                        BCH [Network: Bitcoin Cash]</option>
-                                    <option value="10009" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/DOGE.png">
-                                        DOGE [Network: Dogecoin]</option>
-                                    <option value="10011" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png">
-                                        USDT-BEP20 [Network: Binance Smart Chain]</option>
-                                    <option value="10012" data-image="{{ env('APP_URL') }}asset/img/crypto/coins/BNB.png">
-                                        BNB [Network: Binance Smart Chain]</option>
-                                    <option value="10013"
-                                        data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png">
-                                        USDC [Network: Base]</option>
+                                    <option disabled selected>Select Deposit Network</option>
+
+                                    @foreach ($currencies as $item)
+                                        <option value="{{ $item->id }}"
+                                            data-image="{{ asset('asset/img/crypto/coins/' . $item->symbol . '.png') }}">
+                                            {{ $item->symbol }} [Network: {{ $item->name }}]</option>
+                                    @endforeach
                                 </select>
-                                <div class="nice-select mb-3 form-c select-bar dw w-full rounded bg-gray px-4.5 py-3 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark"
+                                {{-- <div class="nice-select mb-3 form-c select-bar dw w-full rounded bg-gray px-4.5 py-3 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark"
                                     tabindex="0"><span class="current">Select Withdraw Network</span>
                                     <ul class="list">
                                         <li data-value="Select Withdraw Network" class="option selected disabled">Select
                                             Withdraw Network</li>
                                         <li data-value="10001"
-                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
-                                            class="option">
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png" class="option">
                                             <img src="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
                                                 class="icon-dep">USDT-ERC20 [Network: Ethereum]
                                         </li>
                                         <li data-value="10002"
-                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
-                                            class="option">
+                                            data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png" class="option">
                                             <img src="{{ env('APP_URL') }}asset/img/crypto/coins/USDT.png"
                                                 class="icon-dep">USDT-TRC20 [Network: Tron]
                                         </li>
@@ -107,18 +88,16 @@
                                         </li>
                                         <li data-value="10013"
                                             data-image="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png"
-                                            class="option"> <img
-                                                src="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png"
+                                            class="option"> <img src="{{ env('APP_URL') }}asset/img/crypto/coins/USDC.png"
                                                 class="icon-dep">USDC [Network: Base]</li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Amount</label>
-                                <input type="text" name="amount" class="form-c w-100"
-                                    placeholder="Please Input Amount"
+                                <input type="text" name="amount" class="form-c w-100" placeholder="Please Input Amount"
                                     onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1')" required="">
                             </div>
                         </div>
@@ -164,9 +143,47 @@
                         </tr>
                     </thead>
                     <tbody id="body_table">
-                        <tr>
-                            <td class="text-center no-data-table" colspan="100%">No data found</td>
-                        </tr>
+                        @forelse ($withdraw as $item)
+                            <tr>
+                                <td class=" c_yel " id="status">
+                                    {{ ucfirst($item->status) }}
+                                </td>
+                                <td id="time">{{ $item->created_at }}</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between gap-40">
+                                        <div class="d-flex align-items-center gap-10" style="gap: 6px">
+                                            <img src="{{ asset('asset/img/crypto/coins/' . $item->currency->symbol . '.png') }}"
+                                                class="round-gate" width="22" height="22">
+                                            <span class="white fw-600" id="amount">
+                                                {{ $item->amount }}
+                                            </span> <span id="system">{{ $item->currency->symbol }}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="de">${{ number_format($item->usd_value, 2, '.', ',') }}</div>
+                                </td>
+                                <td>
+                                    {{-- <div class="d-flex align-items-center justify-content-between gap-40">
+                                        <button class="table_button  b_pen1 "
+                                            data-gateway_name="{{ $item->currency->symbol }} [Network: Ethereum]"
+                                            data-currency_id="{{ $item->currency->symbol }}"
+                                            data-amount="${{ number_format($item->usd_value, 2, '.', ',') }}"
+                                            data-id="{{ $item->id }}"
+                                            data-wallet="0x8943b243CE3F98952a0349Ff39a8b565b50d2eeE"
+                                            onclick="openVoucherModal(this)" data-id="{{ $item->id }}" data-status="0"
+                                            data-rate="0.00037476" data-final="2.99808000" data-remark="In Progress">
+                                            Upload
+                                        </button>
+                                    </div> --}}
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="9" align="center">No records found</td>
+                            </tr>
+                        @endforelse
+
                     </tbody>
                 </table>
             </div>
