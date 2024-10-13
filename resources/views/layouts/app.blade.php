@@ -2,7 +2,7 @@
 <html>
 
 
-<!-- Mirrored from MakerZN.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:47:42 GMT -->
+<!-- Mirrored from {{ setting('site_name') }}.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:47:42 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="tjCHecAr4lofShpXqC1sASXZheYnWYC2bBjrtmCe">
-    <meta name="title" content="MakerZN | Easy Cryptocurrency Cloud Mining with ASIC Miner">
+    <meta name="title" content="{{ setting('site_title') }}">
     <meta name="description"
-        content="Join MakerZN for secure crypto cloud mining with the latest ASIC miners and GPU rigs. Enjoy automated payouts, eco-friendly operations, and expert support.">
-    <title>MakerZN | Easy Cryptocurrency Cloud Mining with ASIC Miner</title>
+        content="Join {{ setting('site_name') }} for secure crypto cloud mining with the latest ASIC miners and GPU rigs. Enjoy automated payouts, eco-friendly operations, and expert support.">
+    <title>{{ setting('site_title') }}</title>
     <link href="{{ asset('asset/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/meanmenu.min.css') }}" rel="stylesheet">
@@ -32,7 +32,7 @@
     <link href="{{ asset('asset/css/iziToast.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('asset/img/logos/66a7e0c49abd51722278084.png') }}" type="image/x-icon">
 
-    <!-- Default Statcounter code for MakerZN {{ env('APP_URL') }} -->
+    <!-- Default Statcounter code for {{ setting('site_name') }} {{ env('APP_URL') }} -->
     <script type="text/javascript">
         var sc_project = 13022378;
         var sc_invisible = 1;
@@ -153,8 +153,7 @@
 
                             <div class="logo-box">
                                 <div class="logo"><a href="{{ route('home') }}"><img
-                                            src="{{ asset('asset/img/logos/66a7e0c48e8441722278084.png') }}"
-                                            alt="" title=""></a></div>
+                                            src="{{ setting('site_logo') }}" alt="" title=""></a></div>
                             </div>
 
                             <div class="nav-outer d-flex flex-wrap">
@@ -323,11 +322,7 @@
                                                 src="{{ asset('asset/img/logos/66a7e0c48e8441722278084.png') }}"
                                                 alt="" title=""></a></div>
                                 </div>
-                                <p class="f-text">MakerZN is a versatile company with a clear mission: to equip you
-                                    with the essential tools and services for success in the digital asset realm.
-                                    Whether you need high-performance equipment for maximum hash power or expert
-                                    guidance in cloud mining investments, we're committed to ensuring your crypto
-                                    journey is efficient and profitable.</p>
+                                <p class="f-text">{{ setting('site_footer_about') }}</p>
                                 <div class="txd d-flex align-items-center">
                                     <span class="icon fa-solid fa-envelope fa-fw"></span>
                                     <p class="txt"><a href="#" class="__cf_email__"
@@ -342,7 +337,7 @@
                                     <a href="https://www.facebook.com/profile.php?id=61563547275911"><i
                                             class="fa-brands fa-facebook-f"></i></a>
                                     <a href="https://x.com/Mas_Hash_"><i class="fa-brands fa-twitter"></i></a>
-                                    <a href="https://www.youtube.com/@MakerZNMiner"><i
+                                    <a href="https://www.youtube.com/@{{ setting("site_name") }}Miner"><i
                                             class="fa-brands fa-youtube"></i></a>
                                 </div>
                             </div>
@@ -393,7 +388,8 @@
             <div class="footer-bottom">
                 <div class="auto-container">
                     <div class="inner-container d-flex justify-content-center align-items-center flex-wrap">
-                        <div class="footer-copyright">Copyright 2019-2024 MakerZN. All rights reserved.</div>
+                        <div class="footer-copyright">Copyright 2019-2024 {{ setting('site_name') }}. All rights
+                            reserved.</div>
                     </div>
                 </div>
             </div>
@@ -543,6 +539,6 @@
 @endif
 @stack('js')
 
-<!-- Mirrored from MakerZN.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:48:24 GMT -->
+<!-- Mirrored from {{ setting('site_name') }}.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 05:48:24 GMT -->
 
 </html>

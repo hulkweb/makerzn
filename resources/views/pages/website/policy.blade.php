@@ -25,13 +25,13 @@
         "></div>
         <div class="auto-container">
             <h2>
-                MakerZN Privacy Policy | Easy Cryptocurrency Cloud
+                {{ setting('site_name') }} Privacy Policy | Easy Cryptocurrency Cloud
                 Mining with ASIC Miner
             </h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    MakerZN Privacy Policy | Easy Cryptocurrency Cloud
+                    {{ setting('site_name') }} Privacy Policy | Easy Cryptocurrency Cloud
                     Mining with ASIC Miner
                 </li>
             </ul>
@@ -42,7 +42,7 @@
         <h4 style="color: #fff">Privacy Policy</h4>
         <div class="team-detail_text">
             <div>
-                <font color="#cec6ce"><b>This Privacy Policy describes the ways MakerZN
+                <font color="#cec6ce"><b>This Privacy Policy describes the ways {{ setting('site_name') }}
                         ("we", "us", or "our" as appropriate) collects,
                         stores, uses, and manages the information you
                         provide to us, or we collect in connection with
@@ -75,7 +75,7 @@
                 <font color="#cec6ce"><b><br /></b></font>
             </div>
             <div>
-                <font color="#cec6ce"><b>"Terms" means the MakerZN Terms of Use,
+                <font color="#cec6ce"><b>"Terms" means the {{ setting('site_name') }} Terms of Use,
                         including Schedule A 'Important Notice'.</b></font>
             </div>
             <div>
@@ -90,7 +90,7 @@
             </div>
             <div>
                 <font color="#cec6ce"><b>"Website" means the website accessible at
-                        https://MakerZN.com, including its subdomains,
+                        https://{{ setting('site_name') }}.com, including its subdomains,
                         programming code, related technologies,
                         know-how, databases, and design.</b></font>
             </div>
@@ -131,7 +131,7 @@
             </div>
             <div>
                 <font color="#cec6ce"><b>To access and use the Website, undergo a KYC
-                        check according to the MakerZN KYC Policy, for
+                        check according to the {{ setting('site_name') }} KYC Policy, for
                         various purposes that will be mentioned further
                         in this Policy, we may process and collect the
                         following Personal Data (by way of example):</b></font>
@@ -917,7 +917,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MakerZN.</span>
+                                <span>{{ setting('site_name') }}.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

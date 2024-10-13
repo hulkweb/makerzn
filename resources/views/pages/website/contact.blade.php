@@ -25,12 +25,12 @@
         "></div>
         <div class="auto-container">
             <h2>
-                Contact MakerZN | Cryptocurrency Cloud Mining Platform
+                Contact {{ setting('site_name') }} | Cryptocurrency Cloud Mining Platform
             </h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    Contact MakerZN | Cryptocurrency Cloud Mining
+                    Contact {{ setting('site_name') }} | Cryptocurrency Cloud Mining
                     Platform
                 </li>
             </ul>
@@ -117,7 +117,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MakerZN.</span>
+                                <span>{{ setting('site_name') }}.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

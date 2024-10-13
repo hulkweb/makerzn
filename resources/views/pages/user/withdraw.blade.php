@@ -11,7 +11,7 @@
         <div class="content-block">
             <h4 class="main_color mb-3">Withdraw</h4>
             <div class="block-d">
-                <form action="" method="POST">
+                <form action="{{ route('withdraw_post') }}" method="POST">
                     @csrf
                     <div class="row" style="row-gap: 20px">
                         <div class="col-6">
@@ -20,7 +20,7 @@
                                 <select name="network"
                                     class="mb-3 form-c select-bar dw w-full rounded  bg-gray px-4.5 py-3 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark"
                                     required="" value="" style="display: none;">
-                                    <option disabled selected>Select Deposit Network</option>
+                                    <option disabled selected>Select Withdraw Network</option>
 
                                     @foreach ($currencies as $item)
                                         <option value="{{ $item->id }}"
@@ -115,7 +115,7 @@
                                     placeholder="Default Payment Password: 123456" required="">
                             </div>
                         </div>
-                    </div>
+             ̧       </div>
                     <div class="w-100 d-flex justify-content-center">
                         <button class="template-btn btn-style-three mt-4 w-100 d-flex justify-content-center"
                             style="max-width: 200px">

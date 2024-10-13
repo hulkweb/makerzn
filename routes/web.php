@@ -10,6 +10,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Middleware\AdminMiddleware;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -58,9 +60,8 @@ Route::post("signup", [UserController::class, 'signup_post'])->name('signup.post
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get("dashboard", [UserController::class, 'dashboard'])->name('dashboard');
-    Route::get("deposit", [TransactionController::class, 'deposit'])->name('deposit');
+
     Route::get("bills", [UserController::class, 'bills'])->name('bills');
-    Route::get("withdraw", [UserController::class, 'withdraw'])->name('withdraw');
     Route::get("referrals", [UserController::class, 'referrals'])->name('referrals');
 
 
@@ -71,10 +72,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("orders", [UserController::class, 'orders'])->name('orders');
 
 
-
+    Route::get("deposit", [TransactionController::class, 'deposit'])->name('deposit');
     Route::post("deposit_post", [TransactionController::class, 'deposit_post'])->name("deposit_post");
     Route::post("deposit_post_verify", [TransactionController::class, 'deposit_post_verify'])->name("deposit_post_verify");
 
+    Route::get("withdraw", [TransactionController::class, 'withdraw'])->name('withdraw');
     Route::post("withdraw_post", [TransactionController::class, 'withdraw_post'])->name("withdraw_post");
     Route::post("withdraw_post_verify", [TransactionController::class, 'withdraw_post_verify'])->name("withdraw_post_verify");
 

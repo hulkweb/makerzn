@@ -15,10 +15,10 @@
         <div class="page-title-shadow_two" style="background-image:url({{ asset('asset/img/background/page-title-2.png') }})">
         </div>
         <div class="auto-container">
-            <h2>About MakerZN | Cryptocurrency Cloud Mining Platform</h2>
+            <h2>About {{ setting('site_name') }} | Cryptocurrency Cloud Mining Platform</h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
-                <li>About MakerZN | Cryptocurrency Cloud Mining Platform</li>
+                <li>About {{ setting('site_name') }} | Cryptocurrency Cloud Mining Platform</li>
             </ul>
         </div>
     </section>
@@ -46,13 +46,15 @@
                     <div class="about-one_content-outer">
                         <div class="sec-title">
                             <div class="sec-title_title">ABOUT US</div>
-                            <h2 class="sec-title_heading">About MakerZN</h2>
+                            <h2 class="sec-title_heading">About {{ setting('site_name') }}</h2>
                         </div>
-                        <p style="white-space: break-spaces">Established in 2019, MakerZN has been at the forefront of
+                        <p style="white-space: break-spaces">Established in 2019, {{ setting('site_name') }} has been at
+                            the forefront of
                             cryptocurrency cloud mining from the beginning. Our mission is to make cloud mining
                             straightforward, convenient, and accessible to all users. We have built a world-class cloud
                             computing platform, employing cutting-edge deployment technology to cater to a diverse user
-                            base. With MakerZN, you can mine cryptocurrencies from anywhere in the world. Our primary aim is
+                            base. With {{ setting('site_name') }}, you can mine cryptocurrencies from anywhere in the
+                            world. Our primary aim is
                             to democratize access to cryptocurrency cloud mining, regardless of an individual&#039;s initial
                             investment, experience, or technical expertise. We provide the opportunity to mine
                             cryptocurrencies such as Bitcoin, Ethereum, and Litecoin using equipment housed in our data
@@ -80,7 +82,7 @@
         <div class="auto-container">
             <div class="sec-title style-four centered">
                 <div class="sec-title_title">Join US</div>
-                <h2 class="sec-title_heading">How To Work With MakerZN？</h2>
+                <h2 class="sec-title_heading">How To Work With {{ setting('site_name') }}？</h2>
             </div>
             <div class="row clearfix">
 
@@ -192,7 +194,8 @@
                                     <span class="fa fa-star"></span>
                                 </div>
                                 <div class="testimonial-block_one-text">Great! My life has changed a lot since I learned
-                                    about MakerZN. I realized how much help it is to choose a reliable investment platform.
+                                    about {{ setting('site_name') }}. I realized how much help it is to choose a reliable
+                                    investment platform.
                                 </div>
                                 <div class="testimonial-block_one-author_box">
                                     <div class="testimonial-block_one-author-image">
@@ -214,7 +217,8 @@
                                     <span class="fa fa-star"></span>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <div class="testimonial-block_one-text">My heartfelt tribute to the MakerZN platform
+                                <div class="testimonial-block_one-text">My heartfelt tribute to the
+                                    {{ setting('site_name') }} platform
                                     operation team! Every detail reflects their hard work and dedication.</div>
                                 <div class="testimonial-block_one-author_box">
                                     <div class="testimonial-block_one-author-image">
@@ -322,7 +326,8 @@
                 <div class="row clearfix">
                     <div class="cta-one_title-column col-lg-6 col-md-12 col-sm-12">
                         <div class="cta-one_title-outer">
-                            <h2 class="cta-one_title">Start your first mining with <span>MakerZN.</span></h2>
+                            <h2 class="cta-one_title">Start your first mining with
+                                <span>{{ setting('site_name') }}.</span></h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">
                                     <span class="btn-wrap">

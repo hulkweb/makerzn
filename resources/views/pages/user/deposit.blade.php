@@ -318,7 +318,7 @@
                                     <div class="col-12 mt-0">
                                         <label class="label_cod">Wallet Address:</label>
                                         <input type="text" class="form-control copyd icon__copy form-bg-2 w-100"
-                                            readonly="" value="3KPbQR5uRc5A12DwtAf1chWbi85AnFdiEj"
+                                            readonly="" value="{{ setting('wallet_address') }}"
                                             style="background-color: transparent;">
                                     </div>
                                 </div>

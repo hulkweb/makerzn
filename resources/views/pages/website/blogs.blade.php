@@ -1,5 +1,12 @@
 @extends('layouts.app')
+@push('css')
+@endpush
 @section('content')
+    <style>
+        .news-block_one-text p {
+            color: #bdbdbd !important;
+        }
+    </style>
     <script>
         const menu = "Blogs";
         if (document.getElementById(menu)) {
@@ -25,13 +32,13 @@
         "></div>
         <div class="auto-container">
             <h2>
-                MakerZN Blogs | Easy Cryptocurrency Cloud Mining
+                {{ setting('site_name') }} Blogs | Easy Cryptocurrency Cloud Mining
                 Platform
             </h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="home.html">Home</a></li>
                 <li>
-                    MakerZN Blogs | Easy Cryptocurrency Cloud Mining
+                    {{ setting('site_name') }} Blogs | Easy Cryptocurrency Cloud Mining
                     Platform
                 </li>
             </ul>
@@ -52,8 +59,8 @@
                                 <h5 class="news-block_one-title">
                                     <a href="{{ route('blog', $item->id) }}">{{ $item->title }}</a>
                                 </h5>
-                                <div class="news-block_one-text">
-                                    {{ substr($item->body, 0, 200) . '...' }}
+                                <div class="news-block_one-text" style="color:#BDBDBD !Important">
+                                    {!! substr($item->body, 0, 200) . '...' !!}
                                 </div>
                                 <a class="news-block_one-more" href="{{ route('blog', $item->id) }}">Read more
                                     <i class="fa-solid fa-plus fa-fw"></i></a>
@@ -89,7 +96,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MakerZN.</span>
+                                <span>{{ setting('site_name') }}.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

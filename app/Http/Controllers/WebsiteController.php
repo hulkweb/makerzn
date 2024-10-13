@@ -82,6 +82,9 @@ class WebsiteController extends Controller
         $userPlanDetail->start_date = now();
         $userPlanDetail->end_date = now()->addDay($plan->duration);
         $userPlanDetail->save();
+
+        $user->wallet_balance -= $plan->price;
+        $user->save();
         if ($user->refer_by != "") {
             $one = User::find($user->refer_by);
             if ($one) {

@@ -137,7 +137,10 @@
 
                         <div class="form-group">
                             <label for="inputDescription">Body</label>
-                            <textarea class="form-control" id="summernote" name="body" rows="3" required placeholder="Enter description"></textarea>
+                            <div>
+                                <textarea class="form-control" id="summernote" name="body" rows="3" required placeholder="Enter description"></textarea>
+
+                            </div>
                         </div>
 
 
@@ -187,7 +190,9 @@
 
                         <div class="form-group">
                             <label for="inputDescription">Body</label>
-                            <textarea class="form-control" id="summernote_edit" name="body" rows="3" placeholder="Enter description"></textarea>
+                            <div>
+                                <textarea class="form-control" id="summernote_edit" name="body" rows="3" placeholder="Enter description"></textarea>
+                            </div>
                         </div>
 
                     </div>

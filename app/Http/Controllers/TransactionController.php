@@ -7,6 +7,7 @@ use App\Enums\TransactionType;
 use App\Models\Currency;
 use App\Models\Transaction;
 use App\Models\UserPlanDetail;
+use Carbon\Carbon;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class TransactionController extends Controller
 
     public function deposit()
     {
-        $deposits = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->paginate(10);
+        $deposits = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->orderBy("id", "desc")->paginate(10);
         $currencies = Currency::all();
         $last = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->latest()->first();
         return view("pages.user.deposit", compact('deposits', 'currencies', 'last'));
@@ -26,11 +27,17 @@ class TransactionController extends Controller
     {
 
         $currency = Currency::find($request->currency_id);
+        if (Carbon::now()->diffInHours($currency->updated_at) > 1) {
 
+            $amount =  getCryptoAmountForCurrency($request->amount, $currency->symbol);
+        }
+        $currency = Currency::find($request->currency_id);
         $new_transaction = new Transaction();
         $new_transaction->type = TransactionType::$DEPOSIT;
         $new_transaction->user_id = Auth::id();
         $new_transaction->usd_value = $request->amount;
+
+
         $new_transaction->amount = $request->amount / $currency->usd_value;
 
         $new_transaction->status = TransactionStatus::$PENDING;
@@ -63,7 +70,7 @@ class TransactionController extends Controller
     }
     public function withdraw()
     {
-        $withdraw = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$WITHDRAW)->paginate(10);
+        $withdraw = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$WITHDRAW)->orderBy("id", "desc")->paginate(10);
         $currencies = Currency::all();
         $last = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$WITHDRAW)->latest()->first();
         return view("pages.user.withdraw", compact('withdraw', 'currencies', 'last'));

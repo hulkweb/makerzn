@@ -15,11 +15,11 @@
                             Best way to manage<br /><span>your mining</span>
                         </h2>
                         <p>
-                            Keep your MakerZN activities at your
+                            Keep your {{ setting('site_name') }} activities at your
                             fingertips with our mobile apps. Access
                             real-time data and track your mining
                             portfolio wherever you are, whenever you
-                            need. The MakerZN app provides a convenient,
+                            need. The {{ setting('site_name') }} app provides a convenient,
                             easy solution for purchasing and managing
                             mining plans, helping you grow your revenue
                             seamlessly.
@@ -66,10 +66,10 @@
                     <div class="about_text">
                         <div class="section_title aos-init">
                             <h2 class="sec-title_heading">
-                                MakerZN Awesome Mining APP
+                                {{ setting('site_name') }} Awesome Mining APP
                             </h2>
                             <p>
-                                MakerZN Cloud Mining APP has achieved
+                                {{ setting('site_name') }} Cloud Mining APP has achieved
                                 1.7 million downloads and has 860,000
                                 followers. It offers more than 20 mining
                                 plan contracts and serves customers in
@@ -141,14 +141,14 @@
                         <div class="section_title aos-init">
                             <h2 class="sec-title_heading mb-3">
                                 Start Your Cloud Mining From
-                                <span style="color: #fff">MakerZN APP</span>
+                                <span style="color: #fff">{{ setting('site_name') }} APP</span>
                             </h2>
                             <p>
-                                Download the MakerZN APP today to enjoy
+                                Download the {{ setting('site_name') }} APP today to enjoy
                                 a seamless mining order management
                                 experience. Gain access to real-time
                                 data and track your mining portfolio
-                                from anywhere, at any time. The MakerZN
+                                from anywhere, at any time. The {{ setting('site_name') }}
                                 APP provides an easy and convenient way
                                 to purchase and manage mining plans,
                                 helping you grow your revenue
@@ -192,7 +192,7 @@
                         <div class="free_text">
                             <div class="section_title">
                                 <h2>
-                                    Download MakerZN and start your
+                                    Download {{ setting('site_name') }} and start your
                                     first mining
                                 </h2>
                             </div>
@@ -253,7 +253,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MakerZN.</span>
+                                <span>{{ setting('site_name') }}.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

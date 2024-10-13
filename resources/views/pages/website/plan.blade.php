@@ -39,7 +39,7 @@
                 <div class="team-detail_image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="team-detail_image-outer" style="margin-top: 120px">
                         <div class="team-detail_image">
-                            <img src="{{ asset('uploads/plans/' . $item->image) }}" alt="" />
+                            <img src="{{ asset('uploads/plans/' . $plan->image) }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="team-detail_info">
                                         Affiliate Rewards 2nd
-                                        <span>$0.00</span>
+                                        <span>{{ priceHTML($plan->second_referral) }} </span>
                                     </div>
                                 </div>
                                 <div class="column col-lg-6 col-md-6 col-sm-6">
@@ -86,11 +86,11 @@
                                     </div>
                                     <div class="team-detail_info">
                                         Affiliate Rewards 1st
-                                        <span>$0.00</span>
+                                        <span>{{ priceHTML($plan->first_referral) }} </span>
                                     </div>
                                     <div class="team-detail_info">
                                         Affiliate Rewards 3rd
-                                        <span>$0.00</span>
+                                        <span>{{ priceHTML($plan->third_referral) }} </span>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                     </h3>
                     <h6>
                         For calculation of mining income, please refer
-                        to MakerZN pool: {{ env('APP_URL') }}plans
+                        to {{ setting('site_name') }} pool: {{ env('APP_URL') }}plans
                     </h6>
                     <p><br /></p>
                     <h3>
@@ -279,7 +279,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MakerZN.</span>
+                                <span>{{ setting('site_name') }}.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

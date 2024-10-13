@@ -34,14 +34,14 @@
                             <div class="slider-one_content col-lg-7 col-md-12 col-sm-12">
                                 <div class="slider-one_content-inner">
                                     <div class="slider-one_title">
-                                        👋 MakerZN makes mining fast &
+                                        👋 {{ setting('site_name') }} makes mining fast &
                                         easy
                                     </div>
                                     <h1 class="slider-one_heading">
-                                        Easy Mining,Start With MakerZN
+                                        Easy Mining,Start With {{ setting('site_name') }}
                                     </h1>
                                     <div class="slider-one_text">
-                                        MakerZN is a leading cloud
+                                        {{ setting('site_name') }} is a leading cloud
                                         mining platform dedicated to
                                         providing users with efficient
                                         and secure mining services.
@@ -83,7 +83,7 @@
             <!-- Sec Title -->
             <div class="sec-title centered">
                 <div class="sec-title_title">OUR FEATURES</div>
-                <h2 class="sec-title_heading">Why Choose MakerZN?</h2>
+                <h2 class="sec-title_heading">Why Choose {{ setting('site_name') }}?</h2>
             </div>
             <div class="row clearfix">
                 <div class="service-block_one col-lg-4 col-md-6 col-sm-12">
@@ -323,11 +323,11 @@
                         <div class="sec-title">
                             <div class="sec-title_title">ABOUT US</div>
                             <h2 class="sec-title_heading">
-                                About MakerZN
+                                About {{ setting('site_name') }}
                             </h2>
                         </div>
                         <p style="white-space: break-spaces">
-                            Established in 2019, MakerZN has been at the
+                            Established in 2019, {{ setting('site_name') }} has been at the
                             forefront of cryptocurrency cloud mining
                             from the beginning. Our mission is to make
                             cloud mining straightforward, convenient,
@@ -335,7 +335,7 @@
                             world-class cloud computing platform,
                             employing cutting-edge deployment technology
                             to cater to a diverse user base. With
-                            MakerZN, you can mine cryptocurrencies from
+                            {{ setting('site_name') }}, you can mine cryptocurrencies from
                             anywhere in the world. Our primary aim is to
                             democratize access to cryptocurrency cloud
                             mining, regardless of an individual&#039;s
@@ -383,7 +383,7 @@
                             <div class="counter-block_one-icon fa-brands fa-instagram fa-fw"></div>
                             <div class="counter-block_one-text">
                                 Advanced Technology and Facilities:
-                                MakerZN has a world-class cloud
+                                {{ setting('site_name') }} has a world-class cloud
                                 computing platform and the most advanced
                                 equipment deployment technology to
                                 ensure mining efficiency and stability.
@@ -417,7 +417,7 @@
                             <div class="counter-block_one-icon fas fa-heart fa-fw"></div>
                             <div class="counter-block_one-text">
                                 Competitive pricing and transparent fee
-                                structure: MakerZN&#039;s cloud mining
+                                structure: {{ setting('site_name') }}&#039;s cloud mining
                                 plans are competitively priced and have
                                 a transparent fee structure with no
                                 hidden fees. We are committed to
@@ -535,12 +535,12 @@
                                     <div class="icon-outer">
                                         <span class="icon icon-plus fa-solid fa-plus fa-fw"></span>
                                     </div>
-                                    What is MakerZN?
+                                    What is {{ setting('site_name') }}?
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <div class="text">
-                                            MakerZN is a leading
+                                            {{ setting('site_name') }} is a leading
                                             cryptocurrency investment
                                             firm founded in the UK in
                                             2019. Our website and mobile
@@ -572,13 +572,13 @@
                                     <div class="icon-outer">
                                         <span class="icon icon-plus fa-solid fa-plus fa-fw"></span>
                                     </div>
-                                    Is MakerZN legal?
+                                    Is {{ setting('site_name') }} legal?
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <div class="text">
                                             <div>
-                                                MakerZN is a legitimate
+                                                {{ setting('site_name') }} is a legitimate
                                                 and secure cloud mining
                                                 platform that lets you
                                                 earn income with minimal
@@ -604,7 +604,7 @@
                                                 against DDoS attacks,
                                                 allowing safe access
                                                 from anywhere in the
-                                                world. With MakerZN, you
+                                                world. With {{ setting('site_name') }}, you
                                                 can trust that you are
                                                 engaging in a secure and
                                                 efficient crypto mining
@@ -627,7 +627,7 @@
                                         <div class="text">
                                             To earn passive income
                                             through cloud mining on
-                                            MakerZN, simply register and
+                                            {{ setting('site_name') }}, simply register and
                                             choose your mining contract.
                                             You don’t need to invest in
                                             additional equipment like
@@ -640,7 +640,7 @@
                                             cryptocurrency mining,
                                             including popular options
                                             like Bitcoin, Ethereum, and
-                                            Litecoin. With MakerZN, you
+                                            Litecoin. With {{ setting('site_name') }}, you
                                             can take advantage of a
                                             secure and efficient way to
                                             mine cryptocurrencies and
@@ -706,7 +706,7 @@
                                     <div class="content">
                                         <div class="text">
                                             <div>
-                                                At MakerZN, we only
+                                                At {{ setting('site_name') }}, we only
                                                 accept payments in
                                                 cryptocurrency. Our
                                                 platform supports
@@ -734,7 +734,7 @@
                                                 simplifies the process,
                                                 making it easy to start
                                                 mining operations with
-                                                MakerZN.
+                                                {{ setting('site_name') }}.
                                             </div>
                                         </div>
                                     </div>
@@ -979,7 +979,7 @@
                                     <div class="content">
                                         <div class="text">
                                             <p>
-                                                <font color="#ffffff">At MakerZN, our
+                                                <font color="#ffffff">At {{ setting('site_name') }}, our
                                                     referral program
                                                     assigns every user a
                                                     personal referral
@@ -1024,7 +1024,7 @@
                                     <div class="icon-outer">
                                         <span class="icon icon-plus fa-solid fa-plus fa-fw"></span>
                                     </div>
-                                    How can I contact MakerZN&#039;s
+                                    How can I contact {{ setting('site_name') }}&#039;s
                                     customer support for additional
                                     queries?
                                 </div>
@@ -1033,7 +1033,7 @@
                                         <div class="text">
                                             <p>
                                                 <font color="#ffffff">You can easily
-                                                    reach MakerZN's
+                                                    reach {{ setting('site_name') }}'s
                                                     customer support
                                                     through our 24/7
                                                     chat feature
@@ -1673,7 +1673,7 @@
                                     </div>
                                     <div class="testimonial-block_one-text">
                                         Great! My life has changed a lot
-                                        since I learned about MakerZN. I
+                                        since I learned about {{ setting('site_name') }}. I
                                         realized how much help it is to
                                         choose a reliable investment
                                         platform.
@@ -1701,7 +1701,7 @@
                                     </div>
                                     <div class="testimonial-block_one-text">
                                         My heartfelt tribute to the
-                                        MakerZN platform operation team!
+                                        {{ setting('site_name') }} platform operation team!
                                         Every detail reflects their hard
                                         work and dedication.
                                     </div>
@@ -1805,7 +1805,7 @@
                         <div class="cta-one_title-outer">
                             <h2 class="cta-one_title">
                                 Start your first mining with
-                                <span>MakerZN.</span>
+                                <span>{{ setting('site_name') }}.</span>
                             </h2>
                             <div class="cta-one_button">
                                 <a href="#" class="template-btn btn-style-three">

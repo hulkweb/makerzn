@@ -33,13 +33,13 @@
                     <div class="blog-detail">
                         <div class="blog-detail_inner">
                             <div class="blog-detail_image">
-                                <img src="../asset/img/sections/elements/669b5aafd58fb1721457327.jpg"
+                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
                                     alt="Bitcoin mining energy use doubled in 2023 as crypto prices rose" />
                             </div>
                             <div class="blog-detail_content">
                                 <h3 class="blog-detail_heading">{{ $blog->title }}</h3>
-                                <div class="blog-c">
-                                    {{ $blog->body }}
+                                <div class="blog-c" style="color:white !Important">
+                                    {!! $blog->body !!}
                                 </div>
                                 <div class="post-share-options">
                                     <div class="post-share-inner d-flex justify-content-end flex-wrap">
@@ -72,7 +72,7 @@
                                         </div>
                                     @endforeach
 
-                                   
+
 
                                 </div>
                             </div>

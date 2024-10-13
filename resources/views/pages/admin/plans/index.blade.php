@@ -83,6 +83,9 @@
                                             data-daily_rebate="{{ $item->daily_rebate }}" data-part_2="{{ $item->part_2 }}"
                                             data-recoverable_funds="{{ $item->recoverable_funds }}"
                                             data-principal_refund="{{ $item->principal_refund }}"
+                                            data-first_referral="{{ $item->first_referral }}"
+                                            data-second_referral="{{ $item->second_referral }}"
+                                            data-third_referral="{{ $item->third_referral }}"
                                             data-status="{{ $item->status }}"
                                             data-image="{{ asset("uploads/plans/$item->image") }}"
                                             data-interest_settlement_time="{{ $item->interest_settlement_time }}"
@@ -146,8 +149,8 @@
                         </div>
                         <div class="form-group">
                             <label for="inputTitle">daily rebate(in $)</label>
-                            <input type="integer" min="1" class="form-control" name="daily_rebate" id="inputTitle"
-                                placeholder="Enter daily rebate" required>
+                            <input type="integer" min="1" class="form-control" name="daily_rebate"
+                                id="inputTitle" placeholder="Enter daily rebate" required>
                         </div>
                         <div class="form-group">
                             <label for="inputTitle">recoverable funds(in $)</label>
@@ -563,6 +566,10 @@
             $("#daily_rebate").val(ele.getAttribute("data-daily_rebate"));
             $("#recoverable_funds").val(ele.getAttribute("data-recoverable_funds"));
             $("#principal_refund").val(ele.getAttribute("data-principal_refund"));
+            $("#first_referral").val(ele.getAttribute("data-first_referral"));
+            $("#second_referral").val(ele.getAttribute("data-second_referral"));
+            $("#third_referral").val(ele.getAttribute("data-third_referral"));
+
             $("#interest_settlement_time").val(ele.getAttribute("data-interest_settlement_time"));
             $("#image").attr("src", ele.getAttribute("data-image"));
 

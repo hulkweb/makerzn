@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="hSKmz6UzIqOFmsAs6Rceh3fIv5kFPn2CzEisGaPV">
     <meta name="dashboard" content="true">
-    <title>MakerZN-Cryptocurrency Cloud Mining Platform | Dashboard</title>
+    <title>{{ setting('site_name') }}-Cryptocurrency Cloud Mining Platform | Dashboard</title>
     <link href="{{ asset('asset/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/meanmenu.min.css') }}" rel="stylesheet">

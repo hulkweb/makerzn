@@ -179,27 +179,6 @@ class UserController extends Controller
         ];
         return view("pages.user.dashboard", $data);
     }
-    public function deposit()
-    {
-        $deposits = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->paginate(10);
-        $currencies = Currency::all();
-
-        return view("pages.user.deposit", compact('deposits', 'currencies'));
-    }
-    public function deposit_post()
-    {
-        $deposits = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$DEPOSIT)->paginate(10);
-
-        return view("pages.user.deposit", compact('deposits'));
-    }
-
-    public function withdraw()
-    {
-        $withdraw = Transaction::where("user_id", Auth::user()->id)->where("type", TransactionType::$WITHDRAW)->paginate(10);
-        $currencies = Currency::all();
-
-        return view("pages.user.withdraw", compact('withdraw'));
-    }
 
 
     public function settings()
